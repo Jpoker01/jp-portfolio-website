@@ -290,7 +290,7 @@ function Hero() {
               <path d="M22 7l-10 7L2 7" />
             </SocialIcon>
             <SocialIcon
-              href="https://www.linkedin.com/in/ji%C5%99%C3%AD-pokorn%C3%BD-4b1093214/"
+              href="https://www.linkedin.com/in/jpoker01/"
               label="LinkedIn"
             >
               <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z" />
@@ -681,7 +681,7 @@ function Contact() {
               }
             >
               <a
-                href="https://www.linkedin.com/in/ji%C5%99%C3%AD-pokorn%C3%BD-4b1093214/"
+                href="https://www.linkedin.com/in/jpoker01/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[18px] hover:text-white transition-colors duration-300"
