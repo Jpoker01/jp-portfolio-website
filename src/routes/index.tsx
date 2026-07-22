@@ -192,7 +192,7 @@ function Nav() {
                 scrollTo(n.id);
                 setOpen(false);
               }}
-              className="cursor-pointer block w-full text-left py-3 text-[13px] font-semibold text-ink-400 hover:text-white tracking-[0.2em] uppercase"
+              className="cursor-pointer block w-full text-left py-3 text-[15px] font-semibold text-ink-400 hover:text-white tracking-[0.2em] uppercase"
             >
               {n.label}
             </button>
@@ -205,35 +205,23 @@ function Nav() {
 
 // ─── Hero ──────────────────────────────────────────────────────────────────
 
-function SocialIcon({
-  href,
-  label,
-  children,
-}: {
-  href: string;
-  label: string;
-  children: React.ReactNode;
-}) {
+function SocialIcon({ href, label, children, tooltip }: { href: string; label: string; children: React.ReactNode; tooltip?: string }) {
   return (
     <a
       href={href}
-      target={href.startsWith("mailto") || href.startsWith("tel") ? undefined : "_blank"}
+      target={href.startsWith('mailto') || href.startsWith('tel') ? undefined : '_blank'}
       rel="noopener noreferrer"
-      className="text-ink-300 hover:text-white transition-colors duration-300"
+      className="group relative text-ink-300 hover:text-white transition-colors duration-300"
       aria-label={label}
     >
-      <svg
-        width="22"
-        height="22"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
+      <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         {children}
       </svg>
+      {tooltip && (
+        <span className="absolute -top-8 left-1/2 -translate-x-1/2 text-[11px] font-medium text-white bg-ink-800 px-2 py-1 rounded whitespace-nowrap pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+          {tooltip}
+        </span>
+      )}
     </a>
   );
 }
@@ -297,7 +285,7 @@ function Hero() {
               <rect x="2" y="9" width="4" height="12" />
               <circle cx="4" cy="4" r="2" />
             </SocialIcon>
-            <SocialIcon href="tel:+420603967651" label="Phone">
+            <SocialIcon href="tel:+420603967651" label="Phone" tooltip="+420 603 967 651">
               <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
             </SocialIcon>
           </div>
