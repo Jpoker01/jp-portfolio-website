@@ -158,7 +158,7 @@ function Nav() {
       <div className="px-6 md:px-10 lg:px-16 h-16 flex items-center justify-between">
         <button
           onClick={() => scrollTo("home")}
-          className="cursor-pointer font-mono text-xs font-medium text-ink-200 tracking-[0.3em]"
+          className="cursor-pointer font-mono text-[13px] font-medium text-ink-200 tracking-[0.3em]"
         >
           JP
         </button>
@@ -168,7 +168,7 @@ function Nav() {
             <button
               key={n.id}
               onClick={() => scrollTo(n.id)}
-              className="cursor-pointer text-[11px] font-semibold text-ink-400 hover:text-white transition-colors duration-300 tracking-[0.2em] uppercase"
+              className="cursor-pointer text-[13px] font-semibold text-ink-400 hover:text-white transition-colors duration-300 tracking-[0.2em] uppercase"
             >
               {n.label}
             </button>
@@ -179,7 +179,7 @@ function Nav() {
           onClick={() => setOpen(!open)}
           className="cursor-pointer md:hidden text-ink-400 hover:text-white"
         >
-          {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+          {open ? <X className="w-[22px] h-[22px]" /> : <Menu className="w-[22px] h-[22px]" />}
         </button>
       </div>
 
@@ -192,7 +192,7 @@ function Nav() {
                 scrollTo(n.id);
                 setOpen(false);
               }}
-              className="cursor-pointer block w-full text-left py-3 text-[11px] font-semibold text-ink-400 hover:text-white tracking-[0.2em] uppercase"
+              className="cursor-pointer block w-full text-left py-3 text-[13px] font-semibold text-ink-400 hover:text-white tracking-[0.2em] uppercase"
             >
               {n.label}
             </button>
@@ -223,8 +223,8 @@ function SocialIcon({
       aria-label={label}
     >
       <svg
-        width="19"
-        height="19"
+        width="22"
+        height="22"
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
@@ -254,23 +254,23 @@ function Hero() {
 
       <div className="relative z-10 max-w-5xl mx-auto text-center flex flex-col items-center">
         <h1 className="name tracking-tight animate-fade-up" style={{ lineHeight: 1.02 }}>
-          <span className="first font-medium block text-[clamp(40px,8.5vw,78px)]">Jiří</span>
-          <span className="surname font-extrabold block text-[clamp(52px,11.5vw,104px)]">
+          <span className="first font-medium block text-[clamp(38px,8vw,72px)]">Jiří</span>
+          <span className="surname font-extrabold block text-[clamp(46px,10vw,102px)]">
             Pokorný
           </span>
           <span className="name-shine" aria-hidden="true">
-            <span className="first font-light block text-[clamp(40px,8.5vw,78px)]">Jiří</span>
-            <span className="surname font-extrabold block text-[clamp(52px,11.5vw,104px)]">
+            <span className="first font-light block text-[clamp(38px,8vw,72px)]">Jiří</span>
+            <span className="surname font-extrabold block text-[clamp(46px,10vw,102px)]">
               Pokorný
             </span>
           </span>
         </h1>
 
-        <span className="mt-6 uppercase text-[11px] font-semibold tracking-[0.24em] text-ink-500 animate-fade-in">
+        <span className="mt-6 uppercase text-[14px] font-semibold tracking-[0.24em] text-ink-500 animate-fade-in">
           Software Developer&ensp;&middot;&ensp;Brno, CZ
         </span>
 
-        <p className="mt-7 font-light text-[15px] leading-relaxed text-ink-400 max-w-2xl animate-fade-up delay-200">
+        <p className="mt-7 font-light text-[18px] leading-relaxed text-ink-400 max-w-2xl animate-fade-up delay-200">
           Python developer specialising in applied ML/AI, taking projects from raw data to deployed
           applications.
         </p>
@@ -278,10 +278,10 @@ function Hero() {
         <div className="flex items-center justify-center gap-6 mt-10 animate-fade-up delay-300">
           <button
             onClick={() => scrollTo("work")}
-            className="group flex items-center gap-2 text-[11px] font-semibold text-white tracking-[0.2em] uppercase"
+            className="group flex items-center gap-2 text-[13px] font-semibold text-white tracking-[0.2em] uppercase cursor-pointer"
           >
             View Work
-            <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            <ArrowUpRight className="w-[18px] h-[18px] transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </button>
           <span className="w-12 h-px bg-ink-700" />
           <div className="flex items-center gap-4">
@@ -305,7 +305,7 @@ function Hero() {
       </div>
 
       <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex items-center gap-3">
-        <span className="text-[10px] font-bold uppercase tracking-[0.17em] text-ink-500">
+        <span className="text-[11px] font-bold uppercase tracking-[0.17em] text-ink-500">
           Scroll
         </span>
         <span className="w-6 h-px bg-ink-600" />
@@ -319,9 +319,9 @@ function Hero() {
 function SectionLabel({ num, label }: { num: string; label: string }) {
   return (
     <div className="flex items-center gap-5 mb-14">
-      <span className="font-mono text-[14px] text-ink-500">{num}</span>
+      <span className="font-mono text-[16px] text-ink-500">{num}</span>
       <span className="w-10 h-px bg-ink-600" />
-      <span className="text-[14px] font-semibold tracking-[0.18em] uppercase text-ink-200">
+      <span className="text-[15px] font-semibold tracking-[0.18em] uppercase text-ink-200">
         {label}
       </span>
     </div>
@@ -348,16 +348,16 @@ function ProjectCard({
       } pb-16`}
     >
       <div className="lg:col-span-7">
-        <span className="block font-mono text-[11px] text-ink-600 tracking-[0.15em] mb-5">
+        <span className="block font-mono text-[12px] text-ink-600 tracking-[0.15em] mb-5">
           {String(index + 1).padStart(2, "0")} / {String(PROJECTS.length).padStart(2, "0")}
         </span>
-        <p className="font-mono text-[11px] font-medium uppercase tracking-[0.2em] text-ink-400 mb-4">
+        <p className="font-mono text-[13px] font-medium uppercase tracking-[0.2em] text-ink-400 mb-4">
           {project.tag}
         </p>
-        <h3 className="text-3xl md:text-4xl lg:text-[44px] font-bold text-white tracking-tight leading-[1.1] mb-6">
+        <h3 className="text-3xl md:text-4xl lg:text-[35px] font-bold text-white tracking-tight leading-[1.1] mb-6">
           {project.title}
         </h3>
-        <p className="text-[15px] text-ink-400 leading-relaxed font-light max-w-xl">
+        <p className="text-[17px] text-ink-400 leading-relaxed font-light max-w-xl">
           {project.description}
         </p>
       </div>
@@ -367,7 +367,7 @@ function ProjectCard({
           {project.stack.map((s) => (
             <span
               key={s}
-              className="font-mono text-[12px] text-ink-400 border border-ink-800 px-2.5 py-1 rounded-sm"
+              className="font-mono text-[15px] text-ink-400 border border-ink-800 px-2.5 py-1 rounded-sm"
             >
               {s}
             </span>
@@ -375,14 +375,14 @@ function ProjectCard({
         </div>
 
         {project.links.length > 0 && (
-          <div className="flex items-center gap-4 flex-wrap">
+          <div className="flex items-center gap-4 flex-wrap px-2.5">
             {project.links.map((link) => (
               <a
                 key={link.label}
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[11px] font-semibold tracking-[0.2em] uppercase text-white hover:text-ink-300 transition-colors duration-300"
+                className="text-[13px] font-semibold tracking-[0.2em] uppercase text-white hover:text-ink-300 transition-colors duration-300"
               >
                 {link.label} &#8599;
               </a>
@@ -411,12 +411,12 @@ function Work() {
             href="https://github.com/Jpoker01"
             target="_blank"
             rel="noopener noreferrer"
-            className="group relative inline-flex items-center gap-3 px-8 py-4 text-[11px] font-semibold tracking-[0.2em] uppercase text-white border border-ink-700 rounded-sm overflow-hidden transition-all duration-400 hover:border-ink-500 hover:shadow-[0_0_30px_rgba(255,255,255,0.04)]"
+            className="group relative inline-flex items-center gap-3 px-8 py-4 text-[13px] font-semibold tracking-[0.2em] uppercase text-white border border-ink-700 rounded-sm overflow-hidden transition-all duration-400 hover:border-ink-500 hover:shadow-[0_0_30px_rgba(255,255,255,0.04)]"
           >
             <span className="absolute inset-0 bg-white/0 group-hover:bg-white/[0.03] transition-colors duration-400" />
-            <Github className="relative w-[18px] h-[18px]" />
+            <Github className="relative w-[20px] h-[20px]" />
             <span className="relative">See More on GitHub</span>
-            <ArrowUpRight className="relative w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            <ArrowUpRight className="relative w-[18px] h-[18px] transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </a>
         </div>
       </div>
@@ -441,10 +441,10 @@ function Skills() {
             >
               <div className="flex items-center gap-3 mb-5">
                 <group.icon
-                  className="w-5 h-5 text-ink-500 group-hover/cell:text-ink-300 transition-colors duration-300"
+                  className="w-[22px] h-[22px] text-ink-500 group-hover/cell:text-ink-300 transition-colors duration-300"
                   strokeWidth={1.5}
                 />
-                <h3 className="text-[11px] font-semibold uppercase tracking-[0.16em] text-white">
+                <h3 className="text-[13px] font-semibold uppercase tracking-[0.16em] text-white">
                   {group.label}
                 </h3>
               </div>
@@ -478,14 +478,14 @@ function ExperienceItem({ job, isFirst }: { job: (typeof EXPERIENCE)[number]; is
       } pb-16`}
     >
       <div className="lg:col-span-7">
-        <p className="font-mono text-[11px] font-medium uppercase tracking-[0.2em] text-ink-400 mb-4">
+        <p className="font-mono text-[13px] font-medium uppercase tracking-[0.2em] text-ink-400 mb-4">
           {job.company} · {job.location}
         </p>
-        <h3 className="text-3xl md:text-4xl lg:text-[44px] font-bold text-white tracking-tight leading-[1.1] mb-4">
+        <h3 className="text-3xl md:text-4xl lg:text-[35px] font-bold text-white tracking-tight leading-[1.1] mb-4">
           {job.role}
         </h3>
-        <p className="font-mono text-[12px] text-ink-500 tracking-[0.15em] mb-6">{job.period}</p>
-        <p className="text-[15px] text-ink-400 leading-relaxed font-light max-w-xl">
+        <p className="font-mono text-[13px] text-ink-500 tracking-[0.15em] mb-6">{job.period}</p>
+        <p className="text-[17px] text-ink-400 leading-relaxed font-light max-w-xl">
           {job.description}
         </p>
       </div>
@@ -495,7 +495,7 @@ function ExperienceItem({ job, isFirst }: { job: (typeof EXPERIENCE)[number]; is
           {job.stack.map((s) => (
             <span
               key={s}
-              className="font-mono text-[12px] text-ink-400 border border-ink-800 px-2.5 py-1 rounded-sm"
+              className="font-mono text-[15px] text-ink-400 border border-ink-800 px-2.5 py-1 rounded-sm"
             >
               {s}
             </span>
@@ -523,12 +523,12 @@ function Experience() {
             href="/CV_Jiri_Pokorny_EN.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="group relative inline-flex items-center gap-3 px-8 py-4 text-[11px] font-semibold tracking-[0.2em] uppercase text-white border border-ink-700 rounded-sm overflow-hidden transition-all duration-400 hover:border-ink-500 hover:shadow-[0_0_30px_rgba(255,255,255,0.04)]"
+            className="group relative inline-flex items-center gap-3 px-8 py-4 text-[13px] font-semibold tracking-[0.2em] uppercase text-white border border-ink-700 rounded-sm overflow-hidden transition-all duration-400 hover:border-ink-500 hover:shadow-[0_0_30px_rgba(255,255,255,0.04)]"
           >
             <span className="absolute inset-0 bg-white/0 group-hover:bg-white/[0.03] transition-colors duration-400" />
-            <FileText className="relative w-[18px] h-[18px]" />
+            <FileText className="relative w-[20px] h-[20px]" />
             <span className="relative">Download Full CV</span>
-            <ArrowUpRight className="relative w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            <ArrowUpRight className="relative w-[18px] h-[18px] transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </a>
         </div>
       </div>
@@ -555,8 +555,8 @@ function CopyButton({ text }: { text: string }) {
       aria-label="Copy"
     >
       <svg
-        width="14"
-        height="14"
+        width="16"
+        height="16"
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
@@ -568,7 +568,7 @@ function CopyButton({ text }: { text: string }) {
         <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1" />
       </svg>
       {copied && (
-        <span className="absolute -top-7 left-1/2 -translate-x-1/2 text-[10px] text-white bg-ink-800 px-2 py-0.5 rounded whitespace-nowrap pointer-events-none">
+        <span className="absolute -top-7 left-1/2 -translate-x-1/2 text-[11px] text-white bg-ink-800 px-2 py-0.5 rounded whitespace-nowrap pointer-events-none">
           Copied
         </span>
       )}
@@ -588,8 +588,8 @@ function ContactRow({
   return (
     <div className="flex items-center gap-3">
       <svg
-        width="18"
-        height="18"
+        width="20"
+        height="20"
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
@@ -628,7 +628,7 @@ function Contact() {
           className="flex flex-col md:flex-row md:items-center md:justify-center gap-10 md:gap-[56px]"
           style={{ width: "fit-content", marginLeft: "auto", marginRight: "auto" }}
         >
-          <h2 className="text-[38px] font-extrabold text-white leading-[1.1] md:text-right">
+          <h2 className="text-[35px] font-extrabold text-white leading-[1.1] md:text-right">
             Let's work together.
           </h2>
 
@@ -664,7 +664,7 @@ function Contact() {
             >
               <a
                 href="tel:+420603967651"
-                className="text-[16px] hover:text-white transition-colors duration-300"
+                className="text-[18px] hover:text-white transition-colors duration-300"
                 style={{ color: "#d0d0d0" }}
               >
                 +420 603 967 651
@@ -684,7 +684,7 @@ function Contact() {
                 href="https://www.linkedin.com/in/ji%C5%99%C3%AD-pokorn%C3%BD-4b1093214/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[16px] hover:text-white transition-colors duration-300"
+                className="text-[18px] hover:text-white transition-colors duration-300"
                 style={{ color: "#d0d0d0" }}
               >
                 LinkedIn &#8599;
