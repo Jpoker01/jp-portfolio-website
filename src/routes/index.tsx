@@ -254,17 +254,17 @@ function Hero() {
 
       <div className="relative z-10 max-w-5xl mx-auto text-center flex flex-col items-center">
         <h1 className="name tracking-tight animate-fade-up" style={{ lineHeight: 1.02 }}>
-          <span className="first font-medium block text-[clamp(38px,8vw,72px)]">Jiří</span>
-          <span className="surname font-extrabold block text-[clamp(46px,10vw,102px)]">
+        <span className="first font-medium block text-[clamp(48px,13vw,72px)]">Jiří</span>
+        <span className="surname font-extrabold block text-[clamp(60px,17.5vw,102px)]">
+          Pokorný
+        </span>
+        <span className="name-shine" aria-hidden="true">
+          <span className="first font-medium block text-[clamp(48px,13vw,72px)]">Jiří</span>
+          <span className="surname font-extrabold block text-[clamp(60px,17.5vw,102px)]">
             Pokorný
           </span>
-          <span className="name-shine" aria-hidden="true">
-            <span className="first font-light block text-[clamp(38px,8vw,72px)]">Jiří</span>
-            <span className="surname font-extrabold block text-[clamp(46px,10vw,102px)]">
-              Pokorný
-            </span>
-          </span>
-        </h1>
+        </span>
+      </h1>
 
         <span className="mt-6 uppercase text-[14px] font-semibold tracking-[0.24em] text-ink-500 animate-fade-in">
           Software Developer&ensp;&middot;&ensp;Brno, CZ
