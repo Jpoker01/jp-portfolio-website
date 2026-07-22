@@ -444,7 +444,7 @@ function Skills() {
                   className="w-[22px] h-[22px] text-ink-500 group-hover/cell:text-ink-300 transition-colors duration-300"
                   strokeWidth={1.5}
                 />
-                <h3 className="text-[13px] font-semibold uppercase tracking-[0.16em] text-white">
+                <h3 className="text-[14px] font-semibold uppercase tracking-[0.16em] text-white">
                   {group.label}
                 </h3>
               </div>
@@ -452,7 +452,7 @@ function Skills() {
                 {group.items.map((item) => (
                   <span
                     key={item}
-                    className="text-[15px] text-ink-400 group-hover/cell:text-ink-200 transition-colors duration-300"
+                    className="text-[16px] text-ink-400 group-hover/cell:text-ink-200 transition-colors duration-300"
                   >
                     {item}
                   </span>
