@@ -104,7 +104,7 @@ const EXPERIENCE = [
     period: "JUN 2022 - SEP 2024",
     location: "Brno, Czech Republic",
     description:
-      "Developed an incident classification system on the data analysis & AI team using real production SAP customer incident data, an NLP text-classification model that became the foundation of my bachelor's thesis (see ATACA in Selected Work).",
+      "Developed an incident classification system on the data analysis & AI team using real production SAP customer incident data, an NLP text-classification model that became the foundation of my bachelor's thesis (see ATACA in Selected Projects).",
     stack: ["Python", "NLP", "scikit-learn", "Text Classification"],
   },
 ];
@@ -389,7 +389,7 @@ function Work() {
   return (
     <section id="work" className="section-pad border-t border-ink-800">
       <div className="max-w-6xl mx-auto">
-        <SectionLabel num="01" label="Selected Work" />
+        <SectionLabel num="01" label="Selected Projects" />
 
         <div className="max-w-4xl mx-auto">
           {PROJECTS.map((p, i) => (
