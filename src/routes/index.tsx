@@ -309,8 +309,11 @@ function SectionLabel({ num, label }: { num: string; label: string }) {
     <div className="flex items-center gap-5 mb-14">
       <span className="font-mono text-[16px] text-ink-500">{num}</span>
       <span className="w-10 h-px bg-ink-600" />
-      <span className="text-[15px] font-semibold tracking-[0.18em] uppercase text-ink-200">
+      <span className="relative inline-block text-[15px] font-semibold tracking-[0.18em] uppercase text-ink-200">
         {label}
+        <span className="name-shine" aria-hidden="true">
+          {label}
+        </span>
       </span>
     </div>
   );
