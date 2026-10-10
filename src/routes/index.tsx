@@ -100,7 +100,7 @@ const EXPERIENCE = [
     roles: [
       {
         title: "Enterprise Apps",
-        period: "SEP 2024 - FEB 2026",
+        period: "SEP 2024 - FEB 2026 · Full-time",
         description:
           "Developed features for SAP S/4HANA applications across the backend (ABAP) and frontend (SAPUI5, Fiori). Debugged and resolved production issues in live customer systems.",
         stack: ["ABAP", "SAPUI5", "Fiori"],
