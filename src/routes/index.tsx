@@ -489,7 +489,7 @@ function ExperienceItem({ job, isFirst }: { job: (typeof EXPERIENCE)[number]; is
                 className="absolute left-0 top-[9px] w-[7px] h-[7px] rounded-full bg-ink-600"
                 aria-hidden="true"
               />
-              <h3 className="text-2xl md:text-[26px] lg:text-[28px] font-bold text-white tracking-tight leading-[1.15] mb-3">
+              <h3 className="text-2xl md:text-[26px] lg:text-[28px] font-bold text-white tracking-tight leading-[1.15] mb-3 text-balance">
                 {role.title}
               </h3>
               <p className="font-mono text-[13px] text-ink-500 tracking-[0.15em] mb-5">
