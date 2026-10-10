@@ -89,28 +89,28 @@ const SKILL_GROUPS = [
   },
 ];
 
+// One entry per employer. `role` + `company` form the heading ("Associate
+// Developer at SAP"); each item in `roles` is a focus area within that job.
 const EXPERIENCE = [
   {
+    role: "Associate Developer",
     company: "SAP",
     location: "Brno, Czech Republic",
     period: "JUN 2022 - FEB 2026",
     roles: [
       {
-        title: "Associate Developer",
-        type: "FULL-TIME",
+        title: "Enterprise Applications",
         period: "SEP 2024 - FEB 2026",
         description:
           "Developed features for SAP S/4HANA applications across the backend (ABAP) and frontend (SAPUI5, Fiori). Debugged and resolved production issues in live customer systems.",
         stack: ["ABAP", "SAPUI5", "Fiori"],
-        featured: false,
       },
       {
-        title: "Associate Developer",
+        title: "AI & Data Analysis",
         period: "JUN 2022 - SEP 2024",
         description:
           "Built an NLP classifier that routes SAP customer incidents to the right component, trained on real production incident data. This work became the foundation of my bachelor's thesis (see ATACA in Selected Projects).",
         stack: ["Python", "NLP", "scikit-learn", "Text Classification"],
-        featured: true,
       },
     ],
   },
@@ -430,7 +430,10 @@ function Skills() {
       <div className="max-w-6xl mx-auto">
         <SectionLabel num="02" label="Tech Stack" />
 
-        <div ref={ref} className="reveal grid sm:grid-cols-2 lg:grid-cols-3 border border-ink-800">
+        <div
+          ref={ref}
+          className="reveal max-w-4xl mx-auto grid sm:grid-cols-2 lg:grid-cols-3 border border-ink-800"
+        >
           {SKILL_GROUPS.map((group) => (
             <div
               key={group.label}
@@ -468,71 +471,65 @@ function Skills() {
 function ExperienceItem({ job, isFirst }: { job: (typeof EXPERIENCE)[number]; isFirst: boolean }) {
   const ref = useReveal<HTMLDivElement>();
   return (
-    <div ref={ref} className={`reveal ${isFirst ? "" : "border-t border-ink-800 pt-16"} pb-16`}>
-      <div className="grid lg:grid-cols-12 gap-3 lg:gap-12 pb-10">
-        <div className="lg:col-span-7">
-          <h2 className="text-2xl md:text-[26px] lg:text-[28px] font-bold text-white tracking-tight leading-[1.15]">
-            {job.company}
-          </h2>
-          <p className="mt-2 font-mono text-[13px] font-medium uppercase tracking-[0.2em] text-ink-400">
-            {job.location}
-          </p>
-        </div>
-        <p className="lg:col-span-5 font-mono text-[13px] text-ink-500 tracking-[0.15em] lg:text-right">
-          {job.period}
+    <div
+      ref={ref}
+      className={`reveal ${isFirst ? "" : "border-t border-ink-800 pt-16"} pb-16`}
+    >
+      {/* Employer heading — title, then company + location, matching the
+          type scale and mono label of ProjectCard. No overall date; the dates
+          live on each focus area below. */}
+      <div className="mb-12">
+        <h3 className="text-3xl md:text-4xl lg:text-[35px] font-bold text-white tracking-tight leading-[1.1]">
+          {job.role}
+        </h3>
+        <p className="mt-4 font-mono text-[13px] font-medium uppercase tracking-[0.2em] text-ink-400">
+          {job.company} · {job.location}
         </p>
       </div>
 
-      <div>
+      {/* Focus areas within the job, on a thin timeline in the left gutter. */}
+      <div className="relative pl-7 lg:pl-9">
         {job.roles.map((role, ri) => {
           const isLast = ri === job.roles.length - 1;
           return (
-            <div key={role.period} className={`relative pl-9 lg:pl-14 ${isLast ? "" : "mb-10"}`}>
+            <div
+              key={role.period}
+              className={`relative grid lg:grid-cols-12 gap-x-8 lg:gap-x-12 gap-y-5 ${
+                isLast ? "" : "pb-12"
+              }`}
+            >
+              {/* Timeline dot. The ring masks the connecting line behind it. */}
               <span
-                className="absolute left-0 top-[8px] w-2 h-2 rounded-full bg-ink-600"
+                className="absolute -left-7 lg:-left-9 top-[7px] w-[7px] h-[7px] rounded-full bg-ink-400 ring-4 ring-black"
                 aria-hidden="true"
               />
+              {/* Connecting segment down to the next dot (not after the last). */}
               {!isLast && (
                 <span
-                  className="absolute left-[3.5px] w-px bg-ink-800"
-                  style={{ top: 12, bottom: 0 }}
+                  className="absolute left-[-25px] lg:left-[-33px] top-[16px] bottom-[-4px] w-px bg-ink-800"
                   aria-hidden="true"
                 />
               )}
-              {ri > 0 && (
-                <span
-                  className="absolute left-[3.5px] w-px bg-ink-800 top-0"
-                  style={{ height: 12 }}
-                  aria-hidden="true"
-                />
-              )}
-              <div className="grid lg:grid-cols-12 gap-x-8 lg:gap-x-12 gap-y-5">
-                <h3 className="lg:col-span-7 text-[21px] font-semibold text-white tracking-tight leading-[1.2]">
+              <div className="lg:col-span-7">
+                <h4 className="text-[21px] lg:text-[23px] font-semibold text-white tracking-tight leading-[1.2]">
                   {role.title}
-                </h3>
-                <p className="lg:col-span-7 mt-1.5 font-mono text-[13px] text-ink-500 tracking-[0.15em] uppercase">
+                </h4>
+                <p className="mt-2 font-mono text-[13px] text-ink-500 tracking-[0.15em] uppercase">
                   {role.period}
-                  {role.type ? ` · ${role.type}` : ""}
                 </p>
-                <p
-                  className={`lg:col-span-7 mt-4 text-ink-400 font-light leading-relaxed max-w-xl ${
-                    role.featured ? "text-[17px]" : "text-[16px]"
-                  }`}
-                >
+                <p className="mt-4 text-[16px] text-ink-400 font-light leading-relaxed max-w-xl">
                   {role.description}
                 </p>
-                <div className="lg:col-start-8 lg:col-span-5 lg:row-start-3">
-                  <div className="flex flex-wrap gap-2">
-                    {role.stack.map((s) => (
-                      <span
-                        key={s}
-                        className="font-mono text-[15px] text-ink-400 border border-ink-800 px-2.5 py-1 rounded-sm"
-                      >
-                        {s}
-                      </span>
-                    ))}
-                  </div>
-                </div>
+              </div>
+              <div className="lg:col-span-5 flex flex-wrap content-start gap-2 lg:pt-1">
+                {role.stack.map((s) => (
+                  <span
+                    key={s}
+                    className="font-mono text-[15px] text-ink-400 border border-ink-800 px-2.5 py-1 rounded-sm"
+                  >
+                    {s}
+                  </span>
+                ))}
               </div>
             </div>
           );
