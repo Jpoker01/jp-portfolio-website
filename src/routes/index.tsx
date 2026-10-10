@@ -69,7 +69,7 @@ const PROJECTS = [
 ];
 
 const SKILL_GROUPS = [
-  { icon: Code2, label: "Languages", items: ["Python", "C#", "C++", "TypeScript"] },
+  { icon: Code2, label: "Languages", items: ["Python", "C++", "TypeScript"] },
   {
     icon: Brain,
     label: "AI & NLP",
