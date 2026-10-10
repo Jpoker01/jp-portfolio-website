@@ -75,17 +75,17 @@ const SKILL_GROUPS = [
     label: "AI & NLP",
     items: ["scikit-learn", "NLTK", "spaCy", "gensim", "transformers", "Optuna"],
   },
-  { icon: Cpu, label: "Data", items: ["pandas", "NumPy", "SciPy", "SQL"] },
+  { icon: Cpu, label: "Data", items: ["pandas", "NumPy", "SciPy", "PostgreSQL"] },
   {
     icon: Server,
     label: "Backend & Web",
-    items: ["FastAPI", "REST APIs", "ASP.NET Core", "React"],
+    items: ["FastAPI", "REST APIs", "React"],
   },
-  { icon: Zap, label: "Cloud & DevOps", items: ["Docker", "Kubernetes", "Azure"] },
+  { icon: Zap, label: "Cloud & DevOps", items: ["Azure", "Docker", "Kubernetes"] },
   {
     icon: Wrench,
     label: "Tools & Practices",
-    items: ["Git", "Linux", "Unit Testing", "CI/CD"],
+    items: ["Git", "Linux", "CI/CD"],
   },
 ];
 
