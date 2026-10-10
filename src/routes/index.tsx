@@ -17,20 +17,21 @@ import {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Jiří Pokorný - Software Developer" },
+      { title: "Jiří Pokorný - AI Engineer" },
       {
         name: "description",
-        content:
-          "Python developer specialising in applied ML/AI, taking projects from raw data to deployed applications. Based in Brno, Czech Republic.",
+        content: "I build AI applications in Python, from raw data to a deployed product.",
       },
-      { property: "og:title", content: "Jiří Pokorný - Software Developer" },
+      { property: "og:title", content: "Jiří Pokorný - AI Engineer" },
       {
         property: "og:description",
-        content:
-          "Python developer specialising in applied ML/AI, taking projects from raw data to deployed applications.",
+        content: "I build AI applications in Python, from raw data to a deployed product.",
       },
+      { property: "og:url", content: "https://jiripokorny.com/" },
+      { property: "og:image", content: "https://jiripokorny.com/og-image.png" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: "https://jiripokorny.com/og-image.png" },
     ],
   }),
   component: Index,
@@ -50,8 +51,8 @@ const PROJECTS = [
     title: "Authorship Verification System",
     tag: "Master's Thesis",
     description:
-      "End-to-end authorship verification system for English text. Hundreds of experiments across BoW/TF-IDF, graph-based, transformer, and LLM approaches. Deployed as an interactive web app with a fine-tuned classification head.",
-    stack: ["Python", "transformers", "Longformer", "FastAPI", "React", "TypeScript"],
+      "End-to-end authorship verification system for English texts. Several hundred experiments across BoW/TF-IDF, graph-based, transformer (Longformer) and LLM approaches, with Optuna searching through thousands of preprocessing, feature and model pipelines. Best result F1 92.38%. The live web app (FastAPI + React) serves a lightweight logistic-regression model, small and cheap to run.",
+    stack: ["Python", "transformers", "Longformer", "Optuna", "FastAPI", "React", "TypeScript"],
     links: [
       { label: "Live Demo", url: "https://www.verifyauthor.dev" },
       { label: "GitHub", url: "https://github.com/Jpoker01/diploma_thesis" },
@@ -61,7 +62,7 @@ const PROJECTS = [
     title: "ATACA Incident Classification",
     tag: "Bachelor's Thesis · SAP",
     description:
-      "Binary text classification model categorising SAP customer incidents at sentence level. Systematic comparison of dataset balancing, vector representations, and classification algorithms — traditional vs. modern approaches. Built on real production SAP incident data.",
+      "Binary classification of SAP customer incidents at sentence level, built on real production incident data. Systematic comparison of dataset balancing methods, vector representations and classifiers, traditional vs. modern approaches.",
     stack: ["Python", "scikit-learn", "TF-IDF", "NLP", "SAP"],
     links: [{ label: "GitHub", url: "https://github.com/Jpoker01/bachelor_thesis" }],
   },
@@ -71,7 +72,7 @@ const SKILL_GROUPS = [
   { icon: Code2, label: "Languages", items: ["Python", "C#", "C++", "TypeScript"] },
   {
     icon: Brain,
-    label: "AI & Machine Learning",
+    label: "AI & NLP",
     items: ["scikit-learn", "NLTK", "spaCy", "gensim", "transformers", "Optuna"],
   },
   { icon: Cpu, label: "Data", items: ["pandas", "NumPy", "SciPy", "SQL"] },
@@ -104,7 +105,7 @@ const EXPERIENCE = [
     period: "JUN 2022 - SEP 2024",
     location: "Brno, Czech Republic",
     description:
-      "Developed an incident classification system on the data analysis & AI team using real production SAP customer incident data, an NLP text-classification model that became the foundation of my bachelor's thesis (see ATACA in Selected Projects).",
+      "Contributed to an NLP incident classification system in the data analysis & AI team, built on real production SAP customer incident data. This work became the foundation of my bachelor's thesis (see ATACA in Selected Projects).",
     stack: ["Python", "NLP", "scikit-learn", "Text Classification"],
   },
 ];
@@ -255,12 +256,11 @@ function Hero() {
       </h1>
 
         <span className="mt-6 uppercase text-[14px] font-semibold tracking-[0.24em] text-ink-500 animate-fade-in">
-          Software Developer&ensp;&middot;&ensp;Brno, CZ
+          AI Engineer&ensp;&middot;&ensp;Brno, CZ
         </span>
 
         <p className="mt-7 font-light text-[18px] leading-relaxed text-ink-400 max-w-2xl animate-fade-up delay-200">
-          Python developer specialising in applied ML/AI, taking projects from raw data to deployed
-          applications.
+          I build AI applications in Python, from raw data to a deployed product.
         </p>
 
         <div className="flex items-center justify-center gap-6 mt-10 animate-fade-up delay-300">
