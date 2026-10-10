@@ -99,14 +99,14 @@ const EXPERIENCE = [
     period: "JUN 2022 - FEB 2026",
     roles: [
       {
-        title: "Enterprise Applications",
+        title: "Enterprise Applications Development",
         period: "SEP 2024 - FEB 2026",
         description:
           "Developed features for SAP S/4HANA applications across the backend (ABAP) and frontend (SAPUI5, Fiori). Debugged and resolved production issues in live customer systems.",
         stack: ["ABAP", "SAPUI5", "Fiori"],
       },
       {
-        title: "AI & Data Analysis",
+        title: "Machine Learning Development",
         period: "JUN 2022 - SEP 2024",
         description:
           "Built an NLP classifier that routes SAP customer incidents to the right component, trained on real production incident data. This work became the foundation of my bachelor's thesis (see ATACA in Selected Projects).",
