@@ -496,7 +496,7 @@ function ExperienceItem({ job, isFirst }: { job: (typeof EXPERIENCE)[number]; is
                 {role.period}
               </p>
               <p
-                className={`text-ink-400 font-light leading-relaxed max-w-2xl mb-7 ${
+                className={`text-ink-400 font-light leading-relaxed max-w-3xl mb-7 ${
                   role.featured ? "text-[17px]" : "text-[16px]"
                 }`}
               >
