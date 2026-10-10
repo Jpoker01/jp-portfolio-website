@@ -91,22 +91,27 @@ const SKILL_GROUPS = [
 
 const EXPERIENCE = [
   {
-    role: "Associate Developer",
     company: "SAP",
-    period: "SEP 2024 - FEB 2026",
     location: "Brno, Czech Republic",
-    description:
-      "Developed and extended features of enterprise S/4HANA applications based on business requirements, working across the backend (ABAP) and frontend (SAPUI5, Fiori). Resolved complex production issues in live customer systems through systematic root-cause analysis, keeping business-critical processes stable.",
-    stack: ["ABAP", "Fiori"],
-  },
-  {
-    role: "Associate Developer (intern)",
-    company: "SAP",
-    period: "JUN 2022 - SEP 2024",
-    location: "Brno, Czech Republic",
-    description:
-      "Contributed to an NLP incident classification system in the data analysis & AI team, built on real production SAP customer incident data. This work became the foundation of my bachelor's thesis (see ATACA in Selected Projects).",
-    stack: ["Python", "NLP", "scikit-learn", "Text Classification"],
+    period: "JUN 2022 - FEB 2026",
+    roles: [
+      {
+        title: "Associate Developer (full-time)",
+        period: "SEP 2024 - FEB 2026",
+        description:
+          "Developed features for SAP S/4HANA applications across the backend (ABAP) and frontend (SAPUI5, Fiori). Debugged and resolved production issues in live customer systems.",
+        stack: ["ABAP", "SAPUI5", "Fiori"],
+        featured: false,
+      },
+      {
+        title: "Associate Developer",
+        period: "JUN 2022 - SEP 2024",
+        description:
+          "Built an NLP classifier that routes SAP customer incidents to the right component, trained on real production incident data. This work became the foundation of my bachelor's thesis (see ATACA in Selected Projects).",
+        stack: ["Python", "NLP", "scikit-learn", "Text Classification"],
+        featured: true,
+      },
+    ],
   },
 ];
 
@@ -462,34 +467,52 @@ function Skills() {
 function ExperienceItem({ job, isFirst }: { job: (typeof EXPERIENCE)[number]; isFirst: boolean }) {
   const ref = useReveal<HTMLDivElement>();
   return (
-    <div
-      ref={ref}
-      className={`reveal grid lg:grid-cols-12 gap-8 lg:gap-12 ${
-        isFirst ? "" : "border-t border-ink-800 pt-16"
-      } pb-16`}
-    >
-      <div className="lg:col-span-7">
-        <p className="font-mono text-[13px] font-medium uppercase tracking-[0.2em] text-ink-400 mb-4">
+    <div ref={ref} className={`reveal ${isFirst ? "" : "border-t border-ink-800 pt-16"} pb-16`}>
+      <div className="grid lg:grid-cols-12 gap-3 lg:gap-12 lg:items-baseline pb-12">
+        <p className="lg:col-span-7 font-mono text-[13px] font-medium uppercase tracking-[0.2em] text-ink-400">
           {job.company} · {job.location}
         </p>
-        <h3 className="text-3xl md:text-4xl lg:text-[35px] font-bold text-white tracking-tight leading-[1.1] mb-4">
-          {job.role}
-        </h3>
-        <p className="font-mono text-[13px] text-ink-500 tracking-[0.15em] mb-6">{job.period}</p>
-        <p className="text-[17px] text-ink-400 leading-relaxed font-light max-w-xl">
-          {job.description}
+        <p className="lg:col-span-5 font-mono text-[13px] text-ink-500 tracking-[0.15em] lg:text-right">
+          {job.period}
         </p>
       </div>
 
-      <div className="lg:col-span-5 flex flex-col justify-center gap-8">
-        <div className="flex flex-wrap gap-2">
-          {job.stack.map((s) => (
-            <span
-              key={s}
-              className="font-mono text-[15px] text-ink-400 border border-ink-800 px-2.5 py-1 rounded-sm"
-            >
-              {s}
-            </span>
+      <div className="relative">
+        <span
+          className="absolute left-[3px] top-2 bottom-2 w-px bg-ink-800"
+          aria-hidden="true"
+        />
+        <div className="space-y-14 lg:space-y-16">
+          {job.roles.map((role) => (
+            <div key={role.title} className="relative pl-9 lg:pl-14">
+              <span
+                className="absolute left-0 top-[9px] w-[7px] h-[7px] rounded-full bg-ink-600"
+                aria-hidden="true"
+              />
+              <h3 className="text-2xl md:text-[26px] lg:text-[28px] font-bold text-white tracking-tight leading-[1.15] mb-3">
+                {role.title}
+              </h3>
+              <p className="font-mono text-[13px] text-ink-500 tracking-[0.15em] mb-5">
+                {role.period}
+              </p>
+              <p
+                className={`text-ink-400 font-light leading-relaxed max-w-2xl mb-7 ${
+                  role.featured ? "text-[17px]" : "text-[16px]"
+                }`}
+              >
+                {role.description}
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {role.stack.map((s) => (
+                  <span
+                    key={s}
+                    className="font-mono text-[15px] text-ink-400 border border-ink-800 px-2.5 py-1 rounded-sm"
+                  >
+                    {s}
+                  </span>
+                ))}
+              </div>
+            </div>
           ))}
         </div>
       </div>
@@ -505,7 +528,7 @@ function Experience() {
 
         <div className="max-w-4xl mx-auto">
           {EXPERIENCE.map((job, i) => (
-            <ExperienceItem key={job.company + job.role} job={job} isFirst={i === 0} />
+            <ExperienceItem key={job.company} job={job} isFirst={i === 0} />
           ))}
         </div>
 
