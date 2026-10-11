@@ -109,7 +109,7 @@ const EXPERIENCE = [
         title: "ML Engineering",
         period: "JUN 2022 - SEP 2024",
         description:
-          "Built an NLP classifier that routes SAP customer incidents to the right component, trained on real production incident data. This work became the foundation of my bachelor's thesis (see ATACA in Selected Projects).",
+          "Built an NLP classifier that routes SAP customer incidents to the right component, trained on real production incident data. Turned raw incident data into reproducible preprocessing pipelines and tracked experiments to compare balancing methods, vector representations and classifiers. This work became the foundation of my bachelor's thesis (see ATACA in Selected Projects).",
         stack: ["Python", "NLP", "scikit-learn", "Text Classification"],
       },
     ],
