@@ -14,6 +14,8 @@ import {
   FileText,
 } from "lucide-react";
 
+import verifyauthorCard from "@/assets/verifyauthor-card.jpg.asset.json";
+
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
@@ -50,6 +52,7 @@ const PROJECTS = [
   {
     title: "Authorship Verification System",
     tag: "Master's Thesis",
+    image: verifyauthorCard.url,
     description:
       "End-to-end authorship verification system for English texts. Several hundred experiments across BoW/TF-IDF, graph-based, transformer (Longformer) and LLM approaches, with Optuna searching through thousands of preprocessing, feature and model pipelines. Best result F1 92.38%. The live web app (FastAPI + React) serves a lightweight logistic-regression model, small and cheap to run.",
     stack: ["Python", "transformers", "Longformer", "Optuna", "FastAPI", "React", "TypeScript"],
@@ -360,6 +363,13 @@ function ProjectCard({
       </div>
 
       <div className="lg:col-span-5 flex flex-col justify-center gap-8">
+        {project.image && (
+          <img
+            src={project.image}
+            alt={`${project.title} preview`}
+            className="w-full border border-ink-800 rounded-sm"
+          />
+        )}
         <div className="flex flex-wrap gap-2">
           {project.stack.map((s) => (
             <span
