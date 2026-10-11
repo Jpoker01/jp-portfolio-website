@@ -64,6 +64,7 @@ const PROJECTS = [
   {
     title: "ATACA Incident Classification",
     tag: "Bachelor's Thesis · SAP",
+    image: null,
     description:
       "Binary classification of SAP customer incidents at sentence level, built on real production incident data. Systematic comparison of dataset balancing methods, vector representations and classifiers, traditional vs. modern approaches.",
     stack: ["Python", "scikit-learn", "TF-IDF", "NLP", "SAP"],
