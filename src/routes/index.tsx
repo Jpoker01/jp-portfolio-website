@@ -79,7 +79,7 @@ const SKILL_GROUPS = [
   {
     icon: Server,
     label: "Backend & Web",
-    items: ["FastAPI", "REST APIs", "React"],
+    items: ["FastAPI", "Django", "React"],
   },
   { icon: Zap, label: "Cloud & DevOps", items: ["Azure", "Docker", "Kubernetes"] },
   {
