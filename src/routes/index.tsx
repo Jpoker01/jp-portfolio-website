@@ -58,7 +58,7 @@ const PROJECTS = [
     stack: ["Python", "transformers", "Longformer", "Optuna", "FastAPI", "React", "TypeScript"],
     links: [
       { label: "Live Demo", url: "https://www.verifyauthor.dev" },
-      { label: "GitHub", url: "https://github.com/Jpoker01/diploma_thesis" },
+      { label: "GitHub", url: "https://github.com/Jpoker01/ai-authorship-verification" },
     ],
   },
   {
