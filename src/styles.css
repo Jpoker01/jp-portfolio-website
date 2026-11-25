@@ -247,10 +247,7 @@ button:focus-visible {
 /* JP header mark. The one fixed treatment is set in src/components/jp-mark.tsx. */
 :root {
   --jp-letter-glow: 0 0 10px color-mix(in srgb, var(--color-ink-50) 85%, transparent), 0 0 24px color-mix(in srgb, var(--color-ink-50) 62%, transparent), 0 0 52px color-mix(in srgb, var(--color-ink-50) 40%, transparent), 0 0 84px color-mix(in srgb, var(--color-ink-50) 24%, transparent);
-  --nav-glow: 0 0 8px color-mix(in srgb, var(--color-ink-50) 45%, transparent), 0 0 20px color-mix(in srgb, var(--color-ink-50) 28%, transparent), 0 0 44px color-mix(in srgb, var(--color-ink-50) 14%, transparent);
 }
-.nav-glow { text-shadow: var(--nav-glow); transition: color 300ms, text-shadow 340ms ease; }
-.nav-glow:hover, .nav-glow:focus-visible { text-shadow: var(--jp-letter-glow); }
 .jp-mark { display: grid; place-items: center; width: 52px; height: 52px; margin-left: -12px; }
 .jp-treatment {
   position: relative; isolation: isolate; display: inline-flex; align-items: center; justify-content: center;

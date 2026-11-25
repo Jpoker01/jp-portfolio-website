@@ -1,5 +1,8 @@
 # Roadmap
 
+- [x] Remove the glow from all the menu items
+- [x] Suggest a different font for the section subtitles, with a rendered PNG comparison
+
 - [x] Remove the moving shine from all section subtitles
 - [x] Clicking a menu section link must not snap back up to Projects
 
