@@ -1,5 +1,6 @@
 # Roadmap
 
+- [x] Give the JP monogram a strong glow that travels around it
 - [x] Replace the View Work arrow hover motion with something other than an up-and-down bounce
 - [x] Make the bottom contact hover highlight less ragged and sharp
 - [x] Animate the View Work arrow only while the button is hovered
