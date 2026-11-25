@@ -402,7 +402,7 @@ function Hero() {
 function SectionLabel({ label }: { label: string }) {
   return (
     <div className="section-heading relative mb-14 flex items-baseline gap-4 border-b border-ink-800 pb-5">
-      <span className="relative inline-block text-[20px] font-semibold text-ink-100">
+      <span className="nav-glow relative inline-block font-mono text-[18px] md:text-[20px] font-semibold text-ink-50">
         {label}
         <span className="name-shine" aria-hidden="true">
           {label}
@@ -779,7 +779,7 @@ function Contact() {
           className="flex flex-col md:flex-row md:items-center md:justify-center gap-10 md:gap-[56px]"
           style={{ width: "fit-content", marginLeft: "auto", marginRight: "auto" }}
         >
-          <h2 className="relative inline-block text-[35px] font-extrabold text-white leading-[1.1] md:text-right">
+          <h2 className="relative inline-block text-[26px] font-extrabold text-white leading-[1.1] md:text-right">
             Let's work together.
           </h2>
 

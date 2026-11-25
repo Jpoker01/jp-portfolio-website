@@ -1,5 +1,8 @@
 # Roadmap
 
+- [x] Make the section headers a slightly bigger version of the menu items, keeping the extended wording
+- [x] Make the "Let's work together." heading smaller
+
 - [x] Make the bottom contact icons open the mail flap and tilt the phone and LinkedIn like the hero, leaving the hero untouched
 - [x] Make the Live Demo and GitHub link arrows nudge like the See More on GitHub button's arrow
 
