@@ -449,7 +449,7 @@ function Skills() {
                   className="w-[22px] h-[22px] text-[#6a6a6a] group-hover/cell:text-ink-300 transition-colors duration-300"
                   strokeWidth={1.5}
                 />
-                <h3 className="text-[16px] font-semibold uppercase tracking-tight text-white">
+                <h3 className="text-[16px] font-semibold tracking-tight text-white">
                   {group.label}
                 </h3>
               </div>
@@ -753,9 +753,9 @@ function Index() {
   return (
     <div className="min-h-screen">
       <div className="fog-layer" aria-hidden="true">
-        <div className="fog-blob fog-blob-1" />
-        <div className="fog-blob fog-blob-2" />
-        <div className="fog-blob fog-blob-3" />
+        <div className="fog-haze fog-haze-a" />
+        <div className="fog-haze fog-haze-b" />
+        <div className="fog-grain" />
       </div>
       <Nav />
       <main>
