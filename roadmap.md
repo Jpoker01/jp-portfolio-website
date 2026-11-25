@@ -78,3 +78,6 @@
 - [x] JP initials: on hover the J drops and the P lifts
 - [x] Bring the sizing down another step: section subtitles and their item titles
 - [x] Make the JP initials bigger and more prominent on phone
+- [x] JP mark: on click the letters revolve around the centre, the J ending below the P
+- [ ] Subtitle underline animation: make the sweep smoother
+- [ ] JP initials: pick a thicker lettering font from a rendered comparison
