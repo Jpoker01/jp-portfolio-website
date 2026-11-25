@@ -368,7 +368,7 @@ function ProjectCard({
         )}
         <div className="flex flex-wrap gap-x-3 gap-y-3">
           {project.stack.map((s) => (
-            <span key={s} className="tag-mark font-mono text-[12px] uppercase tracking-[0.08em]">
+            <span key={s} className="tag-mark font-sans text-[13px] text-ink-400">
               {s}
             </span>
           ))}
@@ -525,7 +525,7 @@ function ExperienceItem({ job, isFirst }: { job: (typeof EXPERIENCE)[number]; is
               </div>
               <div className="lg:col-span-5 flex flex-wrap content-start gap-x-3 gap-y-3 lg:pt-1">
                 {role.stack.map((s) => (
-                  <span key={s} className="tag-mark font-mono text-[12px] uppercase tracking-[0.08em]">
+                  <span key={s} className="tag-mark font-sans text-[13px] text-ink-400">
                     {s}
                   </span>
                 ))}
