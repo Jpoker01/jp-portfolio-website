@@ -470,6 +470,11 @@ button:focus-visible {
     opacity: 1;
     transform: none;
   }
-  .heading-reveal::after { animation: none; --underline-reveal: 116%; opacity: 1; }
+  .heading-reveal::after,
+  .heading-reveal.in-view::after {
+    animation: none;
+    --underline-reveal: 116%;
+    opacity: 1;
+  }
   *, *::before, *::after { transition-duration: 0s !important; }
 }
