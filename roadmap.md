@@ -61,3 +61,4 @@
 
 - [ ] JP mark: remove the circle the user still sees around the initials, keeping the glow
 - [x] Fix scroll snap: scrolling down past the projects section snaps back up
+- [ ] Clicking a menu section link must not snap back up to Projects
