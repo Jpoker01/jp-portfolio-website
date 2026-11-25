@@ -58,3 +58,6 @@
 - [x] Bottom mail icon: Jiří reports it still does not open correctly
 - [x] Make the 6 tech squares transparent instead of gray
 - [x] Scrap the opening mail flap at the bottom; tilt the mail like the phone and LinkedIn
+
+- [ ] JP mark: remove the circle the user still sees around the initials, keeping the glow
+- [x] Fix scroll snap: scrolling down past the projects section snaps back up

@@ -264,7 +264,7 @@ button:focus-visible {
   position: relative; isolation: isolate; display: inline-flex; align-items: center; justify-content: center;
   width: 52px; height: 52px; flex-shrink: 0; gap: 2px;
   font-family: var(--font-mono); font-size: 19px; font-weight: 600; letter-spacing: 0;
-  color: var(--color-ink-50); transition: transform 340ms ease;
+  color: var(--color-ink-50); text-shadow: var(--jp-letter-glow); transition: transform 340ms ease;
 }
 .jp-mark:hover .jp-treatment, .jp-mark:focus-visible .jp-treatment { transform: scale(1.12); }
 .jp-letter { position: relative; z-index: 1; }

@@ -264,50 +264,33 @@ function SocialIcon({ href, label, children, tooltip, className }: { href: strin
 
 function Hero() {
   // Gently snap to Selected projects once the visitor scrolls a short way
-  // down from the hero. The glide re-issues itself so continued wheeling
-  // cannot cancel it; wheeling up cancels the glide. Re-arms at the top.
+  // down from the hero. The snap is issued once and never re-issued, so it
+  // cannot fight the visitor's own scrolling; wheeling up cancels a pending
+  // snap. Re-arms at the top.
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
     let snapped = false;
+    let lastY = window.scrollY;
     let timer: number | undefined;
-    let interval: number | undefined;
-    let guard: number | undefined;
-
-    const workTop = () => {
-      const el = document.getElementById("work");
-      return el ? el.getBoundingClientRect().top + window.scrollY : 0;
-    };
-
-    const stopGlide = () => {
-      window.clearInterval(interval);
-      window.clearTimeout(guard);
-      interval = undefined;
-    };
-
-    const glide = () => {
-      stopGlide();
-      interval = window.setInterval(() => {
-        scrollTo("work");
-        if (Math.abs(window.scrollY - workTop()) < 4) stopGlide();
-      }, 150);
-      guard = window.setTimeout(stopGlide, 3000);
-    };
 
     const onScroll = () => {
       const y = window.scrollY;
+      const movingDown = y > lastY;
+      lastY = y;
       if (y < 8) {
         snapped = false;
         return;
       }
-      if (snapped || y < window.innerHeight * 0.22 || y > window.innerHeight * 0.9) return;
+      if (snapped || !movingDown) return;
+      if (y < window.innerHeight * 0.22 || y > window.innerHeight * 0.9) return;
       snapped = true;
       window.clearTimeout(timer);
-      timer = window.setTimeout(glide, 120);
+      timer = window.setTimeout(() => scrollTo("work"), 120);
     };
 
     const onWheel = (e: WheelEvent) => {
-      if (e.deltaY < 0) stopGlide();
+      if (e.deltaY < 0) window.clearTimeout(timer);
     };
 
     window.addEventListener("scroll", onScroll, { passive: true });
@@ -316,7 +299,6 @@ function Hero() {
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("wheel", onWheel);
       window.clearTimeout(timer);
-      stopGlide();
     };
   }, []);
 
