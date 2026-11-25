@@ -9,3 +9,4 @@
 - [x] Inversion scope: only the main GitHub CTA, plus contact email and phone; project card GitHub links back to plain hover
 - [x] Scroll label: reverted to its previous font and size
 - [ ] og-image.png (1200x630 site preview) still needs uploading to public/ by Jiří
+- [ ] Master's thesis thumbnail: replace the static image with a looping video (or slideshow) once verifyauthor.dev is refactored
