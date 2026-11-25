@@ -443,10 +443,10 @@ function Skills() {
             >
               <div className="flex items-center gap-3 mb-5">
                 <group.icon
-                  className="w-[22px] h-[22px] text-ink-500 group-hover/cell:text-ink-300 transition-colors duration-300"
+                  className="w-[22px] h-[22px] text-[#6a6a6a] group-hover/cell:text-ink-300 transition-colors duration-300"
                   strokeWidth={1.5}
                 />
-                <h3 className="text-[14px] font-semibold uppercase tracking-[0.16em] text-white">
+                <h3 className="text-[16px] font-semibold uppercase tracking-tight text-white">
                   {group.label}
                 </h3>
               </div>
