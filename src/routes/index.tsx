@@ -197,7 +197,7 @@ function Nav() {
             <Button
               key={n.id}
               onClick={() => scrollTo(n.id)}
-              className="group min-h-11 font-mono text-[15px] font-semibold lowercase text-ink-50"
+              className="group min-h-11 font-heading text-[15px] font-semibold lowercase text-ink-50"
             >
               <span className="inline-block transition-transform duration-[340ms] ease-out group-hover:scale-[1.12]">
                 {n.label}
@@ -227,7 +227,7 @@ function Nav() {
                 scrollTo(n.id);
                 setOpen(false);
               }}
-              className="group block w-full text-left py-3 font-mono text-[20px] font-semibold lowercase text-ink-50"
+              className="group block w-full text-left py-3 font-heading text-[20px] font-semibold lowercase text-ink-50"
             >
               <span className="inline-block transition-transform duration-[340ms] ease-out group-hover:scale-[1.12]">
                 {n.label}
