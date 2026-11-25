@@ -76,4 +76,4 @@
 - [ ] JP mark: remove the circle the user still sees around the initials, keeping the glow
 - [x] Fix scroll snap: scrolling down past the projects section snaps back up
 - [x] JP initials: on hover the J drops and the P lifts
-- [ ] Bring the sizing down another step: section subtitles and their item titles
+- [x] Bring the sizing down another step: section subtitles and their item titles
