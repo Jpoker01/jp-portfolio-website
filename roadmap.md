@@ -40,7 +40,9 @@
 - [x] Fix the phone and LinkedIn hover highlight wrapping onto two lines at phone width
 - [x] Make the email, phone and LinkedIn contact buttons slightly larger
 - [x] Menu links: grow in size on hover like the JP initials, remove the horizontal underline
-- [x] Bottom mail flap: user reports it does not open; browser test shows it opening, confirm
+- [x] Bottom mail flap: use the hero envelope shape so it opens cleanly
+- [x] Tech Stack squares: see-through so the background glow shows
+- [x] Hero mail, phone and LinkedIn icons: no hover motion
 - [ ] og-image.png (1200x630 site preview) still needs uploading to public/ by Jiří
 - [ ] Master's thesis thumbnail: replace the static image with a looping video (or slideshow) once verifyauthor.dev is refactored
 - [x] Snap scroll to Selected projects after a short scroll from the hero
