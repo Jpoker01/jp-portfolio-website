@@ -683,7 +683,7 @@ function Contact() {
             >
               <a
                 href="mailto:jiripokorny455@gmail.com"
-                className="text-[16px] hover:text-white transition-colors duration-300"
+                className="text-[17px] hover:text-white transition-colors duration-300"
                 style={{ color: "#d0d0d0" }}
               >
                 jiripokorny455@gmail.com
@@ -698,7 +698,7 @@ function Contact() {
             >
               <a
                 href="tel:+420603967651"
-                className="text-[18px] hover:text-white transition-colors duration-300"
+                className="text-[17px] hover:text-white transition-colors duration-300"
                 style={{ color: "#d0d0d0" }}
               >
                 +420 603 967 651
@@ -718,7 +718,7 @@ function Contact() {
                 href="https://www.linkedin.com/in/jpoker01/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[18px] hover:text-white transition-colors duration-300"
+                className="text-[17px] hover:text-white transition-colors duration-300"
                 style={{ color: "#d0d0d0" }}
               >
                 LinkedIn &#8599;
