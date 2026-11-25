@@ -185,8 +185,7 @@ body {
 
 @media (prefers-reduced-motion: reduce) {
   .fog-haze-a,
-  .fog-haze-b,
-  .jp-cursor { animation: none; }
+  .fog-haze-b { animation: none; }
 }
 
 /* Skill tags: soft filled rectangle, no border, barely-there dark fill. */
@@ -215,32 +214,6 @@ button:focus-visible {
 
 /* Keep the established look, with consistent seams and comfortable controls. */
 
-/* JP monogram: large letters with a still, text-style glow. */
-.jp-mark {
-  position: relative;
-  isolation: isolate;
-  transform-origin: 50% 50%;
-  text-shadow:
-    0 0 10px color-mix(in srgb, var(--color-ink-50) 85%, transparent),
-    0 0 24px color-mix(in srgb, var(--color-ink-50) 62%, transparent),
-    0 0 52px color-mix(in srgb, var(--color-ink-50) 40%, transparent),
-    0 0 84px color-mix(in srgb, var(--color-ink-50) 24%, transparent);
-  transition:
-    transform 340ms cubic-bezier(0.22, 1, 0.36, 1),
-    text-shadow 340ms ease;
-}
-
-/* The initials grow on hover. */
-.jp-mark:hover,
-.jp-mark:focus-visible {
-  transform: scale(1.18);
-  text-shadow:
-    0 0 12px color-mix(in srgb, var(--color-ink-50) 95%, transparent),
-    0 0 30px color-mix(in srgb, var(--color-ink-50) 75%, transparent),
-    0 0 62px color-mix(in srgb, var(--color-ink-50) 50%, transparent),
-    0 0 96px color-mix(in srgb, var(--color-ink-50) 30%, transparent);
-}
-
 .hero-section { min-height: 100svh; }
 
 /* Shared envelope flap, hinged on the envelope's top edge. */
@@ -259,7 +232,7 @@ button:focus-visible {
 }
 .contact-mail:hover svg,
 .contact-mail:focus-within svg {
-  transform: scale(1.12);
+  transform: rotate(-10deg) scale(1.12);
 }
 .contact-phone:hover svg,
 .contact-phone:focus-within svg {
@@ -269,11 +242,6 @@ button:focus-visible {
 .contact-linkedin:focus-within svg {
   transform: rotate(9deg) scale(1.12);
 }
-/* The envelope flap lifts open, exactly like the hero icon used to. */
-.contact-mail:hover .mail-flap,
-.contact-mail:focus-within .mail-flap {
-  transform: scaleY(-1);
-}
 @media (prefers-reduced-motion: reduce) {
   .contact-row svg { transition: none; }
   .contact-mail:hover svg,
@@ -281,87 +249,37 @@ button:focus-visible {
   .contact-phone:hover svg,
   .contact-phone:focus-within svg,
   .contact-linkedin:hover svg,
-  .contact-linkedin:focus-within svg,
-  .contact-mail:hover .mail-flap,
-  .contact-mail:focus-within .mail-flap { transform: none; }
+  .contact-linkedin:focus-within svg { transform: none; }
 }
 
-/* JP mark. The chosen treatment is set in src/components/jp-mark.tsx. */
+/* JP header mark. The one fixed treatment is set in src/components/jp-mark.tsx. */
 :root {
-  --jp-soft-line: color-mix(in srgb, var(--color-ink-50) 26%, transparent);
-  --jp-quiet-fill: color-mix(in srgb, var(--color-ink-50) 5%, transparent);
-  --jp-preview-shadow: 0 12px 48px color-mix(in srgb, var(--background) 80%, transparent);
   --jp-letter-glow: 0 0 10px color-mix(in srgb, var(--color-ink-50) 85%, transparent), 0 0 24px color-mix(in srgb, var(--color-ink-50) 62%, transparent), 0 0 52px color-mix(in srgb, var(--color-ink-50) 40%, transparent), 0 0 84px color-mix(in srgb, var(--color-ink-50) 24%, transparent);
+  --nav-glow: 0 0 8px color-mix(in srgb, var(--color-ink-50) 45%, transparent), 0 0 20px color-mix(in srgb, var(--color-ink-50) 28%, transparent), 0 0 44px color-mix(in srgb, var(--color-ink-50) 14%, transparent);
 }
-.jp-preview-mark { display: grid; place-items: center; width: 52px; height: 52px; margin-left: -12px; }
+.nav-glow { text-shadow: var(--nav-glow); transition: color 300ms, text-shadow 340ms ease; }
+.nav-glow:hover, .nav-glow:focus-visible { text-shadow: var(--jp-letter-glow); }
+.jp-mark { display: grid; place-items: center; width: 52px; height: 52px; margin-left: -12px; }
 .jp-treatment {
   position: relative; isolation: isolate; display: inline-flex; align-items: center; justify-content: center;
-  width: 52px; height: 52px; flex-shrink: 0; gap: 3px;
+  width: 52px; height: 52px; flex-shrink: 0; gap: 2px;
   font-family: var(--font-mono); font-size: 19px; font-weight: 600; letter-spacing: 0;
   color: var(--color-ink-50); text-shadow: var(--jp-letter-glow); transition: transform 340ms ease;
 }
-.jp-preview-mark:hover .jp-treatment, .jp-preview-mark:focus-visible .jp-treatment { transform: scale(1.12); }
-.jp-ornament { position: absolute; inset: 0; width: 100%; height: 100%; stroke: var(--jp-soft-line); stroke-width: 0.8; pointer-events: none; }
+.jp-mark:hover .jp-treatment, .jp-mark:focus-visible .jp-treatment { transform: scale(1.12); }
 .jp-letter { position: relative; z-index: 1; }
-/* Circular family: a hairline ring, the letters keep their glow. */
-.jp-treatment-halo::before {
-  content: ""; position: absolute; inset: 7px; border-radius: 50%;
-  background: radial-gradient(circle, color-mix(in srgb, var(--color-ink-50) 20%, transparent), transparent 68%);
-}
 
-/* Staggered family: the two letters never sit on the same line. */
-.jp-treatment-steps, .jp-treatment-steps-circle, .jp-treatment-steps-rule { gap: 1px; }
-.jp-treatment-steps .jp-letter-j, .jp-treatment-steps-circle .jp-letter-j, .jp-treatment-steps-rule .jp-letter-j { transform: translateY(-5px); }
-.jp-treatment-steps .jp-letter-p, .jp-treatment-steps-circle .jp-letter-p, .jp-treatment-steps-rule .jp-letter-p { transform: translateY(5px); }
-.jp-treatment-steps::after { content: ""; position: absolute; width: 30px; height: 1px; background: var(--jp-soft-line); transform: rotate(-45deg); }
-.jp-treatment-steps-rule::after { content: ""; position: absolute; width: 1px; height: 26px; background: var(--jp-soft-line); }
-
-.jp-treatment-stack { flex-direction: column; gap: 0; font-size: 13px; line-height: 1; }
-.jp-treatment-offset { gap: 2px; }
+/* Raised first letter: the J sits a little above the P. */
 .jp-treatment-offset .jp-letter-j { transform: translateY(-4px); }
-.jp-treatment-overlap { gap: 0; }
-.jp-treatment-overlap .jp-letter-p { margin-left: -1px; }
-.jp-treatment-scale { gap: 1px; }
-.jp-treatment-scale .jp-letter-j { font-size: 19px; }
-.jp-treatment-scale .jp-letter-p { font-size: 14px; }
-.jp-treatment-tilt { gap: 1px; }
-.jp-treatment-tilt .jp-letter-j { transform: rotate(-9deg) translateY(-2px); }
-.jp-treatment-tilt .jp-letter-p { transform: rotate(-9deg) translateY(3px); }
-
-/* Inverted discs: the mark becomes the only white block in the header. */
-.jp-treatment-disc { color: var(--background); text-shadow: none; }
-.jp-treatment-disc::before { content: ""; position: absolute; inset: 6px; border-radius: 50%; background: var(--color-ink-50); }
-
-/* Half disc: the letters invert where they cross the white half. */
-.jp-treatment-half { text-shadow: none; }
-.jp-treatment-half::before {
-  content: ""; position: absolute; inset: 6px; border-radius: 50%;
-  background: linear-gradient(90deg, var(--color-ink-50) 0 44%, transparent 56%);
-}
-.jp-treatment-half .jp-letter { mix-blend-mode: difference; }
-
-/* Terminal cursor: a blinking underscore after the initials. */
-.jp-cursor { position: relative; z-index: 1; margin-left: 1px; animation: jp-blink 1.1s steps(1, end) infinite; }
-@keyframes jp-blink { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }
 
 
 .skill-grid { gap: 14px; }
-/* Liquid glass tiles: frosted, faintly lit edge, the ambient glow shows through. */
+/* Transparent tiles: only a hairline edge, the page background and ambient glow show through. */
 .skill-cell {
   position: relative;
   border-radius: 6px;
   border: 1px solid color-mix(in srgb, var(--color-ink-50) 9%, transparent);
-  background: linear-gradient(
-    150deg,
-    color-mix(in srgb, var(--color-ink-50) 6%, transparent) 0%,
-    color-mix(in srgb, var(--color-ink-50) 2%, transparent) 45%,
-    color-mix(in srgb, var(--color-ink-50) 4%, transparent) 100%
-  );
-  backdrop-filter: blur(18px) saturate(160%);
-  box-shadow:
-    inset 0 1px 0 color-mix(in srgb, var(--color-ink-50) 12%, transparent),
-    inset 0 -1px 0 color-mix(in srgb, var(--color-ink-50) 3%, transparent),
-    0 10px 30px color-mix(in srgb, var(--background) 60%, transparent);
+  background: transparent;
 }
 .contact-link {
   position: relative;
@@ -440,19 +358,8 @@ button:focus-visible {
   .btn-reveal { gap: 0.75rem; }
 }
 
-.view-work-arrow { animation: none; opacity: 0; transition: opacity 260ms ease; }
-.group:hover .view-work-arrow,
-.group:focus-visible .view-work-arrow { animation: work-arrow-fall 1.15s cubic-bezier(0.45, 0, 0.55, 1) infinite; opacity: 1; }
-@keyframes work-arrow-fall {
-  0% { transform: translateY(-5px); opacity: 0; }
-  30% { opacity: 1; }
-  70% { opacity: 1; }
-  100% { transform: translateY(7px); opacity: 0; }
-}
-
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .view-work-arrow { animation: none; }
   .reveal, .reveal.in-view {
     animation: none;
     opacity: 1;

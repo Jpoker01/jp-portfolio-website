@@ -196,7 +196,7 @@ function Nav() {
             <Button
               key={n.id}
               onClick={() => scrollTo(n.id)}
-              className="group min-h-11 font-mono text-[14px] font-semibold tracking-[0.12em] uppercase text-ink-50 hover:text-ink-300 transition-colors duration-300"
+              className="group nav-glow min-h-11 font-mono text-[15px] font-semibold lowercase text-ink-50"
             >
               <span className="inline-block transition-transform duration-[340ms] ease-out group-hover:scale-[1.12]">
                 {n.label}
@@ -226,7 +226,7 @@ function Nav() {
                 scrollTo(n.id);
                 setOpen(false);
               }}
-              className="group block w-full text-left py-3 font-mono text-[20px] font-semibold tracking-[0.12em] uppercase text-ink-50 hover:text-ink-300 transition-colors duration-300"
+              className="group nav-glow block w-full text-left py-3 font-mono text-[20px] font-semibold lowercase text-ink-50"
             >
               <span className="inline-block transition-transform duration-[340ms] ease-out group-hover:scale-[1.12]">
                 {n.label}
@@ -789,7 +789,7 @@ function Contact() {
               icon={
                 <>
                   <rect x="2" y="4" width="20" height="16" rx="2" />
-                  <path className="mail-flap" d="M2 4.5L12 11.5L22 4.5" />
+                  <path d="M2 4.5L12 11.5L22 4.5" />
                 </>
               }
               motion="contact-mail"

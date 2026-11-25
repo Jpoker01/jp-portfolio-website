@@ -54,3 +54,7 @@
 - [x] Tech Stack squares: liquid glass tiles
 - [x] Lock the JP initials to the current style and remove the style switcher
 - [x] Bottom mail icon opens exactly like the hero one did
+- [x] Restyle menu links: lowercase JetBrains Mono with a soft version of the JP mark's glow
+- [x] Bottom mail icon: Jiří reports it still does not open correctly
+- [x] Make the 6 tech squares transparent instead of gray
+- [x] Scrap the opening mail flap at the bottom; tilt the mail like the phone and LinkedIn
