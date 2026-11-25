@@ -269,9 +269,7 @@ function Hero() {
         </span>
       </h1>
 
-        <span className="hidden lg:block self-stretch w-px bg-ink-800 my-4" aria-hidden="true" />
-
-        <div className="flex flex-col items-center lg:items-start">
+        <div className="flex flex-col items-center lg:items-start mt-8 lg:mt-0 lg:border lg:border-ink-800 lg:rounded-sm lg:px-8 lg:py-7 lg:max-w-[420px]">
         <span className="mt-7 lg:mt-0 uppercase text-[13px] font-medium tracking-[0.18em] text-ink-400">
           AI Engineer &middot; Brno, CZ
         </span>
@@ -283,20 +281,26 @@ function Hero() {
         <div className="flex items-center justify-center lg:justify-start mt-9 lg:mt-7">
           <Button
             onClick={() => scrollTo("contact")}
-            className="group flex items-center gap-2 px-4 py-2 rounded-sm font-display text-[15px] font-semibold text-white tracking-[0.14em] uppercase whitespace-nowrap cursor-pointer transition-colors duration-300 hover:text-ink-300"
+            className="group relative inline-flex items-center justify-center px-5 py-3 rounded-sm border border-ink-700 font-display text-[15px] font-semibold text-white tracking-[0.14em] uppercase whitespace-nowrap cursor-pointer"
           >
-            Contact me
+            <span className="btn-reveal" aria-hidden="true">
+              <span>Contact me</span>
+            </span>
+            <span className="relative">Contact me</span>
           </Button>
         </div>
         </div>
       </div>
 
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex items-center gap-3 select-none">
-        <span className="font-display text-[15px] font-semibold uppercase tracking-[0.14em] text-white">
+      <Button
+        onClick={() => scrollTo("work")}
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 flex items-center gap-3 cursor-pointer group"
+      >
+        <span className="font-display text-[15px] font-semibold uppercase tracking-[0.14em] text-white transition-colors duration-300 group-hover:text-ink-300">
           View Work
         </span>
-        <span className="w-5 h-px bg-ink-600" />
-      </div>
+        <span className="w-5 h-px bg-ink-600 transition-all duration-300 group-hover:w-8" />
+      </Button>
     </section>
   );
 }
