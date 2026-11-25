@@ -194,6 +194,17 @@ function Nav() {
           aria-label="Back to top"
           className="jp-mark min-h-11 flex items-center font-mono text-[13px] font-medium text-ink-200 tracking-[0.3em]"
         >
+          <svg aria-hidden="true" viewBox="0 0 40 40" className="jp-ring">
+            <circle
+              cx="20"
+              cy="20"
+              r="19"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1"
+              className="jp-ring-circle"
+            />
+          </svg>
           JP
         </Button>
 
