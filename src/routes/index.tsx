@@ -241,27 +241,6 @@ function Nav() {
 
 // ─── Hero ──────────────────────────────────────────────────────────────────
 
-function SocialIcon({ href, label, children, tooltip, className }: { href: string; label: string; children: React.ReactNode; tooltip?: string; className?: string }) {
-  return (
-    <a
-      href={href}
-      target={href.startsWith('mailto') || href.startsWith('tel') ? undefined : '_blank'}
-      rel="noopener noreferrer"
-      className={`social-icon group relative inline-flex min-w-9 min-h-11 items-center justify-center rounded-md text-ink-50 hover:text-ink-300 transition-colors duration-300 ${className ?? ''}`}
-      aria-label={label}
-    >
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        {children}
-      </svg>
-      {tooltip && (
-        <span className="absolute -top-8 left-1/2 -translate-x-1/2 text-[11px] font-medium text-white bg-ink-800 px-2 py-1 rounded whitespace-nowrap pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-          {tooltip}
-        </span>
-      )}
-    </a>
-  );
-}
-
 function Hero() {
   return (
     <section
@@ -301,38 +280,20 @@ function Hero() {
           I build AI applications in Python, from raw data to a deployed product.
         </p>
 
-        <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 sm:gap-6 mt-9 lg:mt-7">
+        <div className="flex items-center justify-center lg:justify-start mt-9 lg:mt-7">
           <Button
-            onClick={() => scrollTo("work")}
+            onClick={() => scrollTo("contact")}
             className="group flex items-center gap-2 px-4 py-2 rounded-sm font-display text-[15px] font-semibold text-white tracking-[0.14em] uppercase whitespace-nowrap cursor-pointer transition-colors duration-300 hover:text-ink-300"
           >
-            View Work
+            Contact me
           </Button>
-          <span className="hidden sm:block w-12 h-px bg-ink-700" />
-          <div className="flex items-center gap-1 sm:gap-2">
-            <SocialIcon href="mailto:jiripokorny455@gmail.com" label="Email" >
-              <rect x="2" y="4" width="20" height="16" rx="2" />
-              <path className="mail-flap" d="M2 4.5L12 11.5L22 4.5" />
-            </SocialIcon>
-            <SocialIcon
-              href="https://www.linkedin.com/in/jpoker01/"
-              label="LinkedIn"
-            >
-              <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z" />
-              <rect x="2" y="9" width="4" height="12" />
-              <circle cx="4" cy="4" r="2" />
-            </SocialIcon>
-            <SocialIcon href="tel:+420603967651" label="Phone" tooltip="+420 603 967 651">
-              <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
-            </SocialIcon>
-          </div>
         </div>
         </div>
       </div>
 
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex items-center gap-3">
-        <span className="text-[11px] font-medium uppercase tracking-[0.22em] text-ink-500">
-          Scroll
+      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex items-center gap-3 select-none">
+        <span className="font-display text-[15px] font-semibold uppercase tracking-[0.14em] text-white">
+          View Work
         </span>
         <span className="w-5 h-px bg-ink-600" />
       </div>

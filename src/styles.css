@@ -216,14 +216,6 @@ button:focus-visible {
 
 .hero-section { min-height: 100svh; }
 
-/* Shared envelope flap, hinged on the envelope's top edge. */
-.mail-flap {
-  transform-box: view-box;
-  transform-origin: 12px 4.5px;
-  transition: transform 340ms cubic-bezier(0.22, 1, 0.36, 1);
-}
-@media (prefers-reduced-motion: reduce) { .mail-flap { transition: none; } }
-
 /* Bottom contact icons: the same gentle motion as the hero icons. */
 .contact-row svg {
   transition: transform 340ms cubic-bezier(0.22, 1, 0.36, 1);
