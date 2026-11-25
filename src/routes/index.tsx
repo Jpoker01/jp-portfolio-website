@@ -737,7 +737,7 @@ function Footer() {
         className="footer-bar flex items-center justify-between"
         style={{ fontSize: "11px", color: "#5f5f5f" }}
       >
-        <span>&copy; 2026 Jiří Pokorný</span>
+        <span>&copy; {new Date().getFullYear()} Jiří Pokorný</span>
         <span>Brno, Czech Republic</span>
       </div>
     </footer>
