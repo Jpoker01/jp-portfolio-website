@@ -223,7 +223,7 @@ function SocialIcon({ href, label, children, tooltip }: { href: string; label: s
       href={href}
       target={href.startsWith('mailto') || href.startsWith('tel') ? undefined : '_blank'}
       rel="noopener noreferrer"
-      className="group relative text-ink-300 hover:text-white transition-colors duration-300"
+      className="group relative text-[#6a6a6a] hover:text-white transition-colors duration-300"
       aria-label={label}
     >
       <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
