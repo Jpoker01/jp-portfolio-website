@@ -277,16 +277,16 @@ function Hero() {
           I build AI applications in Python, from raw data to a deployed product.
         </p>
 
-        <div className="flex items-center justify-center gap-6 mt-9 animate-fade-up delay-400">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mt-9 animate-fade-up delay-400">
           <button
             onClick={() => scrollTo("work")}
-            className="group flex items-center gap-2 px-4 py-2 rounded-sm font-display text-[17px] font-semibold text-white tracking-[0.22em] uppercase cursor-pointer transition-colors duration-300 hover:text-ink-300"
+            className="group flex items-center gap-2 px-4 py-2 rounded-sm font-display text-[15px] font-semibold text-white tracking-[0.14em] uppercase whitespace-nowrap cursor-pointer transition-colors duration-300 hover:text-ink-300"
           >
             View Work
             <ArrowUpRight className="w-[18px] h-[18px] transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </button>
-          <span className="w-12 h-px bg-ink-700" />
-          <div className="flex items-center gap-4">
+          <span className="hidden sm:block w-12 h-px bg-ink-700" />
+          <div className="flex items-center gap-3 sm:gap-4">
             <SocialIcon href="mailto:jiripokorny455@gmail.com" label="Email">
               <rect x="2" y="4" width="20" height="16" rx="2" />
               <path d="M22 7l-10 7L2 7" />
@@ -385,7 +385,7 @@ function ProjectCard({
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-2.5 py-1.5 rounded-sm font-display text-[17px] font-semibold tracking-[0.22em] uppercase text-white transition-colors duration-300 hover:text-ink-300"
+                className="px-2.5 py-1.5 rounded-sm font-display text-[15px] font-semibold tracking-[0.14em] uppercase text-white transition-colors duration-300 hover:text-ink-300"
               >
                 {link.label} &#8599;
               </a>
@@ -414,7 +414,7 @@ function Work() {
             href="https://github.com/Jpoker01"
             target="_blank"
             rel="noopener noreferrer"
-            className="group relative inline-flex items-center gap-3 px-8 py-4 font-display text-[17px] font-semibold tracking-[0.22em] uppercase text-white border border-ink-700 rounded-sm overflow-hidden transition-all duration-400 hover:bg-white hover:text-black hover:border-white"
+            className="group relative inline-flex items-center justify-center gap-2 sm:gap-3 px-5 sm:px-8 py-4 font-display text-[14px] sm:text-[15px] font-semibold tracking-[0.1em] sm:tracking-[0.14em] uppercase whitespace-nowrap text-white border border-ink-700 rounded-sm overflow-hidden transition-all duration-400 hover:bg-white hover:text-black hover:border-white"
           >
             <Github className="relative w-[20px] h-[20px]" />
             <span className="relative">See More on GitHub</span>
@@ -555,7 +555,7 @@ function Experience() {
             href="/CV_Jiri_Pokorny_EN.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="group relative inline-flex items-center gap-3 px-8 py-4 font-display text-[17px] font-semibold tracking-[0.22em] uppercase text-white border border-ink-700 rounded-sm overflow-hidden transition-all duration-400 hover:bg-white hover:text-black hover:border-white"
+            className="group relative inline-flex items-center justify-center gap-2 sm:gap-3 px-5 sm:px-8 py-4 font-display text-[14px] sm:text-[15px] font-semibold tracking-[0.1em] sm:tracking-[0.14em] uppercase whitespace-nowrap text-white border border-ink-700 rounded-sm overflow-hidden transition-all duration-400 hover:bg-white hover:text-black hover:border-white"
           >
             <FileText className="relative w-[20px] h-[20px]" />
             <span className="relative">Download Full CV</span>
