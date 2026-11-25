@@ -1,4 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-  <circle cx="50" cy="50" r="50" fill="#000000"/>
-  <text x="50" y="69" font-family="Inter, system-ui, sans-serif" font-size="52" font-weight="700" fill="#ffffff" text-anchor="middle" letter-spacing="-1.5">JP</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- JP mark from the site header: JetBrains Mono SemiBold, J raised, white glow on black. -->
+  <defs>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.6" result="b1"/>
+      <feGaussianBlur in="SourceGraphic" stdDeviation="4.5" result="b2"/>
+      <feComponentTransfer in="b1" result="g1"><feFuncA type="linear" slope="0.85"/></feComponentTransfer>
+      <feComponentTransfer in="b2" result="g2"><feFuncA type="linear" slope="0.55"/></feComponentTransfer>
+      <feMerge><feMergeNode in="g2"/><feMergeNode in="g1"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="#000000"/>
+  <rect x="0.75" y="0.75" width="62.5" height="62.5" rx="13.25" fill="none" stroke="#262626" stroke-width="1.5"/>
+  <g fill="#ffffff" filter="url(#glow)"><path transform="translate(5.71 42.52) scale(0.0405 -0.0405)" d="M270 -10Q161 -10 97.5 50.5Q34 111 34 214H150Q150 157 182.0 124.5Q214 92 270 92Q326 92 358.0 124.0Q390 156 390 214V622H219V730H506V214Q506 110 442.5 50.0Q379 -10 270 -10Z"/><path transform="translate(34.27 51.05) scale(0.0405 -0.0405)" d="M80 0V730H322Q394 730 447.0 702.5Q500 675 529.5 625.0Q559 575 559 507Q559 441 529.5 390.5Q500 340 447.0 312.5Q394 285 322 285H197V0ZM197 390H322Q376 390 408.5 422.0Q441 454 441 507Q441 562 408.5 593.5Q376 625 322 625H197Z"/></g>
 </svg>
