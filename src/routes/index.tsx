@@ -265,7 +265,7 @@ function Hero() {
 
         <div className="mt-6 flex items-center gap-4 animate-fade-in">
           <span className="w-8 h-px bg-ink-700" aria-hidden="true" />
-          <span className="font-mono uppercase text-[12px] tracking-[0.28em] text-ink-300">
+          <span className="font-sans font-medium uppercase text-[13px] tracking-[0.2em] text-ink-300">
             AI Engineer
             <span className="text-ink-600 mx-3">/</span>
             <span className="text-ink-500">Brno, CZ</span>
