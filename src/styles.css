@@ -428,3 +428,8 @@ button:focus-visible {
   }
   *, *::before, *::after { transition-duration: 0s !important; }
 }
+/* View Work: a blinking terminal underscore, shown only on hover. */
+.view-work-cursor { opacity: 0; margin-left: -4px; }
+.group:hover .view-work-cursor,
+.group:focus-visible .view-work-cursor { opacity: 1; animation: jp-blink 1.1s steps(1, end) infinite; }
+@media (prefers-reduced-motion: reduce) { .group:hover .view-work-cursor { animation: none; } }

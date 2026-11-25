@@ -6,7 +6,6 @@ import {
   Menu,
   X,
   ArrowUpRight,
-  ArrowDown,
   Code2,
   Brain,
   Server,
@@ -332,7 +331,7 @@ function Hero() {
             className="group flex items-center gap-2 px-4 py-2 rounded-sm font-display text-[15px] font-semibold text-white tracking-[0.14em] uppercase whitespace-nowrap cursor-pointer transition-colors duration-300 hover:text-ink-300"
           >
             View Work
-            <ArrowDown aria-hidden="true" className="view-work-arrow w-[18px] h-[18px] shrink-0" />
+            <span aria-hidden="true" className="view-work-cursor">_</span>
           </Button>
           <span className="hidden sm:block w-12 h-px bg-ink-700" />
           <div className="flex items-center gap-1 sm:gap-2">
