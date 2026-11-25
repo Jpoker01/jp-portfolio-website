@@ -311,7 +311,7 @@ function Hero() {
 function SectionLabel({ label }: { label: string }) {
   return (
     <div className="section-heading relative mb-14 flex items-baseline gap-4 border-b border-ink-800 pb-5">
-      <span className="relative inline-block font-mono text-[18px] md:text-[20px] font-semibold text-ink-50">
+      <span className="relative inline-block font-heading text-[18px] md:text-[20px] font-semibold text-ink-50">
         {label}
       </span>
     </div>

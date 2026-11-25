@@ -1,6 +1,8 @@
 # Roadmap
 
-- [x] Remove the glow from all the menu items
+- [x] Remove the glow from the JP initials
+- [x] Switch the section subtitles to Onest
+
 - [x] Suggest a different font for the section subtitles, with a rendered PNG comparison
 
 - [x] Remove the moving shine from all section subtitles
