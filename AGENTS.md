@@ -11,3 +11,4 @@
   fixed by the owner. Verify with a desktop and a phone-width screenshot before reporting.
 - Section headers carry no numbering, prefix or index marker: just the glowing
   sentence-case title above the full-width hairline rule.
+- Use the shared unstyled Button for portfolio commands so touch targets and accessible states can be refined without changing link typography.

@@ -1,5 +1,6 @@
 # Roadmap
 
+- [x] Polish alignment, mobile controls, skill-grid dividers and reduced-motion behaviour without changing the visual identity
 - [x] Remove section numbering from all four section headers and drop the numbering preview switcher
 - [x] Add a temporary live switcher for all 12 section-numbering styles and verify desktop and phone previews
 - [x] Match email, LinkedIn and phone icons in the hero and contact section to View Work's white

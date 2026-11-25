@@ -45,6 +45,7 @@
   --background: #000000;
   --foreground: #e5e5e5;
   --border: #181818;
+  --nav-glow: 0 0 10px color-mix(in srgb, var(--color-ink-50) 16%, transparent);
 }
 
 html {
@@ -223,3 +224,25 @@ button:focus-visible {
 }
 
 #work, #skills, #experience, #contact { scroll-margin-top: 80px; }
+
+/* Keep the established look, with consistent seams and comfortable controls. */
+.nav-link { text-shadow: var(--nav-glow); }
+.hero-section { min-height: 100svh; }
+.skill-grid {
+  gap: 1px;
+  padding: 1px;
+  background: var(--border);
+}
+.skill-cell { background: var(--background); }
+.contact-link { overflow-wrap: anywhere; min-width: 0; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal, .reveal.in-view,
+  .animate-fade-up, .animate-fade-in {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+  *, *::before, *::after { transition-duration: 0s !important; }
+}

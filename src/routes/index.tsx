@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState, useEffect, useRef } from "react";
+import { Button } from "@/components/ui/button";
 import {
   Menu,
   X,
@@ -143,7 +144,8 @@ function useReveal<T extends HTMLElement>() {
 }
 
 function scrollTo(id: string) {
-  document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  document.getElementById(id)?.scrollIntoView({ behavior: reducedMotion ? "instant" : "smooth" });
 }
 
 // ─── Nav ───────────────────────────────────────────────────────────────────
@@ -151,66 +153,89 @@ function scrollTo(id: string) {
 function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const menuToggle = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 30);
-    window.addEventListener("scroll", onScroll);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  useEffect(() => {
+    if (!open) return;
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setOpen(false);
+        menuToggle.current?.focus();
+      }
+    };
+    const desktop = window.matchMedia("(min-width: 768px)");
+    const closeOnDesktop = () => { if (desktop.matches) setOpen(false); };
+    document.addEventListener("keydown", closeOnEscape);
+    desktop.addEventListener("change", closeOnDesktop);
+    return () => {
+      document.removeEventListener("keydown", closeOnEscape);
+      desktop.removeEventListener("change", closeOnDesktop);
+    };
+  }, [open]);
+
   return (
     <nav
+      aria-label="Main navigation"
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled ? "bg-black/80 backdrop-blur-xl border-b border-ink-800" : "bg-transparent"
+        scrolled || open ? "bg-background/80 backdrop-blur-xl border-b border-ink-800" : "bg-transparent"
       }`}
     >
       <div className="px-6 md:px-10 lg:px-16 h-16 flex items-center justify-between">
-        <button
+        <Button
           onClick={() => scrollTo("home")}
           aria-label="Back to top"
-          className="cursor-pointer font-mono text-[13px] font-medium text-ink-200 tracking-[0.3em]"
+          className="min-h-11 flex items-center font-mono text-[13px] font-medium text-ink-200 tracking-[0.3em]"
         >
           JP
-        </button>
+        </Button>
 
         <div className="hidden md:flex items-center gap-8">
           {NAV.map((n) => (
-            <button
+            <Button
               key={n.id}
               onClick={() => scrollTo(n.id)}
-              className="group cursor-pointer font-nav text-[18px] font-semibold tracking-[0.14em] uppercase text-white hover:text-ink-300 transition-colors duration-300 [text-shadow:0_0_10px_rgba(255,255,255,0.16)]"
+              className="nav-link group min-h-11 font-nav text-[18px] font-semibold tracking-[0.14em] uppercase text-ink-50 hover:text-ink-300 transition-colors duration-300"
             >
               <span className="relative">
                 {n.label}
                 <span className="absolute -bottom-1 left-0 h-px w-0 bg-ink-400 transition-all duration-300 group-hover:w-full" />
               </span>
-            </button>
+            </Button>
           ))}
         </div>
 
-        <button
+        <Button
+          ref={menuToggle}
           onClick={() => setOpen(!open)}
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
-          className="cursor-pointer md:hidden text-ink-400 hover:text-white transition-colors duration-300"
+          aria-controls="mobile-menu"
+          className="md:hidden w-11 h-11 -mr-3 flex items-center justify-center text-ink-400 hover:text-ink-50 transition-colors duration-300"
         >
           {open ? <X className="w-[22px] h-[22px]" /> : <Menu className="w-[22px] h-[22px]" />}
-        </button>
+        </Button>
       </div>
 
       {open && (
-        <div className="md:hidden bg-black border-t border-ink-800 px-6 py-4 space-y-1">
+        <div id="mobile-menu" className="md:hidden bg-background border-t border-ink-800 px-6 py-4 space-y-1">
           {NAV.map((n) => (
-            <button
+            <Button
               key={n.id}
               onClick={() => {
                 scrollTo(n.id);
                 setOpen(false);
               }}
-              className="cursor-pointer block w-full text-left py-3 font-nav text-[24px] font-semibold tracking-[0.14em] uppercase text-white hover:text-ink-300 transition-colors duration-300 [text-shadow:0_0_10px_rgba(255,255,255,0.16)]"
+              className="nav-link block w-full text-left py-3 font-nav text-[24px] font-semibold tracking-[0.14em] uppercase text-ink-50 hover:text-ink-300 transition-colors duration-300"
             >
               {n.label}
-            </button>
+            </Button>
           ))}
         </div>
       )}
@@ -226,7 +251,7 @@ function SocialIcon({ href, label, children, tooltip }: { href: string; label: s
       href={href}
       target={href.startsWith('mailto') || href.startsWith('tel') ? undefined : '_blank'}
       rel="noopener noreferrer"
-      className="group relative text-ink-50 hover:text-ink-300 transition-colors duration-300"
+      className="group relative inline-flex min-w-9 min-h-11 items-center justify-center text-ink-50 hover:text-ink-300 transition-colors duration-300"
       aria-label={label}
     >
       <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -245,7 +270,7 @@ function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex flex-col justify-center px-6 md:px-10 lg:px-16 overflow-hidden"
+      className="hero-section relative flex flex-col justify-center px-6 md:px-10 lg:px-16 overflow-hidden"
     >
       <div
         className="absolute inset-0 pointer-events-none"
@@ -278,15 +303,15 @@ function Hero() {
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mt-9 animate-fade-up delay-400">
-          <button
+          <Button
             onClick={() => scrollTo("work")}
             className="group flex items-center gap-2 px-4 py-2 rounded-sm font-display text-[15px] font-semibold text-white tracking-[0.14em] uppercase whitespace-nowrap cursor-pointer transition-colors duration-300 hover:text-ink-300"
           >
             View Work
             <ArrowUpRight className="w-[18px] h-[18px] transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-          </button>
+          </Button>
           <span className="hidden sm:block w-12 h-px bg-ink-700" />
-          <div className="flex items-center gap-3 sm:gap-4">
+          <div className="flex items-center gap-1 sm:gap-2">
             <SocialIcon href="mailto:jiripokorny455@gmail.com" label="Email">
               <rect x="2" y="4" width="20" height="16" rx="2" />
               <path d="M22 7l-10 7L2 7" />
@@ -365,7 +390,11 @@ function ProjectCard({
           <img
             src={project.image}
             alt={`${project.title} preview`}
-            className="w-full border border-ink-800 rounded-sm"
+            width={480}
+            height={250}
+            loading="lazy"
+            decoding="async"
+            className="w-full h-auto border border-ink-800 rounded-sm"
           />
         )}
         <div className="flex flex-wrap gap-x-3 gap-y-3">
@@ -377,7 +406,7 @@ function ProjectCard({
         </div>
 
         {project.links.length > 0 && (
-          <div className="flex items-center gap-4 flex-wrap px-2.5">
+          <div className="flex items-center gap-4 flex-wrap -ml-2.5">
             {project.links.map((link) => (
               <a
                 key={link.label}
@@ -436,16 +465,16 @@ function Skills() {
 
         <div
           ref={ref}
-          className="reveal max-w-4xl mx-auto grid sm:grid-cols-2 lg:grid-cols-3 border border-ink-800"
+          className="reveal skill-grid max-w-4xl mx-auto grid sm:grid-cols-2 lg:grid-cols-3"
         >
           {SKILL_GROUPS.map((group) => (
             <div
               key={group.label}
-              className="group/cell p-8 border-r border-b border-ink-800 hover:bg-ink-900 transition-colors duration-300"
+              className="skill-cell group/cell p-8 hover:bg-ink-900 transition-colors duration-300"
             >
               <div className="flex items-center gap-3 mb-5">
                 <group.icon
-                  className="w-[22px] h-[22px] text-[#6a6a6a] group-hover/cell:text-ink-300 transition-colors duration-300"
+                  className="w-[22px] h-[22px] shrink-0 text-ink-50"
                   strokeWidth={1.5}
                 />
                 <h3 className="text-[16px] font-semibold tracking-tight text-white">
@@ -579,10 +608,10 @@ function CopyButton({ text }: { text: string }) {
   };
 
   return (
-    <button
+    <Button
       onClick={handleCopy}
-      className="relative ml-2 text-[#6a6a6a] hover:text-white transition-colors duration-300"
-      aria-label="Copy"
+      className="relative ml-1 shrink-0 w-8 h-11 flex items-center justify-center text-ink-400 hover:text-ink-50 transition-colors duration-300"
+      aria-label={copied ? "Copied" : `Copy ${text}`}
     >
       <svg
         width="16"
@@ -602,7 +631,7 @@ function CopyButton({ text }: { text: string }) {
           Copied
         </span>
       )}
-    </button>
+    </Button>
   );
 }
 
@@ -616,7 +645,7 @@ function ContactRow({
   children: React.ReactNode;
 }) {
   return (
-    <div className="flex items-center gap-3">
+    <div className="flex items-center gap-3 min-w-0">
       <svg
         width="20"
         height="20"
@@ -678,8 +707,7 @@ function Contact() {
             >
               <a
                 href="mailto:jiripokorny455@gmail.com"
-                className="text-[17px] hover:text-white transition-colors duration-300"
-                style={{ color: "#d0d0d0" }}
+                className="contact-link text-[17px] text-ink-300 hover:text-ink-50 transition-colors duration-300"
               >
                 jiripokorny455@gmail.com
               </a>
@@ -693,8 +721,7 @@ function Contact() {
             >
               <a
                 href="tel:+420603967651"
-                className="text-[17px] hover:text-white transition-colors duration-300"
-                style={{ color: "#d0d0d0" }}
+                className="contact-link text-[17px] text-ink-300 hover:text-ink-50 transition-colors duration-300"
               >
                 +420 603 967 651
               </a>
@@ -713,8 +740,7 @@ function Contact() {
                 href="https://www.linkedin.com/in/jpoker01/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[17px] hover:text-white transition-colors duration-300"
-                style={{ color: "#d0d0d0" }}
+                className="contact-link text-[17px] text-ink-300 hover:text-ink-50 transition-colors duration-300"
               >
                 LinkedIn &#8599;
               </a>
