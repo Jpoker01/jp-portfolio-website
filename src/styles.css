@@ -228,68 +228,83 @@ button:focus-visible {
 /* Keep the established look, with consistent seams and comfortable controls. */
 .nav-link { text-shadow: var(--nav-glow); }
 
-/* JP monogram: a strong glow that travels around the mark. */
-@property --jp-angle {
-  syntax: "<angle>";
-  inherits: false;
-  initial-value: 0deg;
-}
-
+/* JP monogram: a solar eclipse, dark disc with a still corona ring. */
 .jp-mark {
   position: relative;
   isolation: isolate;
 }
 
+/* Corona: a bright ring just peeking from behind the disc. */
 .jp-mark::before {
   content: "";
   position: absolute;
-  inset: -12px -18px;
+  left: 50%;
+  top: 50%;
+  width: 76px;
+  height: 76px;
+  margin: -38px 0 0 -38px;
   z-index: -1;
   border-radius: 999px;
-  background: conic-gradient(
-    from var(--jp-angle),
-    transparent 0deg,
-    transparent 190deg,
-    color-mix(in srgb, var(--color-ink-50) 14%, transparent) 250deg,
-    color-mix(in srgb, var(--color-ink-50) 62%, transparent) 310deg,
-    var(--color-ink-50) 344deg,
-    transparent 360deg
+  background: radial-gradient(
+    circle,
+    transparent 26%,
+    var(--color-ink-50) 36%,
+    var(--color-ink-50) 44%,
+    color-mix(in srgb, var(--color-ink-50) 45%, transparent) 56%,
+    color-mix(in srgb, var(--color-ink-50) 14%, transparent) 70%,
+    transparent 84%
   );
-  filter: blur(9px);
-  opacity: 0.9;
-  animation: jp-orbit 5s linear infinite;
+  filter: blur(1.5px);
+  opacity: 1;
+  animation: jp-breathe 6s ease-in-out infinite;
   pointer-events: none;
 }
 
+/* Faint outer halo and rays around the corona. */
 .jp-mark::after {
   content: "";
   position: absolute;
   left: 50%;
   top: 50%;
-  width: 28px;
-  height: 28px;
-  margin: -14px 0 0 -14px;
-  z-index: -1;
+  width: 150px;
+  height: 150px;
+  margin: -75px 0 0 -75px;
+  z-index: -2;
   border-radius: 999px;
-  background: radial-gradient(
-    circle,
-    var(--color-ink-50) 0%,
-    color-mix(in srgb, var(--color-ink-50) 42%, transparent) 46%,
-    transparent 72%
-  );
-  filter: blur(5px);
-  opacity: 0.75;
-  animation: jp-travel 5s linear infinite;
+  background:
+    radial-gradient(
+      circle,
+      transparent 22%,
+      color-mix(in srgb, var(--color-ink-50) 26%, transparent) 30%,
+      transparent 55%
+    ),
+    conic-gradient(
+      from 12deg,
+      transparent 0deg,
+      color-mix(in srgb, var(--color-ink-50) 16%, transparent) 6deg,
+      transparent 14deg,
+      transparent 78deg,
+      color-mix(in srgb, var(--color-ink-50) 13%, transparent) 86deg,
+      transparent 96deg,
+      transparent 160deg,
+      color-mix(in srgb, var(--color-ink-50) 18%, transparent) 168deg,
+      transparent 178deg,
+      transparent 244deg,
+      color-mix(in srgb, var(--color-ink-50) 14%, transparent) 252deg,
+      transparent 262deg,
+      transparent 318deg,
+      color-mix(in srgb, var(--color-ink-50) 17%, transparent) 326deg,
+      transparent 336deg
+    );
+  filter: blur(3px);
+  opacity: 0.85;
+  animation: jp-breathe 6s ease-in-out infinite;
   pointer-events: none;
 }
 
-@keyframes jp-orbit {
-  to { --jp-angle: 360deg; }
-}
-
-@keyframes jp-travel {
-  0% { transform: rotate(0deg) translateX(36px) rotate(0deg); }
-  100% { transform: rotate(360deg) translateX(36px) rotate(-360deg); }
+@keyframes jp-breathe {
+  0%, 100% { opacity: 0.55; transform: scale(0.97); }
+  50% { opacity: 0.95; transform: scale(1.03); }
 }
 
 .hero-section { min-height: 100svh; }
@@ -353,7 +368,7 @@ button:focus-visible {
   html { scroll-behavior: auto; }
   .view-work-arrow { animation: none; }
   .jp-mark::before,
-  .jp-mark::after { animation: none; }
+  .jp-mark::after { animation: none; opacity: 0.8; }
   .reveal, .reveal.in-view,
   .animate-fade-up, .animate-fade-in {
     animation: none;
