@@ -263,15 +263,15 @@ function Hero() {
         </span>
       </h1>
 
-        <span className="mt-6 uppercase text-[13px] font-medium tracking-[0.18em] text-ink-400 animate-fade-in">
+        <span className="mt-7 uppercase text-[13px] font-medium tracking-[0.18em] text-ink-400 animate-fade-in delay-100">
           AI Engineer &middot; Brno, CZ
         </span>
 
-        <p className="mt-7 font-light text-[18px] leading-relaxed text-ink-400 max-w-2xl animate-fade-up delay-200">
+        <p className="mt-6 font-light text-[18px] leading-relaxed text-ink-400 max-w-2xl animate-fade-up delay-250">
           I build AI applications in Python, from raw data to a deployed product.
         </p>
 
-        <div className="flex items-center justify-center gap-6 mt-10 animate-fade-up delay-300">
+        <div className="flex items-center justify-center gap-6 mt-9 animate-fade-up delay-400">
           <button
             onClick={() => scrollTo("work")}
             className="group flex items-center gap-2 text-[13px] font-semibold text-white tracking-[0.2em] uppercase cursor-pointer"
@@ -301,10 +301,10 @@ function Hero() {
       </div>
 
       <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex items-center gap-3">
-        <span className="text-[11px] font-bold uppercase tracking-[0.17em] text-ink-500">
+        <span className="text-[11px] font-medium uppercase tracking-[0.22em] text-ink-500">
           Scroll
         </span>
-        <span className="w-6 h-px bg-ink-600" />
+        <span className="w-5 h-px bg-ink-600" />
       </div>
     </section>
   );
