@@ -471,8 +471,13 @@ function Work() {
             href="https://github.com/Jpoker01"
             target="_blank"
             rel="noopener noreferrer"
-            className="group relative inline-flex items-center justify-center gap-2 sm:gap-3 px-5 sm:px-8 py-4 font-display text-[14px] sm:text-[15px] font-semibold tracking-[0.1em] sm:tracking-[0.14em] uppercase whitespace-nowrap text-white border border-ink-700 rounded-sm overflow-hidden transition-all duration-400 hover:bg-white hover:text-black hover:border-white"
+            className="group relative inline-flex items-center justify-center gap-2 sm:gap-3 px-5 sm:px-8 py-4 font-display text-[14px] sm:text-[15px] font-semibold tracking-[0.1em] sm:tracking-[0.14em] uppercase whitespace-nowrap text-white border border-ink-700 rounded-sm transition-colors duration-400"
           >
+            <span className="btn-reveal" aria-hidden="true">
+              <Github className="w-[20px] h-[20px]" />
+              <span>See More on GitHub</span>
+              <ArrowUpRight className="w-[18px] h-[18px] transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            </span>
             <Github className="relative w-[20px] h-[20px]" />
             <span className="relative">See More on GitHub</span>
             <ArrowUpRight className="relative w-[18px] h-[18px] transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -612,8 +617,13 @@ function Experience() {
             href="/CV_Jiri_Pokorny_EN.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="group relative inline-flex items-center justify-center gap-2 sm:gap-3 px-5 sm:px-8 py-4 font-display text-[14px] sm:text-[15px] font-semibold tracking-[0.1em] sm:tracking-[0.14em] uppercase whitespace-nowrap text-white border border-ink-700 rounded-sm overflow-hidden transition-all duration-400 hover:bg-white hover:text-black hover:border-white"
+            className="group relative inline-flex items-center justify-center gap-2 sm:gap-3 px-5 sm:px-8 py-4 font-display text-[14px] sm:text-[15px] font-semibold tracking-[0.1em] sm:tracking-[0.14em] uppercase whitespace-nowrap text-white border border-ink-700 rounded-sm transition-colors duration-400"
           >
+            <span className="btn-reveal" aria-hidden="true">
+              <FileText className="w-[20px] h-[20px]" />
+              <span>Download Full CV</span>
+              <ArrowUpRight className="w-[18px] h-[18px] transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            </span>
             <FileText className="relative w-[20px] h-[20px]" />
             <span className="relative">Download Full CV</span>
             <ArrowUpRight className="relative w-[18px] h-[18px] transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
