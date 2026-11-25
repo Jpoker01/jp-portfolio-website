@@ -144,12 +144,12 @@ body {
 .delay-400 { animation-delay: 400ms; }
 .delay-500 { animation-delay: 500ms; }
 
-/* Skill tags: soft filled pill, no border, barely-there dark fill. */
+/* Skill tags: soft filled rectangle, no border, barely-there dark fill. */
 .tag-mark {
   display: inline-flex;
   align-items: center;
   padding: 6px 14px;
-  border-radius: 999px;
+  border-radius: 2px;
   background: var(--color-ink-800);
   transition: background-color 0.3s ease;
 }
