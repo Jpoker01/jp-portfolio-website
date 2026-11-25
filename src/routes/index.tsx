@@ -173,15 +173,12 @@ function Nav() {
         </button>
 
         <div className="hidden md:flex items-center gap-8">
-          {NAV.map((n, i) => (
+          {NAV.map((n) => (
             <button
               key={n.id}
               onClick={() => scrollTo(n.id)}
-              className="group cursor-pointer flex items-baseline gap-2 text-[13px] font-medium text-ink-400 hover:text-white transition-colors duration-300"
+              className="group cursor-pointer font-display text-[14px] font-medium tracking-[0.04em] text-ink-400 hover:text-white transition-colors duration-300"
             >
-              <span className="font-mono text-[10px] text-ink-600 group-hover:text-ink-400 transition-colors duration-300">
-                0{i + 1}
-              </span>
               <span className="relative">
                 {n.label}
                 <span className="absolute -bottom-1 left-0 h-px w-0 bg-ink-400 transition-all duration-300 group-hover:w-full" />
@@ -200,16 +197,15 @@ function Nav() {
 
       {open && (
         <div className="md:hidden bg-black border-t border-ink-800 px-6 py-4 space-y-1">
-          {NAV.map((n, i) => (
+          {NAV.map((n) => (
             <button
               key={n.id}
               onClick={() => {
                 scrollTo(n.id);
                 setOpen(false);
               }}
-              className="cursor-pointer flex items-baseline gap-3 w-full text-left py-3 text-[15px] font-medium text-ink-400 hover:text-white transition-colors duration-300"
+              className="cursor-pointer block w-full text-left py-3 font-display text-[16px] font-medium tracking-[0.04em] text-ink-400 hover:text-white transition-colors duration-300"
             >
-              <span className="font-mono text-[11px] text-ink-600">0{i + 1}</span>
               {n.label}
             </button>
           ))}
