@@ -15,7 +15,19 @@ const STYLES = [
   "Digit at the end of the rule",
   "Spelled-out italic serif",
   "Condensed numeral",
+  "Fraction of total",
+  "Section sign",
+  "Hairline bars",
+  "Binary digits",
+  "Lowercase roman, italic serif",
+  "Outlined hollow digit",
+  "Circled digit",
+  "Hexadecimal",
+  "Vertical bar prefix",
+  "Spelled-out small caps",
 ];
+const BINARY = ["001", "010", "011", "100"];
+const CIRCLED = ["①", "②", "③", "④"];
 const ROMAN = ["I", "II", "III", "IV"];
 const GREEK = ["α", "β", "γ", "δ"];
 const WORDS = ["one", "two", "three", "four"];
@@ -32,6 +44,16 @@ export function SectionNumber({ section }: { section: number }) {
   if (style === 4) marker = "•".repeat(section);
   if (style === 5) marker = GREEK[index] ?? String(section);
   if (style === 6) marker = `${String.fromCharCode(64 + section)}.`;
+  if (style === 12) marker = `${section}/4`;
+  if (style === 13) marker = `§${section}`;
+  if (style === 14) marker = "|".repeat(section);
+  if (style === 15) marker = BINARY[index] ?? String(section);
+  if (style === 16) marker = (ROMAN[index] ?? String(section)).toLowerCase();
+  if (style === 17) marker = String(section);
+  if (style === 18) marker = CIRCLED[index] ?? String(section);
+  if (style === 19) marker = `0x0${section}`;
+  if (style === 20) marker = digits;
+  if (style === 21) marker = `section ${WORDS[index] ?? section}`;
   if (style === 10) marker = WORDS[index] ?? String(section);
   return <span aria-hidden="true" data-numbering-style={style + 1} className="section-number">{marker}</span>;
 }
@@ -66,7 +88,7 @@ export function NumberingPreview({ children }: { children: ReactNode }) {
             <div className="mt-3 flex items-center justify-between gap-3">
               <div className="flex items-center gap-2">
                 <Button aria-label="Previous numbering style" title="Previous style" className="h-9 w-9" onClick={() => preview(style - 1)}><ArrowLeft size={16} /></Button>
-                <span aria-live="polite" aria-atomic="true" className="w-12 text-center text-[12px] tabular-nums text-ink-400">{style + 1} / 12</span>
+                <span aria-live="polite" aria-atomic="true" className="w-12 text-center text-[12px] tabular-nums text-ink-400">{style + 1} / {STYLES.length}</span>
                 <Button aria-label="Next numbering style" title="Next style" className="h-9 w-9" onClick={() => preview(style + 1)}><ArrowRight size={16} /></Button>
               </div>
               <Button aria-label="Reset to original numbering" title="Reset to original numbering" className="h-9 w-9" onClick={() => preview(0)}><RotateCcw size={15} /></Button>

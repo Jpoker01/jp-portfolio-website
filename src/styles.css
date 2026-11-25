@@ -244,4 +244,14 @@ button:focus-visible {
 .section-number[data-numbering-style="10"] { position: absolute; right: 0; bottom: 20px; font-family: var(--font-mono); font-size: 11px; font-weight: 400; color: var(--color-ink-500); }
 .section-number[data-numbering-style="11"] { font-family: var(--font-number-word); font-style: italic; letter-spacing: 0.04em; }
 .section-number[data-numbering-style="12"] { font-family: var(--font-nav); font-size: 20px; font-weight: 400; letter-spacing: 0.18em; line-height: 1; transform: translateY(2px); }
+.section-number[data-numbering-style="13"] { font-family: var(--font-mono); font-size: 12px; font-weight: 400; letter-spacing: 0.1em; color: var(--color-ink-500); }
+.section-number[data-numbering-style="14"] { font-family: var(--font-number-serif); font-size: 20px; }
+.section-number[data-numbering-style="15"] { font-size: 16px; font-weight: 200; letter-spacing: 0.3em; color: var(--color-ink-500); }
+.section-number[data-numbering-style="16"] { font-family: var(--font-mono); font-size: 11px; font-weight: 400; letter-spacing: 0.1em; color: var(--color-ink-500); }
+.section-number[data-numbering-style="17"] { font-family: var(--font-number-serif); font-style: italic; font-size: 20px; letter-spacing: 0.04em; }
+.section-number[data-numbering-style="18"] { font-size: 30px; font-weight: 700; line-height: 1; color: transparent; -webkit-text-stroke: 1px var(--color-ink-500); }
+.section-number[data-numbering-style="19"] { font-size: 18px; font-weight: 300; }
+.section-number[data-numbering-style="20"] { font-family: var(--font-mono); font-size: 12px; font-weight: 400; color: var(--color-ink-500); }
+.section-number[data-numbering-style="21"] { font-size: 13px; border-left: 1px solid var(--color-ink-600); padding-left: 10px; }
+.section-number[data-numbering-style="22"] { font-size: 12px; font-variant: small-caps; text-transform: lowercase; letter-spacing: 0.14em; }
 #work, #skills, #experience, #contact { scroll-margin-top: 80px; }
