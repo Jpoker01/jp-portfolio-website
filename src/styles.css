@@ -45,7 +45,6 @@
   --background: #000000;
   --foreground: #e5e5e5;
   --border: #181818;
-  --nav-glow: 0 0 10px color-mix(in srgb, var(--color-ink-50) 16%, transparent);
 }
 
 html {
@@ -227,7 +226,6 @@ button:focus-visible {
 #work, #skills, #experience, #contact { scroll-margin-top: 80px; }
 
 /* Keep the established look, with consistent seams and comfortable controls. */
-.nav-link { text-shadow: var(--nav-glow); }
 
 /* JP monogram: large letters with a still, text-style glow. */
 .jp-mark {
@@ -261,6 +259,7 @@ button:focus-visible {
 .social-icon svg {
   transition: transform 340ms cubic-bezier(0.22, 1, 0.36, 1);
   transform-origin: 50% 50%;
+  overflow: visible;
 }
 .social-mail:hover svg,
 .social-mail:focus-visible svg {
@@ -277,7 +276,7 @@ button:focus-visible {
 /* The envelope flap lifts open. */
 .mail-flap {
   transform-box: view-box;
-  transform-origin: 12px 7px;
+  transform-origin: 12px 4.5px;
   transition: transform 340ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 .social-mail:hover .mail-flap,

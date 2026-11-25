@@ -34,3 +34,7 @@
 - [ ] og-image.png (1200x630 site preview) still needs uploading to public/ by Jiří
 - [ ] Master's thesis thumbnail: replace the static image with a looping video (or slideshow) once verifyauthor.dev is refactored
 - [x] Snap scroll to Selected projects after a short scroll from the hero
+- [x] Match the top menu items to the JP initials lettering, without the glow
+- [x] Fix the scroll snap to Selected projects (no longer triggers)
+- [x] Tech Stack square: remove the blacked-out fill so it matches the page background
+- [x] Mail icon: the open flap's tip is clipped by the icon edge

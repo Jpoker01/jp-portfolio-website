@@ -196,7 +196,7 @@ function Nav() {
             <Button
               key={n.id}
               onClick={() => scrollTo(n.id)}
-              className="nav-link group min-h-11 font-mono text-[14px] font-semibold tracking-[0.12em] uppercase text-ink-50 hover:text-ink-300 transition-colors duration-300"
+              className="group min-h-11 font-mono text-[14px] font-semibold tracking-[0.12em] uppercase text-ink-50 hover:text-ink-300 transition-colors duration-300"
             >
               <span className="relative">
                 {n.label}
@@ -227,7 +227,7 @@ function Nav() {
                 scrollTo(n.id);
                 setOpen(false);
               }}
-              className="nav-link block w-full text-left py-3 font-mono text-[20px] font-semibold tracking-[0.12em] uppercase text-ink-50 hover:text-ink-300 transition-colors duration-300"
+              className="block w-full text-left py-3 font-mono text-[20px] font-semibold tracking-[0.12em] uppercase text-ink-50 hover:text-ink-300 transition-colors duration-300"
             >
               {n.label}
             </Button>
@@ -263,13 +263,35 @@ function SocialIcon({ href, label, children, tooltip, className }: { href: strin
 
 function Hero() {
   // Gently snap to Selected projects once the visitor scrolls a short way
-  // down from the hero. Re-arms when they return to the top.
+  // down from the hero. The glide re-issues itself so continued wheeling
+  // cannot cancel it; wheeling up cancels the glide. Re-arms at the top.
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
-    const threshold = () => window.innerHeight * 0.22;
     let snapped = false;
     let timer: number | undefined;
+    let interval: number | undefined;
+    let guard: number | undefined;
+
+    const workTop = () => {
+      const el = document.getElementById("work");
+      return el ? el.getBoundingClientRect().top + window.scrollY : 0;
+    };
+
+    const stopGlide = () => {
+      window.clearInterval(interval);
+      window.clearTimeout(guard);
+      interval = undefined;
+    };
+
+    const glide = () => {
+      stopGlide();
+      interval = window.setInterval(() => {
+        scrollTo("work");
+        if (Math.abs(window.scrollY - workTop()) < 4) stopGlide();
+      }, 150);
+      guard = window.setTimeout(stopGlide, 3000);
+    };
 
     const onScroll = () => {
       const y = window.scrollY;
@@ -277,16 +299,23 @@ function Hero() {
         snapped = false;
         return;
       }
-      if (snapped || y < threshold() || y > window.innerHeight * 0.9) return;
+      if (snapped || y < window.innerHeight * 0.22 || y > window.innerHeight * 0.9) return;
       snapped = true;
       window.clearTimeout(timer);
-      timer = window.setTimeout(() => scrollTo("work"), 120);
+      timer = window.setTimeout(glide, 120);
+    };
+
+    const onWheel = (e: WheelEvent) => {
+      if (e.deltaY < 0) stopGlide();
     };
 
     window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("wheel", onWheel, { passive: true });
     return () => {
       window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("wheel", onWheel);
       window.clearTimeout(timer);
+      stopGlide();
     };
   }, []);
 
@@ -337,7 +366,7 @@ function Hero() {
           <div className="flex items-center gap-1 sm:gap-2">
             <SocialIcon href="mailto:jiripokorny455@gmail.com" label="Email" className="social-mail">
               <rect x="2" y="4" width="20" height="16" rx="2" />
-              <path className="mail-flap" d="M22 7l-10 7L2 7" />
+              <path className="mail-flap" d="M2 4.5L12 11.5L22 4.5" />
             </SocialIcon>
             <SocialIcon
               href="https://www.linkedin.com/in/jpoker01/"
@@ -499,7 +528,7 @@ function Skills() {
           {SKILL_GROUPS.map((group) => (
             <div
               key={group.label}
-              className="skill-cell group/cell p-8 hover:bg-ink-900 transition-colors duration-300"
+              className="skill-cell group/cell p-8"
             >
               <div className="flex items-center gap-3 mb-5">
                 <group.icon
