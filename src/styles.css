@@ -140,3 +140,40 @@ body {
 .delay-300 { animation-delay: 300ms; }
 .delay-400 { animation-delay: 400ms; }
 .delay-500 { animation-delay: 500ms; }
+
+/* Skill tags: an implied rectangle drawn with two opposite corner ticks */
+.tag-mark {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 13px;
+}
+
+.tag-mark::before,
+.tag-mark::after {
+  content: "";
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  border: 0 solid var(--color-ink-600);
+  transition: border-color 0.3s ease;
+}
+
+.tag-mark::before {
+  top: 0;
+  left: 0;
+  border-top-width: 1px;
+  border-left-width: 1px;
+}
+
+.tag-mark::after {
+  bottom: 0;
+  right: 0;
+  border-bottom-width: 1px;
+  border-right-width: 1px;
+}
+
+.tag-mark:hover::before,
+.tag-mark:hover::after {
+  border-color: var(--color-ink-400);
+}

@@ -349,10 +349,10 @@ function ProjectCard({
       } pb-16`}
     >
       <div className="lg:col-span-7">
-        <span className="block font-sans text-[13px] text-ink-600 tracking-normal mb-5">
+        <span className="block font-sans text-[13px] text-ink-600 tracking-[0.04em] mb-5">
           {String(index + 1).padStart(2, "0")} / {String(PROJECTS.length).padStart(2, "0")}
         </span>
-        <p className="font-sans text-[15px] font-medium tracking-normal text-ink-400 mb-4">
+        <p className="font-sans text-[14px] font-medium uppercase tracking-[0.06em] text-ink-400 mb-4">
           {project.tag}
         </p>
         <h3 className="text-3xl md:text-4xl lg:text-[35px] font-bold text-white tracking-tight leading-[1.1] mb-6">
@@ -371,12 +371,9 @@ function ProjectCard({
             className="w-full border border-ink-800 rounded-sm"
           />
         )}
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-x-3 gap-y-3">
           {project.stack.map((s) => (
-            <span
-              key={s}
-              className="font-sans text-[14px] text-ink-400 bg-ink-800 px-3 py-1 rounded-full"
-            >
+            <span key={s} className="tag-mark font-sans text-[13px] text-ink-400">
               {s}
             </span>
           ))}
@@ -493,7 +490,7 @@ function ExperienceItem({ job, isFirst }: { job: (typeof EXPERIENCE)[number]; is
         <h3 className="text-3xl md:text-4xl lg:text-[35px] font-bold text-white tracking-tight leading-[1.1]">
           {job.role}
         </h3>
-        <p className="mt-4 font-sans text-[15px] font-medium tracking-normal text-ink-400">
+        <p className="mt-4 font-sans text-[14px] font-medium uppercase tracking-[0.06em] text-ink-400">
           {job.company} · {job.location}
         </p>
       </div>
@@ -525,19 +522,16 @@ function ExperienceItem({ job, isFirst }: { job: (typeof EXPERIENCE)[number]; is
                 <h4 className="text-[21px] lg:text-[23px] font-semibold text-white tracking-tight leading-[1.2]">
                   {role.title}
                 </h4>
-                <p className="mt-2 font-sans text-[14px] text-ink-500 tracking-normal">
+                <p className="mt-2 font-sans text-[13px] uppercase tracking-[0.06em] text-ink-500">
                   {role.period}
                 </p>
                 <p className="mt-4 text-[16px] text-ink-400 font-light leading-relaxed max-w-xl">
                   {role.description}
                 </p>
               </div>
-              <div className="lg:col-span-5 flex flex-wrap content-start gap-2 lg:pt-1">
+              <div className="lg:col-span-5 flex flex-wrap content-start gap-x-3 gap-y-3 lg:pt-1">
                 {role.stack.map((s) => (
-                  <span
-                    key={s}
-                    className="font-sans text-[14px] text-ink-400 bg-ink-800 px-3 py-1 rounded-full"
-                  >
+                  <span key={s} className="tag-mark font-sans text-[13px] text-ink-400">
                     {s}
                   </span>
                 ))}
