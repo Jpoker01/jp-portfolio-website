@@ -263,15 +263,9 @@ function Hero() {
         </span>
       </h1>
 
-        <div className="mt-6 flex items-center gap-4 animate-fade-in">
-          <span className="w-8 h-px bg-ink-700" aria-hidden="true" />
-          <span className="font-sans font-medium uppercase text-[13px] tracking-[0.2em] text-ink-300">
-            AI Engineer
-            <span className="text-ink-600 mx-3">/</span>
-            <span className="text-ink-500">Brno, CZ</span>
-          </span>
-          <span className="w-8 h-px bg-ink-700" aria-hidden="true" />
-        </div>
+        <span className="mt-6 uppercase text-[13px] font-medium tracking-[0.18em] text-ink-400 animate-fade-in">
+          AI Engineer &middot; Brno, CZ
+        </span>
 
         <p className="mt-7 font-light text-[18px] leading-relaxed text-ink-400 max-w-2xl animate-fade-up delay-200">
           I build AI applications in Python, from raw data to a deployed product.
