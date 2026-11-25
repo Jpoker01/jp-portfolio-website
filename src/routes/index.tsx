@@ -314,15 +314,9 @@ function Hero() {
 
 function SectionLabel({ num, label }: { num: string; label: string }) {
   return (
-    <div className="flex items-center gap-5 mb-14">
-      <span className="font-mono text-[16px] text-ink-500">{num}</span>
-      <span className="w-10 h-px bg-ink-600" />
-      <span className="relative inline-block text-[15px] font-semibold tracking-[0.18em] uppercase text-ink-200">
-        {label}
-        <span className="name-shine" aria-hidden="true">
-          {label}
-        </span>
-      </span>
+    <div className="mb-14 flex items-baseline gap-4 border-b border-ink-800 pb-5">
+      <span className="font-mono text-[13px] text-ink-500">{num}</span>
+      <span className="text-[20px] font-semibold text-ink-100">{label}</span>
     </div>
   );
 }
@@ -401,7 +395,7 @@ function Work() {
   return (
     <section id="work" className="section-pad border-t border-ink-800">
       <div className="max-w-6xl mx-auto">
-        <SectionLabel num="01" label="Selected Projects" />
+        <SectionLabel num="01" label="Selected projects" />
 
         <div className="max-w-4xl mx-auto">
           {PROJECTS.map((p, i) => (
@@ -434,7 +428,7 @@ function Skills() {
   return (
     <section id="skills" className="section-pad border-t border-ink-800">
       <div className="max-w-6xl mx-auto">
-        <SectionLabel num="02" label="Tech Stack" />
+        <SectionLabel num="02" label="Tech stack" />
 
         <div
           ref={ref}
