@@ -100,18 +100,18 @@ const EXPERIENCE = [
     role: "Associate Developer",
     company: "SAP",
     location: "Brno, Czech Republic",
-    period: "JUN 2022 - FEB 2026",
+    period: "Jun 2022 - Feb 2026",
     roles: [
       {
         title: "Enterprise Apps",
-        period: "SEP 2024 - FEB 2026 · Full-time",
+        period: "Sep 2024 - Feb 2026 · Full-time",
         description:
           "Developed features for SAP S/4HANA applications across the backend (ABAP) and frontend (SAPUI5, Fiori). Debugged and resolved production issues in live customer systems.",
         stack: ["ABAP", "SAPUI5", "Fiori"],
       },
       {
         title: "ML Engineering",
-        period: "JUN 2022 - SEP 2024",
+        period: "Jun 2022 - Sep 2024",
         description:
           "Built an NLP classifier that classifies SAP customer incidents, trained on real production incident data. This work became the foundation of my bachelor's thesis (see ATACA in Selected Projects). Alongside the thesis work, I handled other data and modelling tasks for the team.",
         stack: ["Python", "NLP", "scikit-learn", "Text Classification"],
@@ -349,10 +349,10 @@ function ProjectCard({
       } pb-16`}
     >
       <div className="lg:col-span-7">
-        <span className="block font-label text-[13px] text-ink-600 tracking-[0.04em] mb-5">
+        <span className="block font-sans text-[13px] text-ink-600 tracking-normal mb-5">
           {String(index + 1).padStart(2, "0")} / {String(PROJECTS.length).padStart(2, "0")}
         </span>
-        <p className="font-label text-[14px] font-medium uppercase tracking-[0.06em] text-ink-400 mb-4">
+        <p className="font-sans text-[15px] font-medium tracking-normal text-ink-400 mb-4">
           {project.tag}
         </p>
         <h3 className="text-3xl md:text-4xl lg:text-[35px] font-bold text-white tracking-tight leading-[1.1] mb-6">
@@ -375,7 +375,7 @@ function ProjectCard({
           {project.stack.map((s) => (
             <span
               key={s}
-              className="font-label text-[14px] text-ink-400 border border-ink-800 px-2.5 py-1 rounded-sm"
+              className="font-sans text-[14px] text-ink-400 border border-ink-800 px-2.5 py-1 rounded-sm"
             >
               {s}
             </span>
@@ -493,7 +493,7 @@ function ExperienceItem({ job, isFirst }: { job: (typeof EXPERIENCE)[number]; is
         <h3 className="text-3xl md:text-4xl lg:text-[35px] font-bold text-white tracking-tight leading-[1.1]">
           {job.role}
         </h3>
-        <p className="mt-4 font-label text-[14px] font-medium uppercase tracking-[0.06em] text-ink-400">
+        <p className="mt-4 font-sans text-[15px] font-medium tracking-normal text-ink-400">
           {job.company} · {job.location}
         </p>
       </div>
@@ -525,7 +525,7 @@ function ExperienceItem({ job, isFirst }: { job: (typeof EXPERIENCE)[number]; is
                 <h4 className="text-[21px] lg:text-[23px] font-semibold text-white tracking-tight leading-[1.2]">
                   {role.title}
                 </h4>
-                <p className="mt-2 font-label text-[13px] text-ink-500 tracking-[0.06em] uppercase">
+                <p className="mt-2 font-sans text-[14px] text-ink-500 tracking-normal">
                   {role.period}
                 </p>
                 <p className="mt-4 text-[16px] text-ink-400 font-light leading-relaxed max-w-xl">
@@ -536,7 +536,7 @@ function ExperienceItem({ job, isFirst }: { job: (typeof EXPERIENCE)[number]; is
                 {role.stack.map((s) => (
                   <span
                     key={s}
-                    className="font-label text-[14px] text-ink-400 border border-ink-800 px-2.5 py-1 rounded-sm"
+                    className="font-sans text-[14px] text-ink-400 border border-ink-800 px-2.5 py-1 rounded-sm"
                   >
                     {s}
                   </span>
