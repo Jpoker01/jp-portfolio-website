@@ -466,9 +466,12 @@ function ProjectCard({
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-2.5 py-1.5 rounded-sm font-display text-[15px] font-semibold tracking-[0.14em] uppercase text-white transition-colors duration-300 hover:text-ink-300"
+                className="group relative inline-flex items-center px-2.5 py-1.5 rounded-sm font-display text-[15px] font-semibold tracking-[0.14em] uppercase whitespace-nowrap text-white"
               >
-                {link.label} &#8599;
+                <span className="btn-reveal" aria-hidden="true">
+                  <span>{link.label} &#8599;</span>
+                </span>
+                <span className="relative">{link.label} &#8599;</span>
               </a>
             ))}
           </div>
