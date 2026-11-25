@@ -375,7 +375,7 @@ function ProjectCard({
           {project.stack.map((s) => (
             <span
               key={s}
-              className="font-sans text-[14px] text-ink-400 border border-ink-800 px-2.5 py-1 rounded-sm"
+              className="font-sans text-[14px] text-ink-400 bg-ink-800 px-3 py-1 rounded-full"
             >
               {s}
             </span>
@@ -536,7 +536,7 @@ function ExperienceItem({ job, isFirst }: { job: (typeof EXPERIENCE)[number]; is
                 {role.stack.map((s) => (
                   <span
                     key={s}
-                    className="font-sans text-[14px] text-ink-400 border border-ink-800 px-2.5 py-1 rounded-sm"
+                    className="font-sans text-[14px] text-ink-400 bg-ink-800 px-3 py-1 rounded-full"
                   >
                     {s}
                   </span>
