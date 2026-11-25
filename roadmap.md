@@ -1,5 +1,7 @@
 # Roadmap
 
+- [x] Add a temporary live switcher for all 12 section-numbering styles and verify desktop and phone previews
+- [x] Match email, LinkedIn and phone icons in the hero and contact section to View Work's white
 - [x] Revert the Space Grotesk font swap and the capitals on labels (this turn)
 - [x] Restyle section headers as quiet index (small number, sentence case, full-width rule)
 - [x] Skill tiles: chamfered cut-corner boxes (option 2)

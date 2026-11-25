@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState, useEffect, useRef } from "react";
+import { NumberingPreview, SectionNumber } from "../components/numbering-preview";
 import {
   Menu,
   X,
@@ -226,7 +227,7 @@ function SocialIcon({ href, label, children, tooltip }: { href: string; label: s
       href={href}
       target={href.startsWith('mailto') || href.startsWith('tel') ? undefined : '_blank'}
       rel="noopener noreferrer"
-      className="group relative text-[#6a6a6a] hover:text-white transition-colors duration-300"
+      className="group relative text-ink-50 hover:text-ink-300 transition-colors duration-300"
       aria-label={label}
     >
       <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -318,10 +319,10 @@ function Hero() {
 
 // ─── Section Label ─────────────────────────────────────────────────────────
 
-function SectionLabel({ num, label }: { num: string; label: string }) {
+function SectionLabel({ section, label }: { section: number; label: string }) {
   return (
-    <div className="mb-14 flex items-baseline gap-4 border-b border-ink-800 pb-5">
-      <span className="font-sans text-[15px] font-light uppercase tracking-[0.16em] text-ink-400">{num}</span>
+    <div className="section-heading relative mb-14 flex items-baseline gap-4 border-b border-ink-800 pb-5">
+      <SectionNumber section={section} />
       <span className="relative inline-block text-[20px] font-semibold text-ink-100">
         {label}
         <span className="name-shine" aria-hidden="true">
@@ -401,7 +402,7 @@ function Work() {
   return (
     <section id="work" className="section-pad border-t border-ink-800">
       <div className="max-w-6xl mx-auto">
-        <SectionLabel num="I." label="Selected projects" />
+        <SectionLabel section={1} label="Selected projects" />
 
         <div className="max-w-4xl mx-auto">
           {PROJECTS.map((p, i) => (
@@ -433,7 +434,7 @@ function Skills() {
   return (
     <section id="skills" className="section-pad border-t border-ink-800">
       <div className="max-w-6xl mx-auto">
-        <SectionLabel num="II." label="Tech stack" />
+        <SectionLabel section={2} label="Tech stack" />
 
         <div
           ref={ref}
@@ -542,7 +543,7 @@ function Experience() {
   return (
     <section id="experience" className="section-pad border-t border-ink-800">
       <div className="max-w-6xl mx-auto">
-        <SectionLabel num="III." label="Experience" />
+        <SectionLabel section={3} label="Experience" />
 
         <div className="max-w-4xl mx-auto">
           {EXPERIENCE.map((job, i) => (
@@ -627,8 +628,7 @@ function ContactRow({
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
-        className="shrink-0"
-        style={{ color: "#6a6a6a" }}
+        className="shrink-0 text-ink-50"
       >
         {icon}
       </svg>
@@ -653,7 +653,7 @@ function Contact() {
       }}
     >
       <div ref={ref} className="reveal max-w-6xl mx-auto w-full">
-        <SectionLabel num="IV." label="Contact" />
+        <SectionLabel section={4} label="Contact" />
 
         <div
           className="flex flex-col md:flex-row md:items-center md:justify-center gap-10 md:gap-[56px]"
@@ -748,6 +748,7 @@ function Footer() {
 
 function Index() {
   return (
+    <NumberingPreview>
     <div className="min-h-screen">
       <div className="fog-layer" aria-hidden="true">
         <div className="fog-haze fog-haze-a" />
@@ -764,5 +765,6 @@ function Index() {
       </main>
       <Footer />
     </div>
+    </NumberingPreview>
   );
 }
