@@ -1,6 +1,7 @@
 # Roadmap
 
-- [x] Make the bottom contact hover highlight taller than the text and include its icon
+- [x] Replace the View Work arrow hover motion with something other than an up-and-down bounce
+- [x] Make the bottom contact hover highlight less ragged and sharp
 - [x] Animate the View Work arrow only while the button is hovered
 - [x] Add and verify left-to-right inverted hover highlights on bottom email, phone and LinkedIn links
 - [x] Match desktop and mobile menu fonts to the other portfolio links
