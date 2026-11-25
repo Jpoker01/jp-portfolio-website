@@ -276,8 +276,8 @@ function Hero() {
         }}
       />
 
-      <div className="relative z-10 max-w-5xl mx-auto text-center flex flex-col items-center">
-        <h1 className="name tracking-tight" style={{ lineHeight: 1.02 }}>
+      <div className="relative z-10 w-full max-w-6xl mx-auto flex flex-col items-center text-center lg:flex-row lg:items-center lg:justify-center lg:text-left lg:gap-14">
+        <h1 className="name tracking-tight shrink-0" style={{ lineHeight: 1.02 }}>
         <span className="first font-medium block text-[clamp(42px,11.5vw,64px)]">Jiří</span>
         <span className="surname font-extrabold block text-[clamp(52px,15vw,88px)]">
           Pokorný
@@ -290,15 +290,18 @@ function Hero() {
         </span>
       </h1>
 
-        <span className="mt-7 uppercase text-[13px] font-medium tracking-[0.18em] text-ink-400">
+        <span className="hidden lg:block self-stretch w-px bg-ink-800 my-4" aria-hidden="true" />
+
+        <div className="flex flex-col items-center lg:items-start">
+        <span className="mt-7 lg:mt-0 uppercase text-[13px] font-medium tracking-[0.18em] text-ink-400">
           AI Engineer &middot; Brno, CZ
         </span>
 
-        <p className="mt-6 font-light text-[18px] leading-relaxed text-ink-400 max-w-2xl">
+        <p className="mt-6 font-light text-[18px] leading-relaxed text-ink-400 max-w-2xl lg:max-w-sm">
           I build AI applications in Python, from raw data to a deployed product.
         </p>
 
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mt-9">
+        <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 sm:gap-6 mt-9 lg:mt-7">
           <Button
             onClick={() => scrollTo("work")}
             className="group flex items-center gap-2 px-4 py-2 rounded-sm font-display text-[15px] font-semibold text-white tracking-[0.14em] uppercase whitespace-nowrap cursor-pointer transition-colors duration-300 hover:text-ink-300"
@@ -323,6 +326,7 @@ function Hero() {
               <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
             </SocialIcon>
           </div>
+        </div>
         </div>
       </div>
 
