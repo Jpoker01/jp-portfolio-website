@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
+import { JpStylePreview } from "@/components/jp-style-preview";
 import {
   Menu,
   X,
@@ -189,13 +190,7 @@ function Nav() {
       }`}
     >
       <div className="px-6 md:px-10 lg:px-16 h-16 flex items-center justify-between">
-        <Button
-          onClick={() => scrollTo("home")}
-          aria-label="Back to top"
-          className="jp-mark min-h-11 flex items-center font-mono text-[16px] font-semibold text-ink-50 tracking-[0.24em]"
-        >
-          JP
-        </Button>
+        <JpStylePreview onBackToTop={() => scrollTo("home")} />
 
         <div className="hidden md:flex items-center gap-8">
           {NAV.map((n) => (

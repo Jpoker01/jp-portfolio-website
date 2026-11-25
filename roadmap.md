@@ -1,6 +1,7 @@
 # Roadmap
 
-- [ ] Suggest more options for the JP button; the soft circle was rejected
+- [x] Suggest more options for the JP button; the soft circle was rejected
+- [x] Add and verify a live JP switcher with 15 diverse treatments
 - [x] Give the Download Full CV and big GitHub buttons the same left-to-right wipe as the bottom contacts
 - [x] Dial the JP initials back down, 22px was too big
 - [x] Make the JP initials larger and more striking, growing on hover instead of a closing circle
