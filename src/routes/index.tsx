@@ -638,29 +638,41 @@ function CopyButton({ text }: { text: string }) {
 
 function ContactRow({
   icon,
+  label,
   copyText,
   children,
 }: {
   icon: React.ReactNode;
+  label: string;
   copyText?: string;
   children: React.ReactNode;
 }) {
+  const iconSvg = (className: string) => (
+    <svg
+      width="20"
+      height="20"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+    >
+      {icon}
+    </svg>
+  );
+
   return (
     <div className="flex items-center gap-3 min-w-0">
-      <svg
-        width="20"
-        height="20"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        className="shrink-0 text-ink-50"
-      >
-        {icon}
-      </svg>
-      {children}
+      <div className="contact-row relative flex items-center gap-3 min-w-0">
+        <span className="contact-highlight" aria-hidden="true">
+          {iconSvg("shrink-0")}
+          <span className="text-[17px]">{label}</span>
+        </span>
+        {iconSvg("shrink-0 text-ink-50")}
+        {children}
+      </div>
       {copyText && <CopyButton text={copyText} />}
     </div>
   );
@@ -705,10 +717,10 @@ function Contact() {
                 </>
               }
               copyText="jiripokorny455@gmail.com"
+              label="jiripokorny455@gmail.com"
             >
               <a
                 href="mailto:jiripokorny455@gmail.com"
-                data-highlight="jiripokorny455@gmail.com"
                 className="contact-link text-[17px] text-ink-300"
               >
                 jiripokorny455@gmail.com
@@ -720,10 +732,10 @@ function Contact() {
                 <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
               }
               copyText="+420603967651"
+              label="+420 603 967 651"
             >
               <a
                 href="tel:+420603967651"
-                data-highlight="+420 603 967 651"
                 className="contact-link text-[17px] text-ink-300"
               >
                 +420 603 967 651
@@ -738,12 +750,12 @@ function Contact() {
                   <circle cx="4" cy="4" r="2" />
                 </>
               }
+              label="LinkedIn ↗"
             >
               <a
                 href="https://www.linkedin.com/in/jpoker01/"
                 target="_blank"
                 rel="noopener noreferrer"
-                data-highlight="LinkedIn ↗"
                 className="contact-link text-[17px] text-ink-300"
               >
                 LinkedIn &#8599;

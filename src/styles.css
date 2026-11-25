@@ -240,22 +240,27 @@ button:focus-visible {
   overflow-wrap: anywhere;
   min-width: 0;
 }
-.contact-link::after {
-  content: attr(data-highlight);
+.contact-row { position: relative; }
+.contact-highlight {
   position: absolute;
-  inset: 0;
+  inset: -10px -10px;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 10px;
   color: var(--background);
   background: var(--color-ink-50);
   clip-path: inset(0 100% 0 0);
   transition: clip-path 450ms cubic-bezier(0.22, 1, 0.36, 1);
   pointer-events: none;
 }
-.contact-link:hover::after,
-.contact-link:focus-visible::after { clip-path: inset(0 0 0 0); }
+.contact-row:hover .contact-highlight,
+.contact-row:focus-within .contact-highlight { clip-path: inset(0 0 0 0); }
 
-.view-work-arrow { animation: work-arrow-down 2.4s ease-in-out infinite; }
+.view-work-arrow { animation: none; }
 .group:hover .view-work-arrow,
-.group:focus-visible .view-work-arrow { animation-duration: 1.2s; }
+.group:focus-visible .view-work-arrow { animation: work-arrow-down 1.2s ease-in-out infinite; }
 @keyframes work-arrow-down {
   0%, 100% { transform: translateY(-2px); }
   50% { transform: translateY(3px); }
