@@ -39,6 +39,8 @@
 - [x] Scroll label: reverted to its previous font and size
 - [x] Fix the phone and LinkedIn hover highlight wrapping onto two lines at phone width
 - [x] Make the email, phone and LinkedIn contact buttons slightly larger
+- [x] Menu links: grow in size on hover like the JP initials, remove the horizontal underline
+- [x] Bottom mail flap: user reports it does not open; browser test shows it opening, confirm
 - [ ] og-image.png (1200x630 site preview) still needs uploading to public/ by Jiří
 - [ ] Master's thesis thumbnail: replace the static image with a looping video (or slideshow) once verifyauthor.dev is refactored
 - [x] Snap scroll to Selected projects after a short scroll from the hero

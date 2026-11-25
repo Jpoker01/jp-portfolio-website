@@ -198,9 +198,8 @@ function Nav() {
               onClick={() => scrollTo(n.id)}
               className="group min-h-11 font-mono text-[14px] font-semibold tracking-[0.12em] uppercase text-ink-50 hover:text-ink-300 transition-colors duration-300"
             >
-              <span className="relative">
+              <span className="inline-block transition-transform duration-[340ms] ease-out group-hover:scale-[1.12]">
                 {n.label}
-                <span className="absolute -bottom-1 left-0 h-px w-0 bg-ink-400 transition-all duration-300 group-hover:w-full" />
               </span>
             </Button>
           ))}
@@ -227,9 +226,11 @@ function Nav() {
                 scrollTo(n.id);
                 setOpen(false);
               }}
-              className="block w-full text-left py-3 font-mono text-[20px] font-semibold tracking-[0.12em] uppercase text-ink-50 hover:text-ink-300 transition-colors duration-300"
+              className="group block w-full text-left py-3 font-mono text-[20px] font-semibold tracking-[0.12em] uppercase text-ink-50 hover:text-ink-300 transition-colors duration-300"
             >
-              {n.label}
+              <span className="inline-block transition-transform duration-[340ms] ease-out group-hover:scale-[1.12]">
+                {n.label}
+              </span>
             </Button>
           ))}
         </div>
