@@ -311,7 +311,7 @@ function Hero() {
 function SectionLabel({ label }: { label: string }) {
   return (
     <div className="section-heading relative mb-14 flex items-baseline gap-4 border-b border-ink-800 pb-5">
-      <span className="relative inline-block font-heading text-[26px] md:text-[30px] font-semibold text-ink-50">
+      <span className="relative inline-block font-heading text-[23px] md:text-[26px] font-semibold text-ink-50">
         {label}
       </span>
     </div>
@@ -339,7 +339,7 @@ function ProjectCard({
         <p className="font-sans text-[15px] font-medium tracking-normal text-ink-400 mb-4">
           {project.tag}
         </p>
-        <h3 className="text-[21px] md:text-[23px] lg:text-[23px] font-bold text-white tracking-tight leading-[1.1] mb-6">
+        <h3 className="text-[19px] md:text-[21px] lg:text-[21px] font-bold text-white tracking-tight leading-[1.1] mb-6">
           {project.title}
         </h3>
         <p className="text-[17px] text-ink-400 leading-relaxed font-light max-w-xl">
@@ -489,7 +489,7 @@ function ExperienceItem({ job, isFirst }: { job: (typeof EXPERIENCE)[number]; is
           type scale and mono label of ProjectCard. No overall date; the dates
           live on each focus area below. */}
       <div className="mb-12">
-        <h3 className="text-[21px] md:text-[23px] lg:text-[23px] font-bold text-white tracking-tight leading-[1.1]">
+        <h3 className="text-[19px] md:text-[21px] lg:text-[21px] font-bold text-white tracking-tight leading-[1.1]">
           {job.role}
         </h3>
         <p className="mt-4 font-sans text-[15px] font-medium tracking-normal text-ink-400">
@@ -521,7 +521,7 @@ function ExperienceItem({ job, isFirst }: { job: (typeof EXPERIENCE)[number]; is
                 />
               )}
               <div className="lg:col-span-7">
-                <h4 className="text-[19px] lg:text-[20px] font-semibold text-white tracking-tight leading-[1.2]">
+                <h4 className="text-[17px] lg:text-[18px] font-semibold text-white tracking-tight leading-[1.2]">
                   {role.title}
                 </h4>
                 <p className="mt-2 font-sans text-[14px] text-ink-500 tracking-normal">
