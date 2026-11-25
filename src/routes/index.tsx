@@ -368,7 +368,7 @@ function ProjectCard({
         )}
         <div className="flex flex-wrap gap-x-3 gap-y-3">
           {project.stack.map((s) => (
-            <span key={s} className="tag-mark font-sans text-[13px] text-ink-400">
+            <span key={s} className="tag-mark font-mono text-[12px] uppercase tracking-[0.08em]">
               {s}
             </span>
           ))}
@@ -525,7 +525,7 @@ function ExperienceItem({ job, isFirst }: { job: (typeof EXPERIENCE)[number]; is
               </div>
               <div className="lg:col-span-5 flex flex-wrap content-start gap-x-3 gap-y-3 lg:pt-1">
                 {role.stack.map((s) => (
-                  <span key={s} className="tag-mark font-sans text-[13px] text-ink-400">
+                  <span key={s} className="tag-mark font-mono text-[12px] uppercase tracking-[0.08em]">
                     {s}
                   </span>
                 ))}
@@ -659,8 +659,11 @@ function Contact() {
           className="flex flex-col md:flex-row md:items-center md:justify-center gap-10 md:gap-[56px]"
           style={{ width: "fit-content", marginLeft: "auto", marginRight: "auto" }}
         >
-          <h2 className="text-[35px] font-extrabold text-white leading-[1.1] md:text-right">
+          <h2 className="relative inline-block text-[35px] font-extrabold text-white leading-[1.1] md:text-right">
             Let's work together.
+            <span className="name-shine" aria-hidden="true">
+              Let's work together.
+            </span>
           </h2>
 
           <div
@@ -680,7 +683,8 @@ function Contact() {
             >
               <a
                 href="mailto:jiripokorny455@gmail.com"
-                className="px-2 py-1 rounded-sm text-[16px] text-[#d0d0d0] transition-colors duration-300 hover:bg-white hover:text-black"
+                className="text-[16px] hover:text-white transition-colors duration-300"
+                style={{ color: "#d0d0d0" }}
               >
                 jiripokorny455@gmail.com
               </a>
@@ -694,7 +698,8 @@ function Contact() {
             >
               <a
                 href="tel:+420603967651"
-                className="px-2 py-1 rounded-sm text-[18px] text-[#d0d0d0] transition-colors duration-300 hover:bg-white hover:text-black"
+                className="text-[18px] hover:text-white transition-colors duration-300"
+                style={{ color: "#d0d0d0" }}
               >
                 +420 603 967 651
               </a>

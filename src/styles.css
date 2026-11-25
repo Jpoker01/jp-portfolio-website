@@ -144,37 +144,16 @@ body {
 .delay-400 { animation-delay: 400ms; }
 .delay-500 { animation-delay: 500ms; }
 
-/* Skill tags: rectangular box with two diagonally cut corners.
-   ::before is the 1px border, ::after is the fill inset by 1px. */
+/* Skill tags: solid light box, dark mono text, sharp corners. */
 .tag-mark {
-  position: relative;
   display: inline-flex;
   align-items: center;
-  padding: 7px 13px;
-  isolation: isolate;
-}
-
-.tag-mark::before,
-.tag-mark::after {
-  content: "";
-  position: absolute;
+  padding: 6px 12px;
+  background: #e6e6e6;
+  color: #0a0a0a;
   transition: background-color 0.3s ease;
 }
 
-.tag-mark::before {
-  inset: 0;
-  z-index: -2;
-  background: var(--color-ink-700);
-  clip-path: polygon(8px 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%, 0 8px);
-}
-
-.tag-mark::after {
-  inset: 1px;
-  z-index: -1;
-  background: #000;
-  clip-path: polygon(7px 0, 100% 0, 100% calc(100% - 7px), calc(100% - 7px) 100%, 0 100%, 0 7px);
-}
-
-.tag-mark:hover::before {
-  background: var(--color-ink-500);
+.tag-mark:hover {
+  background: #ffffff;
 }
