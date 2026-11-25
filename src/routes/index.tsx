@@ -240,13 +240,13 @@ function Nav() {
 
 // ─── Hero ──────────────────────────────────────────────────────────────────
 
-function SocialIcon({ href, label, children, tooltip }: { href: string; label: string; children: React.ReactNode; tooltip?: string }) {
+function SocialIcon({ href, label, children, tooltip, className }: { href: string; label: string; children: React.ReactNode; tooltip?: string; className?: string }) {
   return (
     <a
       href={href}
       target={href.startsWith('mailto') || href.startsWith('tel') ? undefined : '_blank'}
       rel="noopener noreferrer"
-      className="group relative inline-flex min-w-9 min-h-11 items-center justify-center text-ink-50 hover:text-ink-300 transition-colors duration-300"
+      className={`social-icon group relative inline-flex min-w-9 min-h-11 items-center justify-center text-ink-50 hover:text-ink-300 transition-colors duration-300 ${className ?? ''}`}
       aria-label={label}
     >
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -335,19 +335,20 @@ function Hero() {
           </Button>
           <span className="hidden sm:block w-12 h-px bg-ink-700" />
           <div className="flex items-center gap-1 sm:gap-2">
-            <SocialIcon href="mailto:jiripokorny455@gmail.com" label="Email">
+            <SocialIcon href="mailto:jiripokorny455@gmail.com" label="Email" className="social-mail">
               <rect x="2" y="4" width="20" height="16" rx="2" />
-              <path d="M22 7l-10 7L2 7" />
+              <path className="mail-flap" d="M22 7l-10 7L2 7" />
             </SocialIcon>
             <SocialIcon
               href="https://www.linkedin.com/in/jpoker01/"
               label="LinkedIn"
+              className="social-linkedin"
             >
               <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z" />
               <rect x="2" y="9" width="4" height="12" />
               <circle cx="4" cy="4" r="2" />
             </SocialIcon>
-            <SocialIcon href="tel:+420603967651" label="Phone" tooltip="+420 603 967 651">
+            <SocialIcon href="tel:+420603967651" label="Phone" tooltip="+420 603 967 651" className="social-phone">
               <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
             </SocialIcon>
           </div>
