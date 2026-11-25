@@ -1,5 +1,8 @@
 # Roadmap
 
+- [x] JP mark: implement the inverted discs and terminal cursor treatments from the uploaded reference
+- [x] Rebuild the JP switcher around option 14's staggered look plus circular forms, then fix any weak options
+
 - [x] Suggest more options for the JP button; the soft circle was rejected
 - [x] Add and verify a live JP switcher with 15 diverse treatments
 - [x] Give the Download Full CV and big GitHub buttons the same left-to-right wipe as the bottom contacts
