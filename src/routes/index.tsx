@@ -681,8 +681,8 @@ function ContactRow({
 }) {
   const iconSvg = (className: string) => (
     <svg
-      width="20"
-      height="20"
+      width="22"
+      height="22"
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
@@ -700,7 +700,7 @@ function ContactRow({
       <div className="contact-row relative flex items-center gap-3 min-w-0">
         <span className="contact-highlight" aria-hidden="true">
           {iconSvg("shrink-0")}
-          <span className="text-[17px]">{label}</span>
+          <span className="text-[18px]">{label}</span>
         </span>
         {iconSvg("shrink-0 text-ink-50")}
         {children}
@@ -753,7 +753,7 @@ function Contact() {
             >
               <a
                 href="mailto:jiripokorny455@gmail.com"
-                className="contact-link text-[17px] text-ink-300"
+                className="contact-link text-[18px] text-ink-300"
               >
                 jiripokorny455@gmail.com
               </a>
@@ -768,7 +768,7 @@ function Contact() {
             >
               <a
                 href="tel:+420603967651"
-                className="contact-link text-[17px] text-ink-300"
+                className="contact-link text-[18px] text-ink-300"
               >
                 +420 603 967 651
               </a>
@@ -788,7 +788,7 @@ function Contact() {
                 href="https://www.linkedin.com/in/jpoker01/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="contact-link text-[17px] text-ink-300"
+                className="contact-link text-[18px] text-ink-300"
               >
                 LinkedIn &#8599;
               </a>

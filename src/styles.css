@@ -349,7 +349,11 @@ button:focus-visible {
 .contact-highlight {
   --hl-w: 0;
   position: absolute;
-  inset: -10px -10px;
+  top: -10px;
+  bottom: -10px;
+  left: -12px;
+  width: max-content;
+  max-width: calc(100vw - 24px);
   z-index: 1;
   display: flex;
   align-items: center;
