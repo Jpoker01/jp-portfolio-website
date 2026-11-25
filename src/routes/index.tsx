@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
-import { JpStylePreview } from "@/components/jp-style-preview";
+import { JpMark } from "@/components/jp-mark";
 import {
   Menu,
   X,
@@ -189,7 +189,7 @@ function Nav() {
       }`}
     >
       <div className="px-6 md:px-10 lg:px-16 h-16 flex items-center justify-between">
-        <JpStylePreview onBackToTop={() => scrollTo("home")} />
+        <JpMark onBackToTop={() => scrollTo("home")} />
 
         <div className="hidden md:flex items-center gap-8">
           {NAV.map((n) => (
@@ -788,8 +788,7 @@ function Contact() {
             <ContactRow
               icon={
                 <>
-                  <rect className="mail-letter" x="5.5" y="5" width="13" height="10" rx="1" />
-                  <rect className="mail-body" x="2" y="4" width="20" height="16" rx="2" />
+                  <rect x="2" y="4" width="20" height="16" rx="2" />
                   <path className="mail-flap" d="M2 4.5L12 11.5L22 4.5" />
                 </>
               }

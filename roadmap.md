@@ -52,3 +52,5 @@
 - [x] Mail icon: the open flap's tip is clipped by the icon edge
 - [x] Bottom mail icon: flap folds up and a letter slides out on hover
 - [x] Tech Stack squares: liquid glass tiles
+- [x] Lock the JP initials to the current style and remove the style switcher
+- [x] Bottom mail icon opens exactly like the hero one did

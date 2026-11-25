@@ -12,4 +12,4 @@
 - Section headers carry no numbering, prefix or index marker: just the glowing
   sentence-case title above the full-width hairline rule.
 - Use the shared unstyled Button for portfolio commands so touch targets and accessible states can be refined without changing link typography.
-- Keep temporary JP treatments and their in-memory selection in the dedicated preview component, so comparing header marks never changes portfolio content or requires stored visitor data.
+- The JP header mark lives in `src/components/jp-mark.tsx` with one fixed treatment constant, so the mark looks the same for every visitor.
