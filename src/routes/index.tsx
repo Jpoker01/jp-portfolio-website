@@ -179,7 +179,7 @@ function Nav() {
             <button
               key={n.id}
               onClick={() => scrollTo(n.id)}
-              className="cursor-pointer font-display text-[13px] font-semibold text-ink-400 hover:text-white transition-colors duration-300 tracking-[0.2em] uppercase"
+              className="cursor-pointer text-[13px] font-semibold text-ink-400 hover:text-white transition-colors duration-300 tracking-[0.2em] uppercase"
             >
               {n.label}
             </button>
@@ -203,7 +203,7 @@ function Nav() {
                 scrollTo(n.id);
                 setOpen(false);
               }}
-              className="cursor-pointer font-display block w-full text-left py-3 text-[15px] font-semibold text-ink-400 hover:text-white tracking-[0.2em] uppercase"
+              className="cursor-pointer block w-full text-left py-3 text-[15px] font-semibold text-ink-400 hover:text-white tracking-[0.2em] uppercase"
             >
               {n.label}
             </button>
@@ -252,7 +252,7 @@ function Hero() {
       />
 
       <div className="relative z-10 max-w-5xl mx-auto text-center flex flex-col items-center">
-        <h1 className="name font-display tracking-tight animate-fade-up" style={{ lineHeight: 1.02 }}>
+        <h1 className="name tracking-tight animate-fade-up" style={{ lineHeight: 1.02 }}>
         <span className="first font-medium block text-[clamp(48px,13vw,72px)]">Jiří</span>
         <span className="surname font-extrabold block text-[clamp(60px,17.5vw,102px)]">
           Pokorný
@@ -265,7 +265,7 @@ function Hero() {
         </span>
       </h1>
 
-        <span className="mt-6 font-display uppercase text-[14px] font-semibold tracking-[0.24em] text-ink-500 animate-fade-in">
+        <span className="mt-6 uppercase text-[14px] font-semibold tracking-[0.24em] text-ink-500 animate-fade-in">
           AI Engineer&ensp;&middot;&ensp;Brno, CZ
         </span>
 
@@ -276,7 +276,7 @@ function Hero() {
         <div className="flex items-center justify-center gap-6 mt-10 animate-fade-up delay-300">
           <button
             onClick={() => scrollTo("work")}
-            className="group font-display flex items-center gap-2 text-[13px] font-semibold text-white tracking-[0.2em] uppercase cursor-pointer"
+            className="group flex items-center gap-2 text-[13px] font-semibold text-white tracking-[0.2em] uppercase cursor-pointer"
           >
             View Work
             <ArrowUpRight className="w-[18px] h-[18px] transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -303,7 +303,7 @@ function Hero() {
       </div>
 
       <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex items-center gap-3">
-        <span className="font-display text-[11px] font-bold uppercase tracking-[0.17em] text-ink-500">
+        <span className="text-[11px] font-bold uppercase tracking-[0.17em] text-ink-500">
           Scroll
         </span>
         <span className="w-6 h-px bg-ink-600" />
@@ -319,7 +319,7 @@ function SectionLabel({ num, label }: { num: string; label: string }) {
     <div className="flex items-center gap-5 mb-14">
       <span className="font-mono text-[16px] text-ink-500">{num}</span>
       <span className="w-10 h-px bg-ink-600" />
-      <span className="font-display relative inline-block text-[15px] font-semibold tracking-[0.18em] uppercase text-ink-200">
+      <span className="relative inline-block text-[15px] font-semibold tracking-[0.18em] uppercase text-ink-200">
         {label}
         <span className="name-shine" aria-hidden="true">
           {label}
@@ -349,13 +349,13 @@ function ProjectCard({
       } pb-16`}
     >
       <div className="lg:col-span-7">
-        <span className="block font-sans text-[13px] text-ink-600 tracking-[0.04em] mb-5">
+        <span className="block font-sans text-[13px] text-ink-600 tracking-normal mb-5">
           {String(index + 1).padStart(2, "0")} / {String(PROJECTS.length).padStart(2, "0")}
         </span>
-        <p className="font-sans text-[14px] font-medium uppercase tracking-[0.06em] text-ink-400 mb-4">
+        <p className="font-sans text-[15px] font-medium tracking-normal text-ink-400 mb-4">
           {project.tag}
         </p>
-        <h3 className="font-display text-3xl md:text-4xl lg:text-[35px] font-bold text-white tracking-tight leading-[1.1] mb-6">
+        <h3 className="text-3xl md:text-4xl lg:text-[35px] font-bold text-white tracking-tight leading-[1.1] mb-6">
           {project.title}
         </h3>
         <p className="text-[17px] text-ink-400 leading-relaxed font-light max-w-xl">
@@ -387,7 +387,7 @@ function ProjectCard({
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-display text-[13px] font-semibold tracking-[0.2em] uppercase text-white hover:text-ink-300 transition-colors duration-300"
+                className="text-[13px] font-semibold tracking-[0.2em] uppercase text-white hover:text-ink-300 transition-colors duration-300"
               >
                 {link.label} &#8599;
               </a>
@@ -416,7 +416,7 @@ function Work() {
             href="https://github.com/Jpoker01"
             target="_blank"
             rel="noopener noreferrer"
-            className="group font-display relative inline-flex items-center gap-3 px-8 py-4 text-[13px] font-semibold tracking-[0.2em] uppercase text-white border border-ink-700 rounded-sm overflow-hidden transition-all duration-400 hover:border-ink-500 hover:shadow-[0_0_30px_rgba(255,255,255,0.04)]"
+            className="group relative inline-flex items-center gap-3 px-8 py-4 text-[13px] font-semibold tracking-[0.2em] uppercase text-white border border-ink-700 rounded-sm overflow-hidden transition-all duration-400 hover:border-ink-500 hover:shadow-[0_0_30px_rgba(255,255,255,0.04)]"
           >
             <span className="absolute inset-0 bg-white/0 group-hover:bg-white/[0.03] transition-colors duration-400" />
             <Github className="relative w-[20px] h-[20px]" />
@@ -452,7 +452,7 @@ function Skills() {
                   className="w-[22px] h-[22px] text-ink-500 group-hover/cell:text-ink-300 transition-colors duration-300"
                   strokeWidth={1.5}
                 />
-                <h3 className="font-display text-[14px] font-semibold uppercase tracking-[0.16em] text-white">
+                <h3 className="text-[14px] font-semibold uppercase tracking-[0.16em] text-white">
                   {group.label}
                 </h3>
               </div>
@@ -487,10 +487,10 @@ function ExperienceItem({ job, isFirst }: { job: (typeof EXPERIENCE)[number]; is
           type scale and mono label of ProjectCard. No overall date; the dates
           live on each focus area below. */}
       <div className="mb-12">
-        <h3 className="font-display text-3xl md:text-4xl lg:text-[35px] font-bold text-white tracking-tight leading-[1.1]">
+        <h3 className="text-3xl md:text-4xl lg:text-[35px] font-bold text-white tracking-tight leading-[1.1]">
           {job.role}
         </h3>
-        <p className="mt-4 font-sans text-[14px] font-medium uppercase tracking-[0.06em] text-ink-400">
+        <p className="mt-4 font-sans text-[15px] font-medium tracking-normal text-ink-400">
           {job.company} · {job.location}
         </p>
       </div>
@@ -519,10 +519,10 @@ function ExperienceItem({ job, isFirst }: { job: (typeof EXPERIENCE)[number]; is
                 />
               )}
               <div className="lg:col-span-7">
-                <h4 className="font-display text-[21px] lg:text-[23px] font-semibold text-white tracking-tight leading-[1.2]">
+                <h4 className="text-[21px] lg:text-[23px] font-semibold text-white tracking-tight leading-[1.2]">
                   {role.title}
                 </h4>
-                <p className="mt-2 font-sans text-[13px] uppercase tracking-[0.06em] text-ink-500">
+                <p className="mt-2 font-sans text-[14px] text-ink-500 tracking-normal">
                   {role.period}
                 </p>
                 <p className="mt-4 text-[16px] text-ink-400 font-light leading-relaxed max-w-xl">
@@ -561,7 +561,7 @@ function Experience() {
             href="/CV_Jiri_Pokorny_EN.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="group font-display relative inline-flex items-center gap-3 px-8 py-4 text-[13px] font-semibold tracking-[0.2em] uppercase text-white border border-ink-700 rounded-sm overflow-hidden transition-all duration-400 hover:border-ink-500 hover:shadow-[0_0_30px_rgba(255,255,255,0.04)]"
+            className="group relative inline-flex items-center gap-3 px-8 py-4 text-[13px] font-semibold tracking-[0.2em] uppercase text-white border border-ink-700 rounded-sm overflow-hidden transition-all duration-400 hover:border-ink-500 hover:shadow-[0_0_30px_rgba(255,255,255,0.04)]"
           >
             <span className="absolute inset-0 bg-white/0 group-hover:bg-white/[0.03] transition-colors duration-400" />
             <FileText className="relative w-[20px] h-[20px]" />
@@ -666,7 +666,7 @@ function Contact() {
           className="flex flex-col md:flex-row md:items-center md:justify-center gap-10 md:gap-[56px]"
           style={{ width: "fit-content", marginLeft: "auto", marginRight: "auto" }}
         >
-          <h2 className="font-display text-[35px] font-extrabold text-white leading-[1.1] md:text-right">
+          <h2 className="text-[35px] font-extrabold text-white leading-[1.1] md:text-right">
             Let's work together.
           </h2>
 
