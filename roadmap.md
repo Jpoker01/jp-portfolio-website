@@ -1,5 +1,8 @@
 # Roadmap
 
+- [x] Remove the scroll snap to Selected projects
+- [x] Decrease the project names and the Associate Developer heading further
+
 - [x] Make the section headers a slightly bigger version of the menu items, keeping the extended wording
 - [x] Make the "Let's work together." heading smaller
 

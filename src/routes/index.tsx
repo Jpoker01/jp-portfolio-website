@@ -263,67 +263,6 @@ function SocialIcon({ href, label, children, tooltip, className }: { href: strin
 }
 
 function Hero() {
-  // Gently snap to Selected projects once the visitor scrolls a short way
-  // down from the hero with their own wheel, touch or keyboard. A snap is
-  // issued once and never re-issued, and it only ever follows real visitor
-  // input, so clicking a menu link or pressing the JP mark can never be
-  // hijacked into it. Wheeling up cancels a pending snap. Re-arms at the top.
-  useEffect(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-
-    let snapped = false;
-    let lastY = window.scrollY;
-    let timer: number | undefined;
-    let visitorScrolled = false;
-
-    const onScroll = () => {
-      const y = window.scrollY;
-      const movingDown = y > lastY;
-      lastY = y;
-      if (y < 8) {
-        snapped = false;
-        return;
-      }
-      if (snapped || !movingDown || !visitorScrolled) return;
-      if (y < window.innerHeight * 0.22 || y > window.innerHeight * 0.9) return;
-      snapped = true;
-      visitorScrolled = false;
-      window.clearTimeout(timer);
-      timer = window.setTimeout(() => scrollTo("work"), 120);
-    };
-
-    const onWheel = (e: WheelEvent) => {
-      if (e.deltaY < 0) {
-        window.clearTimeout(timer);
-        return;
-      }
-      visitorScrolled = true;
-    };
-
-    const onTouchStart = () => {
-      visitorScrolled = true;
-    };
-
-    // Only keys that scroll the page: these never activate a focused control,
-    // so pressing Enter on a menu link cannot arm the snap.
-    const SCROLL_KEYS = ["ArrowDown", "PageDown", "End"];
-    const onKeyDown = (e: KeyboardEvent) => {
-      if (SCROLL_KEYS.includes(e.key)) visitorScrolled = true;
-    };
-
-    window.addEventListener("scroll", onScroll, { passive: true });
-    window.addEventListener("wheel", onWheel, { passive: true });
-    window.addEventListener("touchstart", onTouchStart, { passive: true });
-    window.addEventListener("keydown", onKeyDown);
-    return () => {
-      window.removeEventListener("scroll", onScroll);
-      window.removeEventListener("wheel", onWheel);
-      window.removeEventListener("touchstart", onTouchStart);
-      window.removeEventListener("keydown", onKeyDown);
-      window.clearTimeout(timer);
-    };
-  }, []);
-
   return (
     <section
       id="home"
@@ -433,7 +372,7 @@ function ProjectCard({
         <p className="font-sans text-[15px] font-medium tracking-normal text-ink-400 mb-4">
           {project.tag}
         </p>
-        <h3 className="text-[25px] md:text-[28px] lg:text-[28px] font-bold text-white tracking-tight leading-[1.1] mb-6">
+        <h3 className="text-[21px] md:text-[23px] lg:text-[23px] font-bold text-white tracking-tight leading-[1.1] mb-6">
           {project.title}
         </h3>
         <p className="text-[17px] text-ink-400 leading-relaxed font-light max-w-xl">
@@ -583,7 +522,7 @@ function ExperienceItem({ job, isFirst }: { job: (typeof EXPERIENCE)[number]; is
           type scale and mono label of ProjectCard. No overall date; the dates
           live on each focus area below. */}
       <div className="mb-12">
-        <h3 className="text-[25px] md:text-[28px] lg:text-[28px] font-bold text-white tracking-tight leading-[1.1]">
+        <h3 className="text-[21px] md:text-[23px] lg:text-[23px] font-bold text-white tracking-tight leading-[1.1]">
           {job.role}
         </h3>
         <p className="mt-4 font-sans text-[15px] font-medium tracking-normal text-ink-400">
