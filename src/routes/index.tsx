@@ -197,7 +197,7 @@ function Nav() {
             <Button
               key={n.id}
               onClick={() => scrollTo(n.id)}
-              className="nav-link group min-h-11 font-nav text-[18px] font-normal tracking-[0.14em] uppercase text-ink-50 hover:text-ink-300 transition-colors duration-300"
+              className="nav-link group min-h-11 font-mono text-[14px] font-semibold tracking-[0.12em] uppercase text-ink-50 hover:text-ink-300 transition-colors duration-300"
             >
               <span className="relative">
                 {n.label}
@@ -228,7 +228,7 @@ function Nav() {
                 scrollTo(n.id);
                 setOpen(false);
               }}
-              className="nav-link block w-full text-left py-3 font-nav text-[24px] font-normal tracking-[0.14em] uppercase text-ink-50 hover:text-ink-300 transition-colors duration-300"
+              className="nav-link block w-full text-left py-3 font-mono text-[20px] font-semibold tracking-[0.12em] uppercase text-ink-50 hover:text-ink-300 transition-colors duration-300"
             >
               {n.label}
             </Button>
