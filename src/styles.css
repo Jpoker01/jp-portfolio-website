@@ -9,8 +9,6 @@
   --font-mono: "JetBrains Mono", "Fira Code", monospace;
   --font-display: "DM Sans", "Inter", system-ui, sans-serif;
   --font-nav: "Bebas Neue", "Inter", system-ui, sans-serif;
-  --font-number-serif: "Cormorant Garamond", Georgia, serif;
-  --font-number-word: "Fraunces", Georgia, serif;
 
   --color-ink-50: #ffffff;
   --color-ink-100: #f5f5f5;
@@ -224,34 +222,4 @@ button:focus-visible {
   border-radius: 2px;
 }
 
-/* Temporary numbering comparisons, isolated from the portfolio's typography. */
-.section-number {
-  flex-shrink: 0;
-  color: var(--color-ink-400);
-  font-family: var(--font-sans);
-  font-size: 15px;
-  font-weight: 300;
-  letter-spacing: 0.16em;
-}
-.section-number[data-numbering-style="2"] { font-family: var(--font-mono); font-size: 13px; font-weight: 400; letter-spacing: 0.08em; }
-.section-number[data-numbering-style="3"] { font-family: var(--font-number-serif); font-size: 30px; letter-spacing: 0.02em; }
-.section-number[data-numbering-style="4"] { font-family: var(--font-mono); font-size: 13px; font-weight: 500; letter-spacing: 0.14em; color: var(--color-ink-500); }
-.section-number[data-numbering-style="5"] { letter-spacing: 0.5em; }
-.section-number[data-numbering-style="6"] { font-size: 16px; letter-spacing: 0.08em; }
-.section-number[data-numbering-style="8"] { font-family: var(--font-mono); font-size: 11px; font-weight: 400; letter-spacing: 0.12em; border: 1px solid var(--color-ink-700); padding: 3px 8px; }
-.section-heading:has([data-numbering-style="9"]) { align-items: flex-start; }
-.section-number[data-numbering-style="9"] { font-size: 11px; font-weight: 400; letter-spacing: 0.18em; color: var(--color-ink-500); transform: translateY(3px); }
-.section-number[data-numbering-style="10"] { position: absolute; right: 0; bottom: 20px; font-family: var(--font-mono); font-size: 11px; font-weight: 400; color: var(--color-ink-500); }
-.section-number[data-numbering-style="11"] { font-family: var(--font-number-word); font-style: italic; letter-spacing: 0.04em; }
-.section-number[data-numbering-style="12"] { font-family: var(--font-nav); font-size: 20px; font-weight: 400; letter-spacing: 0.18em; line-height: 1; transform: translateY(2px); }
-.section-number[data-numbering-style="13"] { font-family: var(--font-mono); font-size: 12px; font-weight: 400; letter-spacing: 0.1em; color: var(--color-ink-500); }
-.section-number[data-numbering-style="14"] { font-family: var(--font-number-serif); font-size: 20px; }
-.section-number[data-numbering-style="15"] { font-size: 16px; font-weight: 200; letter-spacing: 0.3em; color: var(--color-ink-500); }
-.section-number[data-numbering-style="16"] { font-family: var(--font-mono); font-size: 11px; font-weight: 400; letter-spacing: 0.1em; color: var(--color-ink-500); }
-.section-number[data-numbering-style="17"] { font-family: var(--font-number-serif); font-style: italic; font-size: 20px; letter-spacing: 0.04em; }
-.section-number[data-numbering-style="18"] { font-size: 30px; font-weight: 700; line-height: 1; color: transparent; -webkit-text-stroke: 1px var(--color-ink-500); }
-.section-number[data-numbering-style="19"] { font-size: 18px; font-weight: 300; }
-.section-number[data-numbering-style="20"] { font-family: var(--font-mono); font-size: 12px; font-weight: 400; color: var(--color-ink-500); }
-.section-number[data-numbering-style="21"] { font-size: 13px; border-left: 1px solid var(--color-ink-600); padding-left: 10px; }
-.section-number[data-numbering-style="22"] { font-size: 12px; font-variant: small-caps; text-transform: lowercase; letter-spacing: 0.14em; }
 #work, #skills, #experience, #contact { scroll-margin-top: 80px; }

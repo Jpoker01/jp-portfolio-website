@@ -9,5 +9,5 @@
   `max-w-4xl` inner) so headings, padding, dividers and tag chips stay identical.
 - Content changes must not alter visuals: fonts, colours, animations and spacing are
   fixed by the owner. Verify with a desktop and a phone-width screenshot before reporting.
-- Section numbering previews use a shared React context in `src/components/numbering-preview.tsx`; keep selections in memory only so previews never become a saved portfolio choice.
-- New preview controls use `src/components/ui/button.tsx` and semantic ink tokens to keep their interaction styling consistent.
+- Section headers carry no numbering, prefix or index marker: just the glowing
+  sentence-case title above the full-width hairline rule.

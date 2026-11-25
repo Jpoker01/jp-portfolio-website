@@ -1,5 +1,6 @@
 # Roadmap
 
+- [x] Remove section numbering from all four section headers and drop the numbering preview switcher
 - [x] Add a temporary live switcher for all 12 section-numbering styles and verify desktop and phone previews
 - [x] Match email, LinkedIn and phone icons in the hero and contact section to View Work's white
 - [x] Revert the Space Grotesk font swap and the capitals on labels (this turn)

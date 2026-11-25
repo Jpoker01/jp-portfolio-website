@@ -1,6 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState, useEffect, useRef } from "react";
-import { NumberingPreview, SectionNumber } from "../components/numbering-preview";
 import {
   Menu,
   X,
@@ -319,10 +318,9 @@ function Hero() {
 
 // ─── Section Label ─────────────────────────────────────────────────────────
 
-function SectionLabel({ section, label }: { section: number; label: string }) {
+function SectionLabel({ label }: { label: string }) {
   return (
     <div className="section-heading relative mb-14 flex items-baseline gap-4 border-b border-ink-800 pb-5">
-      <SectionNumber section={section} />
       <span className="relative inline-block text-[20px] font-semibold text-ink-100">
         {label}
         <span className="name-shine" aria-hidden="true">
@@ -402,7 +400,7 @@ function Work() {
   return (
     <section id="work" className="section-pad border-t border-ink-800">
       <div className="max-w-6xl mx-auto">
-        <SectionLabel section={1} label="Selected projects" />
+        <SectionLabel label="Selected projects" />
 
         <div className="max-w-4xl mx-auto">
           {PROJECTS.map((p, i) => (
@@ -434,7 +432,7 @@ function Skills() {
   return (
     <section id="skills" className="section-pad border-t border-ink-800">
       <div className="max-w-6xl mx-auto">
-        <SectionLabel section={2} label="Tech stack" />
+        <SectionLabel label="Tech stack" />
 
         <div
           ref={ref}
@@ -543,7 +541,7 @@ function Experience() {
   return (
     <section id="experience" className="section-pad border-t border-ink-800">
       <div className="max-w-6xl mx-auto">
-        <SectionLabel section={3} label="Experience" />
+        <SectionLabel label="Experience" />
 
         <div className="max-w-4xl mx-auto">
           {EXPERIENCE.map((job, i) => (
@@ -653,7 +651,7 @@ function Contact() {
       }}
     >
       <div ref={ref} className="reveal max-w-6xl mx-auto w-full">
-        <SectionLabel section={4} label="Contact" />
+        <SectionLabel label="Contact" />
 
         <div
           className="flex flex-col md:flex-row md:items-center md:justify-center gap-10 md:gap-[56px]"
@@ -748,7 +746,6 @@ function Footer() {
 
 function Index() {
   return (
-    <NumberingPreview>
     <div className="min-h-screen">
       <div className="fog-layer" aria-hidden="true">
         <div className="fog-haze fog-haze-a" />
@@ -765,6 +762,5 @@ function Index() {
       </main>
       <Footer />
     </div>
-    </NumberingPreview>
   );
 }
