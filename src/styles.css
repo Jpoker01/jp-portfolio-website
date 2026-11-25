@@ -265,6 +265,12 @@ button:focus-visible {
 .jp-mark:hover .jp-treatment-offset .jp-letter-p,
 .jp-mark:focus-visible .jp-treatment-offset .jp-letter-p { transform: translateY(-4px); }
 
+/* Phone: the mark is the site's signature, so it carries more presence here. */
+@media (max-width: 767px) {
+  .jp-mark { width: 58px; height: 58px; margin-left: -14px; }
+  .jp-treatment { width: 58px; height: 58px; font-size: 26px; letter-spacing: 0.02em; }
+}
+
 
 .skill-grid { gap: 14px; }
 /* Transparent tiles: only a hairline edge, the page background and ambient glow show through. */

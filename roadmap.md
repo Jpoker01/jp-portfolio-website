@@ -77,3 +77,4 @@
 - [x] Fix scroll snap: scrolling down past the projects section snaps back up
 - [x] JP initials: on hover the J drops and the P lifts
 - [x] Bring the sizing down another step: section subtitles and their item titles
+- [x] Make the JP initials bigger and more prominent on phone
