@@ -450,12 +450,9 @@ function Skills() {
                   {group.label}
                 </h3>
               </div>
-              <div className="flex flex-wrap gap-x-4 gap-y-2">
+              <div className="flex flex-wrap gap-2">
                 {group.items.map((item) => (
-                  <span
-                    key={item}
-                    className="text-[16px] text-ink-400 group-hover/cell:text-ink-200 transition-colors duration-300"
-                  >
+                  <span key={item} className="tag-mark font-sans text-[13px] text-ink-400">
                     {item}
                   </span>
                 ))}
