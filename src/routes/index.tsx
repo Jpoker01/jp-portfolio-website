@@ -312,9 +312,10 @@ function Hero() {
 
 // ─── Section Label ─────────────────────────────────────────────────────────
 
-function SectionLabel({ label }: { label: string }) {
+function SectionLabel({ num, label }: { num: string; label: string }) {
   return (
-    <div className="mb-14 border-b border-ink-800 pb-5">
+    <div className="mb-14 flex items-baseline gap-4 border-b border-ink-800 pb-5">
+      <span className="font-mono text-[13px] text-ink-500">{num}</span>
       <span className="relative inline-block text-[20px] font-semibold text-ink-100">
         {label}
         <span className="name-shine" aria-hidden="true">
@@ -394,7 +395,7 @@ function Work() {
   return (
     <section id="work" className="section-pad border-t border-ink-800">
       <div className="max-w-6xl mx-auto">
-        <SectionLabel label="Selected projects" />
+        <SectionLabel num="01" label="Selected projects" />
 
         <div className="max-w-4xl mx-auto">
           {PROJECTS.map((p, i) => (
@@ -427,7 +428,7 @@ function Skills() {
   return (
     <section id="skills" className="section-pad border-t border-ink-800">
       <div className="max-w-6xl mx-auto">
-        <SectionLabel label="Tech stack" />
+        <SectionLabel num="02" label="Tech stack" />
 
         <div
           ref={ref}
@@ -539,7 +540,7 @@ function Experience() {
   return (
     <section id="experience" className="section-pad border-t border-ink-800">
       <div className="max-w-6xl mx-auto">
-        <SectionLabel label="Experience" />
+        <SectionLabel num="03" label="Experience" />
 
         <div className="max-w-4xl mx-auto">
           {EXPERIENCE.map((job, i) => (
@@ -651,7 +652,7 @@ function Contact() {
       }}
     >
       <div ref={ref} className="reveal max-w-6xl mx-auto w-full">
-        <SectionLabel label="Contact" />
+        <SectionLabel num="04" label="Contact" />
 
         <div
           className="flex flex-col md:flex-row md:items-center md:justify-center gap-10 md:gap-[56px]"
