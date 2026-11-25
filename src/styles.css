@@ -228,39 +228,56 @@ button:focus-visible {
 /* Keep the established look, with consistent seams and comfortable controls. */
 .nav-link { text-shadow: var(--nav-glow); }
 
-/* JP monogram: a mild glow that slowly drifts around the mark. */
+/* JP monogram: a constant black disc with a mild glow around its edge. */
 .jp-mark {
   position: relative;
   isolation: isolate;
 }
 
+/* The black disc. */
 .jp-mark::before {
   content: "";
   position: absolute;
   left: 50%;
   top: 50%;
-  width: 46px;
-  height: 46px;
-  margin: -23px 0 0 -23px;
+  width: 40px;
+  height: 40px;
+  margin: -20px 0 0 -20px;
   z-index: -1;
+  border-radius: 999px;
+  background: var(--color-ink-950);
+  pointer-events: none;
+}
+
+/* The mild glow hugging the disc's edge, slowly drifting. */
+.jp-mark::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 58px;
+  height: 58px;
+  margin: -29px 0 0 -29px;
+  z-index: -2;
   border-radius: 999px;
   background: radial-gradient(
     circle,
-    color-mix(in srgb, var(--color-ink-50) 26%, transparent) 0%,
-    color-mix(in srgb, var(--color-ink-50) 10%, transparent) 45%,
-    transparent 72%
+    transparent 52%,
+    color-mix(in srgb, var(--color-ink-50) 30%, transparent) 66%,
+    color-mix(in srgb, var(--color-ink-50) 12%, transparent) 80%,
+    transparent 96%
   );
-  filter: blur(6px);
-  opacity: 0.7;
+  filter: blur(3px);
+  opacity: 0.75;
   animation: jp-drift 9s ease-in-out infinite;
   pointer-events: none;
 }
 
 @keyframes jp-drift {
-  0%, 100% { transform: translate(-7px, -4px); }
-  25% { transform: translate(7px, -5px); }
-  50% { transform: translate(8px, 5px); }
-  75% { transform: translate(-6px, 5px); }
+  0%, 100% { transform: translate(-2px, -1px); }
+  25% { transform: translate(2px, -2px); }
+  50% { transform: translate(2px, 2px); }
+  75% { transform: translate(-2px, 2px); }
 }
 
 .hero-section { min-height: 100svh; }
@@ -323,7 +340,7 @@ button:focus-visible {
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .view-work-arrow { animation: none; }
-  .jp-mark::before { animation: none; }
+  .jp-mark::after { animation: none; }
   .reveal, .reveal.in-view,
   .animate-fade-up, .animate-fade-in {
     animation: none;
