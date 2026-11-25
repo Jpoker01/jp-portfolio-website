@@ -6,6 +6,7 @@ import {
   Menu,
   X,
   ArrowUpRight,
+  ArrowDown,
   Code2,
   Brain,
   Server,
@@ -299,7 +300,7 @@ function Hero() {
         <span className="font-display text-[15px] font-semibold uppercase tracking-[0.14em] text-white transition-colors duration-300 group-hover:text-ink-300">
           View Work
         </span>
-        <span className="w-5 h-px bg-ink-600 transition-all duration-300 group-hover:w-8" />
+        <ArrowDown className="w-4 h-4 text-white transition-transform duration-300 group-hover:translate-y-0.5" />
       </Button>
     </section>
   );
