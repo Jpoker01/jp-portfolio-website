@@ -277,7 +277,7 @@ function Hero() {
         <div className="flex items-center justify-center gap-6 mt-9 animate-fade-up delay-400">
           <button
             onClick={() => scrollTo("work")}
-            className="group flex items-center gap-2 px-4 py-2 rounded-sm font-display text-[14px] font-semibold text-white tracking-[0.14em] uppercase cursor-pointer transition-colors duration-300 hover:bg-white hover:text-black"
+            className="group flex items-center gap-2 px-4 py-2 rounded-sm font-display text-[14px] font-semibold text-white tracking-[0.14em] uppercase cursor-pointer transition-colors duration-300 hover:text-ink-300"
           >
             View Work
             <ArrowUpRight className="w-[18px] h-[18px] transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -382,7 +382,11 @@ function ProjectCard({
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-2.5 py-1.5 rounded-sm font-display text-[14px] font-semibold tracking-[0.14em] uppercase text-white hover:bg-white hover:text-black transition-colors duration-300"
+                className={`px-2.5 py-1.5 rounded-sm font-display text-[14px] font-semibold tracking-[0.14em] uppercase text-white transition-colors duration-300 ${
+                  link.label === "GitHub"
+                    ? "hover:bg-white hover:text-black"
+                    : "hover:text-ink-300"
+                }`}
               >
                 {link.label} &#8599;
               </a>
@@ -556,9 +560,8 @@ function Experience() {
             href="/CV_Jiri_Pokorny_EN.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="group relative inline-flex items-center gap-3 px-8 py-4 font-display text-[14px] font-semibold tracking-[0.14em] uppercase text-white border border-ink-700 rounded-sm overflow-hidden transition-all duration-400 hover:border-ink-500 hover:shadow-[0_0_30px_rgba(255,255,255,0.04)]"
+            className="group relative inline-flex items-center gap-3 px-8 py-4 font-display text-[14px] font-semibold tracking-[0.14em] uppercase text-white border border-ink-700 rounded-sm overflow-hidden transition-all duration-400 hover:bg-white hover:text-black hover:border-white"
           >
-            <span className="absolute inset-0 bg-white/0 group-hover:bg-white/[0.03] transition-colors duration-400" />
             <FileText className="relative w-[20px] h-[20px]" />
             <span className="relative">Download Full CV</span>
             <ArrowUpRight className="relative w-[18px] h-[18px] transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
