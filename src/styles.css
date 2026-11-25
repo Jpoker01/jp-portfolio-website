@@ -144,6 +144,66 @@ body {
 .delay-400 { animation-delay: 400ms; }
 .delay-500 { animation-delay: 500ms; }
 
+/* Ambient drifting fog: three soft blurred white blobs behind all content. */
+.fog-layer {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.fog-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1), transparent 70%);
+  will-change: transform;
+}
+
+.fog-blob-1 {
+  width: 60vw;
+  height: 60vw;
+  top: -20%;
+  left: -10%;
+  animation: fog-drift-1 45s ease-in-out infinite alternate;
+}
+
+.fog-blob-2 {
+  width: 50vw;
+  height: 50vw;
+  bottom: -15%;
+  right: -10%;
+  animation: fog-drift-2 60s ease-in-out infinite alternate;
+}
+
+.fog-blob-3 {
+  width: 40vw;
+  height: 40vw;
+  top: 35%;
+  left: 45%;
+  animation: fog-drift-3 52s ease-in-out infinite alternate;
+}
+
+@keyframes fog-drift-1 {
+  from { transform: translate(0, 0) scale(1); }
+  to   { transform: translate(14vw, 10vh) scale(1.15); }
+}
+
+@keyframes fog-drift-2 {
+  from { transform: translate(0, 0) scale(1.1); }
+  to   { transform: translate(-12vw, -8vh) scale(0.95); }
+}
+
+@keyframes fog-drift-3 {
+  from { transform: translate(0, 0) scale(0.9); }
+  to   { transform: translate(-10vw, 12vh) scale(1.2); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fog-blob { animation: none; }
+}
+
 /* Skill tags: soft filled rectangle, no border, barely-there dark fill. */
 .tag-mark {
   display: inline-flex;
