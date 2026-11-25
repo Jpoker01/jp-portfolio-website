@@ -268,6 +268,34 @@ function SocialIcon({ href, label, children, tooltip }: { href: string; label: s
 }
 
 function Hero() {
+  // Gently snap to Selected projects once the visitor scrolls a short way
+  // down from the hero. Re-arms when they return to the top.
+  useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    const threshold = () => window.innerHeight * 0.22;
+    let snapped = false;
+    let timer: number | undefined;
+
+    const onScroll = () => {
+      const y = window.scrollY;
+      if (y < 8) {
+        snapped = false;
+        return;
+      }
+      if (snapped || y < threshold() || y > window.innerHeight * 0.9) return;
+      snapped = true;
+      window.clearTimeout(timer);
+      timer = window.setTimeout(() => scrollTo("work"), 120);
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.clearTimeout(timer);
+    };
+  }, []);
+
   return (
     <section
       id="home"

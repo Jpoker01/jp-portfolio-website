@@ -21,3 +21,4 @@
 - [x] Scroll label: reverted to its previous font and size
 - [ ] og-image.png (1200x630 site preview) still needs uploading to public/ by Jiří
 - [ ] Master's thesis thumbnail: replace the static image with a looping video (or slideshow) once verifyauthor.dev is refactored
+- [x] Snap scroll to Selected projects after a short scroll from the hero
