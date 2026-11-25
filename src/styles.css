@@ -254,10 +254,16 @@ button:focus-visible {
   color: var(--color-ink-50); transition: transform 340ms ease;
 }
 .jp-mark:hover .jp-treatment, .jp-mark:focus-visible .jp-treatment { transform: scale(1.12); }
-.jp-letter { position: relative; z-index: 1; }
+.jp-letter { position: relative; z-index: 1; transition: transform 340ms ease; }
 
 /* Raised first letter: the J sits a little above the P. */
 .jp-treatment-offset .jp-letter-j { transform: translateY(-4px); }
+
+/* On hover the two letters cross: the J drops, the P lifts. */
+.jp-mark:hover .jp-treatment-offset .jp-letter-j,
+.jp-mark:focus-visible .jp-treatment-offset .jp-letter-j { transform: translateY(0); }
+.jp-mark:hover .jp-treatment-offset .jp-letter-p,
+.jp-mark:focus-visible .jp-treatment-offset .jp-letter-p { transform: translateY(-4px); }
 
 
 .skill-grid { gap: 14px; }
