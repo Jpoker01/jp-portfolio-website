@@ -5,6 +5,7 @@ import {
   Menu,
   X,
   ArrowUpRight,
+  ArrowDown,
   Code2,
   Brain,
   Server,
@@ -201,7 +202,7 @@ function Nav() {
             <Button
               key={n.id}
               onClick={() => scrollTo(n.id)}
-              className="nav-link group min-h-11 font-nav text-[18px] font-semibold tracking-[0.14em] uppercase text-ink-50 hover:text-ink-300 transition-colors duration-300"
+              className="nav-link group min-h-11 font-display text-[18px] font-semibold tracking-[0.14em] uppercase text-ink-50 hover:text-ink-300 transition-colors duration-300"
             >
               <span className="relative">
                 {n.label}
@@ -232,7 +233,7 @@ function Nav() {
                 scrollTo(n.id);
                 setOpen(false);
               }}
-              className="nav-link block w-full text-left py-3 font-nav text-[24px] font-semibold tracking-[0.14em] uppercase text-ink-50 hover:text-ink-300 transition-colors duration-300"
+              className="nav-link block w-full text-left py-3 font-display text-[24px] font-semibold tracking-[0.14em] uppercase text-ink-50 hover:text-ink-300 transition-colors duration-300"
             >
               {n.label}
             </Button>
@@ -308,7 +309,7 @@ function Hero() {
             className="group flex items-center gap-2 px-4 py-2 rounded-sm font-display text-[15px] font-semibold text-white tracking-[0.14em] uppercase whitespace-nowrap cursor-pointer transition-colors duration-300 hover:text-ink-300"
           >
             View Work
-            <ArrowUpRight className="w-[18px] h-[18px] transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            <ArrowDown aria-hidden="true" className="view-work-arrow w-[18px] h-[18px] shrink-0" />
           </Button>
           <span className="hidden sm:block w-12 h-px bg-ink-700" />
           <div className="flex items-center gap-1 sm:gap-2">

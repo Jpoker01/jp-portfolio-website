@@ -236,8 +236,17 @@ button:focus-visible {
 .skill-cell { background: var(--background); }
 .contact-link { overflow-wrap: anywhere; min-width: 0; }
 
+.view-work-arrow { animation: work-arrow-down 2.4s ease-in-out infinite; }
+.group:hover .view-work-arrow,
+.group:focus-visible .view-work-arrow { animation-duration: 1.2s; }
+@keyframes work-arrow-down {
+  0%, 100% { transform: translateY(-2px); }
+  50% { transform: translateY(3px); }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
+  .view-work-arrow { animation: none; }
   .reveal, .reveal.in-view,
   .animate-fade-up, .animate-fade-in {
     animation: none;

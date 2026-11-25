@@ -1,5 +1,7 @@
 # Roadmap
 
+- [x] Match desktop and mobile menu fonts to the other portfolio links
+- [x] Replace View Work's external-link arrow with a downward animation and verify scrolling to projects
 - [x] Polish alignment, mobile controls, skill-grid dividers and reduced-motion behaviour without changing the visual identity
 - [x] Remove section numbering from all four section headers and drop the numbering preview switcher
 - [x] Add a temporary live switcher for all 12 section-numbering styles and verify desktop and phone previews
