@@ -353,7 +353,7 @@ function ProjectCard({
         <p className="font-sans text-[15px] font-medium tracking-normal text-ink-400 mb-4">
           {project.tag}
         </p>
-        <h3 className="text-3xl md:text-4xl lg:text-[35px] font-bold text-white tracking-tight leading-[1.1] mb-6">
+        <h3 className="text-[28px] md:text-[32px] lg:text-[32px] font-bold text-white tracking-tight leading-[1.1] mb-6">
           {project.title}
         </h3>
         <p className="text-[17px] text-ink-400 leading-relaxed font-light max-w-xl">
@@ -481,7 +481,7 @@ function ExperienceItem({ job, isFirst }: { job: (typeof EXPERIENCE)[number]; is
           type scale and mono label of ProjectCard. No overall date; the dates
           live on each focus area below. */}
       <div className="mb-12">
-        <h3 className="text-3xl md:text-4xl lg:text-[35px] font-bold text-white tracking-tight leading-[1.1]">
+        <h3 className="text-[28px] md:text-[32px] lg:text-[32px] font-bold text-white tracking-tight leading-[1.1]">
           {job.role}
         </h3>
         <p className="mt-4 font-sans text-[15px] font-medium tracking-normal text-ink-400">
