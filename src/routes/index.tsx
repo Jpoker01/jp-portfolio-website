@@ -339,13 +339,13 @@ function Hero() {
 
       <div className="relative z-10 max-w-5xl mx-auto text-center flex flex-col items-center">
         <h1 className="name tracking-tight" style={{ lineHeight: 1.02 }}>
-        <span className="first font-medium block text-[clamp(48px,13vw,72px)]">Jiří</span>
-        <span className="surname font-extrabold block text-[clamp(60px,17.5vw,102px)]">
+        <span className="first font-medium block text-[clamp(42px,11.5vw,64px)]">Jiří</span>
+        <span className="surname font-extrabold block text-[clamp(52px,15vw,88px)]">
           Pokorný
         </span>
         <span className="name-shine" aria-hidden="true">
-          <span className="first font-medium block text-[clamp(48px,13vw,72px)]">Jiří</span>
-          <span className="surname font-extrabold block text-[clamp(60px,17.5vw,102px)]">
+          <span className="first font-medium block text-[clamp(42px,11.5vw,64px)]">Jiří</span>
+          <span className="surname font-extrabold block text-[clamp(52px,15vw,88px)]">
             Pokorný
           </span>
         </span>
@@ -433,7 +433,7 @@ function ProjectCard({
         <p className="font-sans text-[15px] font-medium tracking-normal text-ink-400 mb-4">
           {project.tag}
         </p>
-        <h3 className="text-[28px] md:text-[32px] lg:text-[32px] font-bold text-white tracking-tight leading-[1.1] mb-6">
+        <h3 className="text-[25px] md:text-[28px] lg:text-[28px] font-bold text-white tracking-tight leading-[1.1] mb-6">
           {project.title}
         </h3>
         <p className="text-[17px] text-ink-400 leading-relaxed font-light max-w-xl">
@@ -583,7 +583,7 @@ function ExperienceItem({ job, isFirst }: { job: (typeof EXPERIENCE)[number]; is
           type scale and mono label of ProjectCard. No overall date; the dates
           live on each focus area below. */}
       <div className="mb-12">
-        <h3 className="text-[28px] md:text-[32px] lg:text-[32px] font-bold text-white tracking-tight leading-[1.1]">
+        <h3 className="text-[25px] md:text-[28px] lg:text-[28px] font-bold text-white tracking-tight leading-[1.1]">
           {job.role}
         </h3>
         <p className="mt-4 font-sans text-[15px] font-medium tracking-normal text-ink-400">
@@ -615,7 +615,7 @@ function ExperienceItem({ job, isFirst }: { job: (typeof EXPERIENCE)[number]; is
                 />
               )}
               <div className="lg:col-span-7">
-                <h4 className="text-[21px] lg:text-[23px] font-semibold text-white tracking-tight leading-[1.2]">
+                <h4 className="text-[19px] lg:text-[20px] font-semibold text-white tracking-tight leading-[1.2]">
                   {role.title}
                 </h4>
                 <p className="mt-2 font-sans text-[14px] text-ink-500 tracking-normal">
