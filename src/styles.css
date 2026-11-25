@@ -358,14 +358,11 @@ button:focus-visible {
 @media (max-width: 767px) { .jp-preview-panel { right: 12px; bottom: 12px; } }
 
 .skill-grid {
-  border-top: 1px solid var(--border);
-  border-left: 1px solid var(--border);
+  gap: 1px;
+  padding: 1px;
+  background: var(--border);
 }
-.skill-cell {
-  background: transparent;
-  border-right: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-}
+.skill-cell { background: var(--background); }
 .contact-link {
   position: relative;
   display: inline-block;
