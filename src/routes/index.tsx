@@ -249,7 +249,7 @@ function SocialIcon({ href, label, children, tooltip }: { href: string; label: s
       className="group relative inline-flex min-w-9 min-h-11 items-center justify-center text-ink-50 hover:text-ink-300 transition-colors duration-300"
       aria-label={label}
     >
-      <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         {children}
       </svg>
       {tooltip && (
