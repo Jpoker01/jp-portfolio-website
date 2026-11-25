@@ -157,7 +157,7 @@ body {
   position: absolute;
   border-radius: 50%;
   filter: blur(90px);
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.1), transparent 70%);
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.18), transparent 70%);
   will-change: transform;
 }
 

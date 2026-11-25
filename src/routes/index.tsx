@@ -748,7 +748,7 @@ function Footer() {
 
 function Index() {
   return (
-    <div className="min-h-screen bg-black">
+    <div className="min-h-screen">
       <div className="fog-layer" aria-hidden="true">
         <div className="fog-blob fog-blob-1" />
         <div className="fog-blob fog-blob-2" />
