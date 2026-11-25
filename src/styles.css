@@ -22,13 +22,6 @@
   --color-ink-900: #0d0d0d;
   --color-ink-950: #000000;
 
-  --animate-fade-in: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-  --animate-fade-up: fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-
-  @keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
-  }
   @keyframes fadeUp {
     0% { opacity: 0; transform: translateY(40px); }
     100% { opacity: 1; transform: translateY(0); }
@@ -137,12 +130,7 @@ body {
   }
 }
 
-.delay-100 { animation-delay: 100ms; }
-.delay-200 { animation-delay: 200ms; }
-.delay-250 { animation-delay: 250ms; }
-.delay-300 { animation-delay: 300ms; }
-.delay-400 { animation-delay: 400ms; }
-.delay-500 { animation-delay: 500ms; }
+
 
 /* Ambient background: an oversized, very low-contrast haze plus fine grain.
    The gradients run far past the viewport and overlap, so the eye reads
@@ -497,16 +485,10 @@ button:focus-visible {
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .view-work-arrow { animation: none; }
-  .reveal, .reveal.in-view,
-  .animate-fade-up, .animate-fade-in {
+  .reveal, .reveal.in-view {
     animation: none;
     opacity: 1;
     transform: none;
   }
   *, *::before, *::after { transition-duration: 0s !important; }
 }
-/* View Work: a blinking terminal underscore, shown only on hover. */
-.view-work-cursor { opacity: 0; margin-left: -4px; }
-.group:hover .view-work-cursor,
-.group:focus-visible .view-work-cursor { opacity: 1; animation: jp-blink 1.1s steps(1, end) infinite; }
-@media (prefers-reduced-motion: reduce) { .group:hover .view-work-cursor { animation: none; } }

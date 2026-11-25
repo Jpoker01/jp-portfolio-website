@@ -334,7 +334,7 @@ function Hero() {
       />
 
       <div className="relative z-10 max-w-5xl mx-auto text-center flex flex-col items-center">
-        <h1 className="name tracking-tight animate-fade-up" style={{ lineHeight: 1.02 }}>
+        <h1 className="name tracking-tight" style={{ lineHeight: 1.02 }}>
         <span className="first font-medium block text-[clamp(48px,13vw,72px)]">Jiří</span>
         <span className="surname font-extrabold block text-[clamp(60px,17.5vw,102px)]">
           Pokorný
@@ -347,21 +347,20 @@ function Hero() {
         </span>
       </h1>
 
-        <span className="mt-7 uppercase text-[13px] font-medium tracking-[0.18em] text-ink-400 animate-fade-in delay-100">
+        <span className="mt-7 uppercase text-[13px] font-medium tracking-[0.18em] text-ink-400">
           AI Engineer &middot; Brno, CZ
         </span>
 
-        <p className="mt-6 font-light text-[18px] leading-relaxed text-ink-400 max-w-2xl animate-fade-up delay-250">
+        <p className="mt-6 font-light text-[18px] leading-relaxed text-ink-400 max-w-2xl">
           I build AI applications in Python, from raw data to a deployed product.
         </p>
 
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mt-9 animate-fade-up delay-400">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mt-9">
           <Button
             onClick={() => scrollTo("work")}
             className="group flex items-center gap-2 px-4 py-2 rounded-sm font-display text-[15px] font-semibold text-white tracking-[0.14em] uppercase whitespace-nowrap cursor-pointer transition-colors duration-300 hover:text-ink-300"
           >
             View Work
-            <span aria-hidden="true" className="view-work-cursor">_</span>
           </Button>
           <span className="hidden sm:block w-12 h-px bg-ink-700" />
           <div className="flex items-center gap-1 sm:gap-2">
