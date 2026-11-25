@@ -241,21 +241,17 @@ function Nav() {
 // ─── Hero ──────────────────────────────────────────────────────────────────
 
 function SocialIcon({ href, label, children, tooltip, className }: { href: string; label: string; children: React.ReactNode; tooltip?: string; className?: string }) {
-  const icon = (
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-      {children}
-    </svg>
-  );
   return (
     <a
       href={href}
       target={href.startsWith('mailto') || href.startsWith('tel') ? undefined : '_blank'}
       rel="noopener noreferrer"
-      className={`social-icon group relative inline-flex min-w-9 min-h-11 items-center justify-center rounded-md text-ink-50 ${className ?? ''}`}
+      className={`social-icon group relative inline-flex min-w-9 min-h-11 items-center justify-center rounded-md text-ink-50 hover:text-ink-300 transition-colors duration-300 ${className ?? ''}`}
       aria-label={label}
     >
-      <span className="btn-reveal" aria-hidden="true">{icon}</span>
-      <span className="relative">{icon}</span>
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        {children}
+      </svg>
       {tooltip && (
         <span className="absolute -top-8 left-1/2 -translate-x-1/2 text-[11px] font-medium text-white bg-ink-800 px-2 py-1 rounded whitespace-nowrap pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-200">
           {tooltip}
