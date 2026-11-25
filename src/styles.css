@@ -228,41 +228,30 @@ button:focus-visible {
 /* Keep the established look, with consistent seams and comfortable controls. */
 .nav-link { text-shadow: var(--nav-glow); }
 
-/* JP monogram: plain letters with a still, text-style glow. */
+/* JP monogram: large letters with a still, text-style glow. */
 .jp-mark {
   position: relative;
   isolation: isolate;
-  text-shadow:
-    0 0 8px color-mix(in srgb, var(--color-ink-50) 85%, transparent),
-    0 0 20px color-mix(in srgb, var(--color-ink-50) 60%, transparent),
-    0 0 44px color-mix(in srgb, var(--color-ink-50) 38%, transparent),
-    0 0 72px color-mix(in srgb, var(--color-ink-50) 22%, transparent);
-}
-
-/* The circle outline that closes around the letters on hover. */
-/* The circle outline that closes around the letters on hover. */
-.jp-ring {
-  position: absolute;
-  left: calc(50% - 2px);
-  top: 50%;
-  width: 40px;
-  height: 40px;
-  transform: translate(-50%, -50%);
-  color: color-mix(in srgb, var(--color-ink-50) 78%, transparent);
-  pointer-events: none;
-}
-
-.jp-ring-circle {
-  stroke-dasharray: 119.4;
-  stroke-dashoffset: 119.4;
-  transform: rotate(-90deg);
   transform-origin: 50% 50%;
-  transition: stroke-dashoffset 620ms cubic-bezier(0.22, 1, 0.36, 1);
+  text-shadow:
+    0 0 10px color-mix(in srgb, var(--color-ink-50) 85%, transparent),
+    0 0 24px color-mix(in srgb, var(--color-ink-50) 62%, transparent),
+    0 0 52px color-mix(in srgb, var(--color-ink-50) 40%, transparent),
+    0 0 84px color-mix(in srgb, var(--color-ink-50) 24%, transparent);
+  transition:
+    transform 340ms cubic-bezier(0.22, 1, 0.36, 1),
+    text-shadow 340ms ease;
 }
 
-.jp-mark:hover .jp-ring-circle,
-.jp-mark:focus-visible .jp-ring-circle {
-  stroke-dashoffset: 0;
+/* The initials grow on hover. */
+.jp-mark:hover,
+.jp-mark:focus-visible {
+  transform: scale(1.18);
+  text-shadow:
+    0 0 12px color-mix(in srgb, var(--color-ink-50) 95%, transparent),
+    0 0 30px color-mix(in srgb, var(--color-ink-50) 75%, transparent),
+    0 0 62px color-mix(in srgb, var(--color-ink-50) 50%, transparent),
+    0 0 96px color-mix(in srgb, var(--color-ink-50) 30%, transparent);
 }
 
 .hero-section { min-height: 100svh; }

@@ -1,5 +1,7 @@
 # Roadmap
 
+- [x] Dial the JP initials back down, 22px was too big
+- [x] Make the JP initials larger and more striking, growing on hover instead of a closing circle
 - [x] Use a text-style glow on the JP mark, with no moving animation
 - [x] Show the View Work arrow only while the button is hovered
 - [x] Give the JP monogram a strong glow that travels around it
