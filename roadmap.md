@@ -1,5 +1,6 @@
 # Roadmap
 
+- [x] Add and verify left-to-right inverted hover highlights on bottom email, phone and LinkedIn links
 - [x] Match desktop and mobile menu fonts to the other portfolio links
 - [x] Replace View Work's external-link arrow with a downward animation and verify scrolling to projects
 - [x] Polish alignment, mobile controls, skill-grid dividers and reduced-motion behaviour without changing the visual identity
