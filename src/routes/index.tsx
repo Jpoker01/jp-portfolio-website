@@ -469,9 +469,19 @@ function ProjectCard({
                 className="group relative inline-flex items-center px-2.5 py-1.5 rounded-sm font-display text-[15px] font-semibold tracking-[0.14em] uppercase whitespace-nowrap text-white"
               >
                 <span className="btn-reveal" aria-hidden="true">
-                  <span>{link.label} &#8599;</span>
+                  <span>
+                    {link.label}{" "}
+                    <span className="inline-block transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+                      &#8599;
+                    </span>
+                  </span>
                 </span>
-                <span className="relative">{link.label} &#8599;</span>
+                <span className="relative">
+                  {link.label}{" "}
+                  <span className="inline-block transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+                    &#8599;
+                  </span>
+                </span>
               </a>
             ))}
           </div>
@@ -706,11 +716,13 @@ function ContactRow({
   label,
   copyText,
   children,
+  motion,
 }: {
   icon: React.ReactNode;
   label: string;
   copyText?: string;
   children: React.ReactNode;
+  motion?: string;
 }) {
   const iconSvg = (className: string) => (
     <svg
@@ -730,7 +742,7 @@ function ContactRow({
 
   return (
     <div className="flex items-center gap-3 min-w-0">
-      <div className="contact-row relative flex items-center gap-3 min-w-0">
+      <div className={`contact-row relative flex items-center gap-3 min-w-0 ${motion ?? ""}`}>
         <span className="contact-highlight" aria-hidden="true">
           {iconSvg("shrink-0")}
           <span className="text-[18px]">{label}</span>
@@ -778,9 +790,10 @@ function Contact() {
               icon={
                 <>
                   <rect x="2" y="4" width="20" height="16" rx="2" />
-                  <path d="M22 7l-10 7L2 7" />
+                  <path className="mail-flap" d="M22 7l-10 7L2 7" />
                 </>
               }
+              motion="contact-mail"
               copyText="jiripokorny455@gmail.com"
               label="jiripokorny455@gmail.com"
             >
@@ -796,6 +809,7 @@ function Contact() {
               icon={
                 <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
               }
+              motion="contact-phone"
               copyText="+420603967651"
               label="+420 603 967 651"
             >
@@ -815,6 +829,7 @@ function Contact() {
                   <circle cx="4" cy="4" r="2" />
                 </>
               }
+              motion="contact-linkedin"
               label="LinkedIn ↗"
             >
               <a

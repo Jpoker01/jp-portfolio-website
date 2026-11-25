@@ -1,5 +1,8 @@
 # Roadmap
 
+- [x] Make the bottom contact icons open the mail flap and tilt the phone and LinkedIn like the hero, leaving the hero untouched
+- [x] Make the Live Demo and GitHub link arrows nudge like the See More on GitHub button's arrow
+
 - [x] Remove the inverted wipe from the hero mail, phone and LinkedIn icons, restoring their gentle motion
 
 - [x] Make the hero mail, phone and LinkedIn icons wipe white from the left on hover like the bottom contact rows

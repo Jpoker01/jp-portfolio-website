@@ -292,6 +292,44 @@ button:focus-visible {
   .social-mail:focus-visible .mail-flap { transform: none; }
 }
 
+/* Bottom contact icons: the same gentle motion as the hero icons. */
+.contact-row svg {
+  transition: transform 340ms cubic-bezier(0.22, 1, 0.36, 1);
+  transform-origin: 50% 50%;
+  overflow: visible;
+}
+.contact-mail:hover svg,
+.contact-mail:focus-within svg {
+  transform: scale(1.12);
+}
+.contact-phone:hover svg,
+.contact-phone:focus-within svg {
+  transform: rotate(-10deg) scale(1.12);
+}
+.contact-linkedin:hover svg,
+.contact-linkedin:focus-within svg {
+  transform: rotate(9deg) scale(1.12);
+}
+/* The envelope flap lifts open, hinged on the flap's own corners. */
+.contact-mail .mail-flap {
+  transform-origin: 12px 7px;
+}
+.contact-mail:hover .mail-flap,
+.contact-mail:focus-within .mail-flap {
+  transform: scaleY(-1);
+}
+@media (prefers-reduced-motion: reduce) {
+  .contact-row svg { transition: none; }
+  .contact-mail:hover svg,
+  .contact-mail:focus-within svg,
+  .contact-phone:hover svg,
+  .contact-phone:focus-within svg,
+  .contact-linkedin:hover svg,
+  .contact-linkedin:focus-within svg,
+  .contact-mail:hover .mail-flap,
+  .contact-mail:focus-within .mail-flap { transform: none; }
+}
+
 /* Temporary JP comparison tool. All treatments share the same fixed footprint. */
 :root {
   --jp-soft-line: color-mix(in srgb, var(--color-ink-50) 26%, transparent);
