@@ -309,8 +309,12 @@ function Hero() {
 // ─── Section Label ─────────────────────────────────────────────────────────
 
 function SectionLabel({ label }: { label: string }) {
+  const ref = useReveal<HTMLDivElement>();
   return (
-    <div className="section-heading relative mb-14 flex items-baseline gap-4 border-b border-ink-800 pb-5">
+    <div
+      ref={ref}
+      className="section-heading heading-reveal relative mb-14 flex items-baseline gap-4 border-b border-ink-800 pb-5"
+    >
       <span className="relative inline-block font-heading text-[21px] md:text-[24px] font-semibold text-ink-50">
         {label}
       </span>

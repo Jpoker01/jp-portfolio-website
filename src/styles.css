@@ -122,6 +122,30 @@ body {
 .reveal { opacity: 0; }
 .reveal.in-view { animation: fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
 
+.heading-reveal::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  height: 2px;
+  width: 100%;
+  background: linear-gradient(
+    90deg,
+    var(--color-ink-50),
+    color-mix(in srgb, var(--color-ink-50) 45%, transparent)
+  );
+  box-shadow: 0 0 14px color-mix(in srgb, var(--color-ink-50) 40%, transparent);
+  transform: scaleX(0);
+  transform-origin: left center;
+}
+.heading-reveal.in-view::after {
+  animation: headingUnderline 1.1s cubic-bezier(0.16, 1, 0.3, 1) 0.15s forwards;
+}
+@keyframes headingUnderline {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
 @media (max-width: 519px) {
   .footer-bar {
     flex-direction: column !important;
@@ -364,5 +388,6 @@ button:focus-visible {
     opacity: 1;
     transform: none;
   }
+  .heading-reveal::after { animation: none; transform: scaleX(1); }
   *, *::before, *::after { transition-duration: 0s !important; }
 }
