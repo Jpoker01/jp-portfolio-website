@@ -292,7 +292,7 @@ button:focus-visible {
 .jp-treatment {
   position: relative; isolation: isolate;
   width: 52px; height: 52px; flex-shrink: 0;
-  font-family: var(--font-mono); font-size: 19px; font-weight: 600; letter-spacing: 0;
+  font-family: "Exo 2", "Inter", sans-serif; font-size: 19px; font-weight: 400; letter-spacing: 0;
   color: var(--color-ink-50); transition: transform 340ms ease;
   /* Half the width of the two letters plus the old gap: how far each sits from the centre. */
   --jp-shift: 7px;

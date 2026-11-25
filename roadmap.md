@@ -80,4 +80,5 @@
 - [x] Make the JP initials bigger and more prominent on phone
 - [x] JP mark: on click the letters revolve around the centre, the J ending below the P
 - [x] Subtitle underline animation: make the sweep smoother
-- [ ] JP initials: pick a thicker lettering font from a rendered comparison
+- [x] JP initials: pick a thicker lettering font from a rendered comparison
+- [x] JP initials: apply Exo 2 (option 04) and verify desktop, phone, hover and click
