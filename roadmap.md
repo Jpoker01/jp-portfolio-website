@@ -1,5 +1,8 @@
 # Roadmap
 
+- [x] Remove the moving shine from all section subtitles
+- [x] Clicking a menu section link must not snap back up to Projects
+
 - [x] Remove the scroll snap to Selected projects
 - [x] Decrease the project names and the Associate Developer heading further
 
@@ -67,4 +70,3 @@
 
 - [ ] JP mark: remove the circle the user still sees around the initials, keeping the glow
 - [x] Fix scroll snap: scrolling down past the projects section snaps back up
-- [ ] Clicking a menu section link must not snap back up to Projects
