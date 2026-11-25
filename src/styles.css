@@ -217,3 +217,11 @@ body {
 .tag-mark:hover {
   background: var(--color-ink-700);
 }
+
+/* Keyboard focus: quiet white ring, only for keyboard users. */
+a:focus-visible,
+button:focus-visible {
+  outline: 1px solid var(--color-ink-400);
+  outline-offset: 4px;
+  border-radius: 2px;
+}

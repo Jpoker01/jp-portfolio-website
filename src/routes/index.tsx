@@ -167,6 +167,7 @@ function Nav() {
       <div className="px-6 md:px-10 lg:px-16 h-16 flex items-center justify-between">
         <button
           onClick={() => scrollTo("home")}
+          aria-label="Back to top"
           className="cursor-pointer font-mono text-[13px] font-medium text-ink-200 tracking-[0.3em]"
         >
           JP
@@ -189,7 +190,9 @@ function Nav() {
 
         <button
           onClick={() => setOpen(!open)}
-          className="cursor-pointer md:hidden text-ink-400 hover:text-white"
+          aria-label={open ? "Close menu" : "Open menu"}
+          aria-expanded={open}
+          className="cursor-pointer md:hidden text-ink-400 hover:text-white transition-colors duration-300"
         >
           {open ? <X className="w-[22px] h-[22px]" /> : <Menu className="w-[22px] h-[22px]" />}
         </button>
@@ -579,7 +582,7 @@ function CopyButton({ text }: { text: string }) {
   return (
     <button
       onClick={handleCopy}
-      className="relative ml-2 text-ink-600 hover:text-white transition-colors duration-300"
+      className="relative ml-2 text-[#6a6a6a] hover:text-white transition-colors duration-300"
       aria-label="Copy"
     >
       <svg
