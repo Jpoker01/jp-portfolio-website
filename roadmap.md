@@ -1,5 +1,7 @@
 # Roadmap
 
+- [x] Make the hero mail, phone and LinkedIn icons wipe white from the left on hover like the bottom contact rows
+
 - [x] Give the project Live Demo and GitHub links the same left-to-right inverted wipe as the CV and big GitHub buttons
 - [x] JP mark: implement the inverted discs and terminal cursor treatments from the uploaded reference
 - [x] Rebuild the JP switcher around option 14's staggered look plus circular forms, then fix any weak options
