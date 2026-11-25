@@ -192,7 +192,7 @@ function Nav() {
         <Button
           onClick={() => scrollTo("home")}
           aria-label="Back to top"
-          className="min-h-11 flex items-center font-mono text-[13px] font-medium text-ink-200 tracking-[0.3em]"
+          className="jp-mark min-h-11 flex items-center font-mono text-[13px] font-medium text-ink-200 tracking-[0.3em]"
         >
           JP
         </Button>
