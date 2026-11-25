@@ -349,10 +349,10 @@ function ProjectCard({
       } pb-16`}
     >
       <div className="lg:col-span-7">
-        <span className="block font-mono text-[12px] text-ink-600 tracking-[0.15em] mb-5">
+        <span className="block font-label text-[13px] text-ink-600 tracking-[0.04em] mb-5">
           {String(index + 1).padStart(2, "0")} / {String(PROJECTS.length).padStart(2, "0")}
         </span>
-        <p className="font-mono text-[13px] font-medium uppercase tracking-[0.2em] text-ink-400 mb-4">
+        <p className="font-label text-[14px] font-medium uppercase tracking-[0.06em] text-ink-400 mb-4">
           {project.tag}
         </p>
         <h3 className="text-3xl md:text-4xl lg:text-[35px] font-bold text-white tracking-tight leading-[1.1] mb-6">
@@ -375,7 +375,7 @@ function ProjectCard({
           {project.stack.map((s) => (
             <span
               key={s}
-              className="font-mono text-[15px] text-ink-400 border border-ink-800 px-2.5 py-1 rounded-sm"
+              className="font-label text-[14px] text-ink-400 border border-ink-800 px-2.5 py-1 rounded-sm"
             >
               {s}
             </span>
@@ -493,7 +493,7 @@ function ExperienceItem({ job, isFirst }: { job: (typeof EXPERIENCE)[number]; is
         <h3 className="text-3xl md:text-4xl lg:text-[35px] font-bold text-white tracking-tight leading-[1.1]">
           {job.role}
         </h3>
-        <p className="mt-4 font-mono text-[13px] font-medium uppercase tracking-[0.2em] text-ink-400">
+        <p className="mt-4 font-label text-[14px] font-medium uppercase tracking-[0.06em] text-ink-400">
           {job.company} · {job.location}
         </p>
       </div>
@@ -525,7 +525,7 @@ function ExperienceItem({ job, isFirst }: { job: (typeof EXPERIENCE)[number]; is
                 <h4 className="text-[21px] lg:text-[23px] font-semibold text-white tracking-tight leading-[1.2]">
                   {role.title}
                 </h4>
-                <p className="mt-2 font-mono text-[13px] text-ink-500 tracking-[0.15em] uppercase">
+                <p className="mt-2 font-label text-[13px] text-ink-500 tracking-[0.06em] uppercase">
                   {role.period}
                 </p>
                 <p className="mt-4 text-[16px] text-ink-400 font-light leading-relaxed max-w-xl">
@@ -536,7 +536,7 @@ function ExperienceItem({ job, isFirst }: { job: (typeof EXPERIENCE)[number]; is
                 {role.stack.map((s) => (
                   <span
                     key={s}
-                    className="font-mono text-[15px] text-ink-400 border border-ink-800 px-2.5 py-1 rounded-sm"
+                    className="font-label text-[14px] text-ink-400 border border-ink-800 px-2.5 py-1 rounded-sm"
                   >
                     {s}
                   </span>

@@ -6,6 +6,7 @@
 
 @theme {
   --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --font-label: "IBM Plex Mono", ui-monospace, monospace;
   --font-mono: "JetBrains Mono", "Fira Code", monospace;
 
   --color-ink-50: #ffffff;
