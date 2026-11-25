@@ -788,7 +788,8 @@ function Contact() {
             <ContactRow
               icon={
                 <>
-                  <rect x="2" y="4" width="20" height="16" rx="2" />
+                  <rect className="mail-letter" x="5.5" y="5" width="13" height="10" rx="1" />
+                  <rect className="mail-body" x="2" y="4" width="20" height="16" rx="2" />
                   <path className="mail-flap" d="M2 4.5L12 11.5L22 4.5" />
                 </>
               }

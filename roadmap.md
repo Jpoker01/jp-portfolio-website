@@ -50,3 +50,5 @@
 - [x] Fix the scroll snap to Selected projects (no longer triggers)
 - [x] Tech Stack square: remove the blacked-out fill so it matches the page background
 - [x] Mail icon: the open flap's tip is clipped by the icon edge
+- [x] Bottom mail icon: flap folds up and a letter slides out on hover
+- [x] Tech Stack squares: liquid glass tiles
