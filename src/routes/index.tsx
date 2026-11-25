@@ -329,11 +329,9 @@ function SectionLabel({ label }: { label: string }) {
 
 function ProjectCard({
   project,
-  index,
   isFirst,
 }: {
   project: (typeof PROJECTS)[number];
-  index: number;
   isFirst: boolean;
 }) {
   const ref = useReveal<HTMLDivElement>();
@@ -345,9 +343,6 @@ function ProjectCard({
       } pb-16`}
     >
       <div className="lg:col-span-7">
-        <span className="block font-sans text-[13px] text-ink-600 tracking-normal mb-5">
-          {String(index + 1).padStart(2, "0")} / {String(PROJECTS.length).padStart(2, "0")}
-        </span>
         <p className="font-sans text-[15px] font-medium tracking-normal text-ink-400 mb-4">
           {project.tag}
         </p>
@@ -403,7 +398,7 @@ function Work() {
 
         <div className="max-w-4xl mx-auto">
           {PROJECTS.map((p, i) => (
-            <ProjectCard key={p.title} project={p} index={i} isFirst={i === 0} />
+            <ProjectCard key={p.title} project={p} isFirst={i === 0} />
           ))}
         </div>
 
