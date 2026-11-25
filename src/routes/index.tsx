@@ -263,8 +263,8 @@ function Hero() {
         </span>
       </h1>
 
-        <span className="mt-6 uppercase text-[14px] font-semibold tracking-[0.24em] text-ink-500 animate-fade-in">
-          AI Engineer&ensp;&middot;&ensp;Brno, CZ
+        <span className="mt-6 uppercase text-[13px] font-medium tracking-[0.18em] text-ink-400 animate-fade-in">
+          AI Engineer &middot; Brno, CZ
         </span>
 
         <p className="mt-7 font-light text-[18px] leading-relaxed text-ink-400 max-w-2xl animate-fade-up delay-200">
