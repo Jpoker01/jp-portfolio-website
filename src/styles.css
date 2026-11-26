@@ -292,10 +292,10 @@ button:focus-visible {
 .jp-treatment {
   position: relative; isolation: isolate;
   width: 52px; height: 52px; flex-shrink: 0;
-  font-family: "Inter", sans-serif; font-size: 19px; font-weight: 800; letter-spacing: -0.02em;
+  font-family: "Inter", sans-serif; font-size: 24px; font-weight: 900; letter-spacing: -0.02em;
   color: var(--color-ink-50); transition: transform 340ms ease;
   /* Half the width of the two letters plus the old gap: how far each sits from the centre. */
-  --jp-shift: 7px;
+  --jp-shift: 8.8px;
 }
 .jp-mark:hover .jp-treatment, .jp-mark:focus-visible .jp-treatment { transform: scale(1.12); }
 
@@ -369,7 +369,7 @@ button:focus-visible {
 /* Phone: the mark is the site's signature, so it carries more presence here. */
 @media (max-width: 767px) {
   .jp-mark { width: 58px; height: 58px; margin-left: -14px; }
-  .jp-treatment { width: 58px; height: 58px; font-size: 26px; letter-spacing: -0.02em; --jp-shift: 9px; }
+  .jp-treatment { width: 58px; height: 58px; font-size: 32px; letter-spacing: -0.02em; --jp-shift: 11.1px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
