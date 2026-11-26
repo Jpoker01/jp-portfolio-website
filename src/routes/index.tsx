@@ -275,7 +275,7 @@ function Hero() {
           AI Engineer &middot; Brno, CZ
         </span>
 
-        <p className="mt-6 font-light text-[18px] leading-relaxed text-ink-400 max-w-2xl lg:max-w-sm">
+        <p className="mt-6 font-light text-[18px] leading-relaxed text-ink-300 max-w-2xl lg:max-w-sm">
           I build AI applications in Python, from raw data to a deployed product.
         </p>
 
