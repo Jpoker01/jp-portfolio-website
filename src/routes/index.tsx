@@ -58,7 +58,7 @@ const PROJECTS = [
       "End-to-end authorship verification system for English texts. Several hundred experiments across BoW/TF-IDF, graph-based, transformer (Longformer) and LLM approaches, with Optuna searching through thousands of preprocessing, feature and model pipelines. Best result F1 92.38%. The live web app (FastAPI + React) serves a lightweight logistic-regression model, small and cheap to run.",
     stack: ["Python", "transformers", "Longformer", "Optuna", "FastAPI", "React", "TypeScript"],
     links: [
-      { label: "Live Demo", url: "https://www.verifyauthor.dev" },
+      { label: "Live demo", url: "https://www.verifyauthor.dev" },
       { label: "GitHub", url: "https://github.com/Jpoker01/ai-authorship-verification" },
     ],
   },
@@ -282,7 +282,7 @@ function Hero() {
         <div className="flex items-center justify-center lg:justify-start mt-9 lg:mt-7">
           <Button
             onClick={() => scrollTo("contact")}
-            className="group relative inline-flex items-center justify-center px-5 py-3 rounded-sm border border-ink-700 font-display text-[15px] font-semibold text-white tracking-[0.14em] uppercase whitespace-nowrap cursor-pointer"
+            className="group relative inline-flex items-center justify-center px-5 py-3 rounded-sm border border-ink-700 font-display text-[15px] font-medium text-white tracking-normal whitespace-nowrap cursor-pointer"
           >
             <span className="btn-reveal" aria-hidden="true">
               <span>Contact me</span>
@@ -297,8 +297,8 @@ function Hero() {
         onClick={() => scrollTo("work")}
         className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 flex items-center gap-3 cursor-pointer group"
       >
-        <span className="font-display text-[15px] font-semibold uppercase tracking-[0.14em] text-white transition-colors duration-300 group-hover:text-ink-300">
-          View Work
+        <span className="font-display text-[15px] font-medium tracking-normal text-white transition-colors duration-300 group-hover:text-ink-300">
+          View work
         </span>
         <ArrowDown className="w-4 h-4 text-white transition-transform duration-300 group-hover:translate-y-0.5" />
       </Button>
@@ -379,7 +379,7 @@ function ProjectCard({
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative inline-flex items-center px-2.5 py-1.5 rounded-sm font-display text-[15px] font-semibold tracking-[0.14em] uppercase whitespace-nowrap text-white"
+                className="group relative inline-flex items-center px-2.5 py-1.5 rounded-sm font-display text-[15px] font-medium tracking-normal whitespace-nowrap text-white"
               >
                 <span className="btn-reveal" aria-hidden="true">
                   <span>
@@ -421,15 +421,15 @@ function Work() {
             href="https://github.com/Jpoker01"
             target="_blank"
             rel="noopener noreferrer"
-            className="group relative inline-flex items-center justify-center gap-2 sm:gap-3 px-5 sm:px-8 py-4 font-display text-[14px] sm:text-[15px] font-semibold tracking-[0.1em] sm:tracking-[0.14em] uppercase whitespace-nowrap text-white border border-ink-700 rounded-sm transition-colors duration-400"
+            className="group relative inline-flex items-center justify-center gap-2 sm:gap-3 px-5 sm:px-8 py-4 font-display text-[14px] sm:text-[15px] font-medium tracking-normal whitespace-nowrap text-white border border-ink-700 rounded-sm transition-colors duration-400"
           >
             <span className="btn-reveal" aria-hidden="true">
               <Github className="w-[20px] h-[20px]" />
-              <span>See More on GitHub</span>
+              <span>See more on GitHub</span>
               <ArrowUpRight className="w-[18px] h-[18px] transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </span>
             <Github className="relative w-[20px] h-[20px]" />
-            <span className="relative">See More on GitHub</span>
+            <span className="relative">See more on GitHub</span>
             <ArrowUpRight className="relative w-[18px] h-[18px] transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </a>
         </div>
@@ -567,15 +567,15 @@ function Experience() {
             href="/CV_Jiri_Pokorny_EN.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="group relative inline-flex items-center justify-center gap-2 sm:gap-3 px-5 sm:px-8 py-4 font-display text-[14px] sm:text-[15px] font-semibold tracking-[0.1em] sm:tracking-[0.14em] uppercase whitespace-nowrap text-white border border-ink-700 rounded-sm transition-colors duration-400"
+            className="group relative inline-flex items-center justify-center gap-2 sm:gap-3 px-5 sm:px-8 py-4 font-display text-[14px] sm:text-[15px] font-medium tracking-normal whitespace-nowrap text-white border border-ink-700 rounded-sm transition-colors duration-400"
           >
             <span className="btn-reveal" aria-hidden="true">
               <FileText className="w-[20px] h-[20px]" />
-              <span>Download Full CV</span>
+              <span>Download full CV</span>
               <ArrowUpRight className="w-[18px] h-[18px] transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </span>
             <FileText className="relative w-[20px] h-[20px]" />
-            <span className="relative">Download Full CV</span>
+            <span className="relative">Download full CV</span>
             <ArrowUpRight className="relative w-[18px] h-[18px] transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </a>
         </div>
