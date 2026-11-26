@@ -335,23 +335,26 @@ function ProjectCard({
   return (
     <div
       ref={ref}
-      className={`reveal grid lg:grid-cols-12 gap-8 lg:gap-12 ${
+      className={`reveal grid lg:grid-cols-12 gap-x-8 lg:gap-x-12 gap-y-6 ${
         isFirst ? "" : "border-t border-ink-800 pt-16"
       } pb-16`}
     >
-      <div className="lg:col-span-7">
+      {/* Heading on its own row, so the description and the right column
+          below it start on the same line. */}
+      <div className="lg:col-span-12">
         <p className="font-sans text-[15px] font-medium tracking-normal text-ink-400 mb-4">
           {project.tag}
         </p>
-        <h3 className="text-[18px] md:text-[20px] lg:text-[20px] font-bold text-white tracking-tight leading-[1.1] mb-6">
+        <h3 className="text-[18px] md:text-[20px] lg:text-[20px] font-bold text-white tracking-tight leading-[1.1]">
           {project.title}
         </h3>
-        <p className="text-[17px] text-ink-400 leading-relaxed font-light max-w-xl">
-          {project.description}
-        </p>
       </div>
 
-      <div className="lg:col-span-5 flex flex-col justify-center gap-8">
+      <p className="lg:col-span-7 text-[17px] text-ink-400 leading-relaxed font-light max-w-xl">
+        {project.description}
+      </p>
+
+      <div className="lg:col-span-5 flex flex-col gap-8 mt-2 lg:mt-0">
         {project.image && (
           <img
             src={project.image}
@@ -508,7 +511,7 @@ function ExperienceItem({ job, isFirst }: { job: (typeof EXPERIENCE)[number]; is
           return (
             <div
               key={role.period}
-              className={`relative grid lg:grid-cols-12 gap-x-8 lg:gap-x-12 gap-y-5 ${
+              className={`relative grid lg:grid-cols-12 gap-x-8 lg:gap-x-12 gap-y-4 ${
                 isLast ? "" : "pb-12"
               }`}
             >
@@ -524,18 +527,20 @@ function ExperienceItem({ job, isFirst }: { job: (typeof EXPERIENCE)[number]; is
                   aria-hidden="true"
                 />
               )}
-              <div className="lg:col-span-7">
+              {/* Title and period on their own row, so the description and the
+                  tags below them start on the same line. */}
+              <div className="lg:col-span-12">
                 <h4 className="text-[16px] lg:text-[17px] font-semibold text-white tracking-tight leading-[1.2]">
                   {role.title}
                 </h4>
                 <p className="mt-2 font-sans text-[14px] text-ink-500 tracking-normal">
                   {role.period}
                 </p>
-                <p className="mt-4 text-[16px] text-ink-400 font-light leading-relaxed max-w-xl">
-                  {role.description}
-                </p>
               </div>
-              <div className="lg:col-span-5 flex flex-wrap content-start gap-x-3 gap-y-3 lg:pt-1">
+              <p className="lg:col-span-7 text-[16px] text-ink-400 font-light leading-relaxed max-w-xl">
+                {role.description}
+              </p>
+              <div className="lg:col-span-5 flex flex-wrap content-start gap-x-3 gap-y-3 mt-1 lg:mt-0">
                 {role.stack.map((s) => (
                   <span key={s} className="tag-mark font-sans text-[13px] text-ink-400">
                     {s}
