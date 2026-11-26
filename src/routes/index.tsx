@@ -740,7 +740,7 @@ function Contact() {
           className="flex flex-col md:flex-row md:items-center md:justify-center gap-10 md:gap-[56px]"
           style={{ width: "fit-content", marginLeft: "auto", marginRight: "auto" }}
         >
-          <h2 className="relative inline-block text-[26px] font-extrabold text-white leading-[1.1] md:text-right">
+          <h2 className="relative inline-block text-[18px] font-medium text-ink-300 leading-[1.3] md:text-right">
             Let's work together.
           </h2>
 
