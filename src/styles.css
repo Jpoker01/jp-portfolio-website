@@ -119,15 +119,9 @@ body {
 .reveal { opacity: 0; }
 .reveal.in-view { animation: fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
 
-/* The underline is uncovered by a soft-edged sweep: a registered custom property drives a
-   gradient mask, so the leading tip fades in rather than being cut off squarely. The mask
-   is drawn larger than the line so the glow around it stays visible. */
-@property --underline-reveal {
-  syntax: "<percentage>";
-  inherits: false;
-  initial-value: 0%;
-}
-
+/* The underline is uncovered left to right by animating clip-path. Unlike a mask driven by
+   a registered custom property, clip-path animates natively in every current browser,
+   including older iOS Safari. The negative insets keep the glow around the line visible. */
 .heading-reveal::after {
   content: "";
   position: absolute;
@@ -141,24 +135,16 @@ body {
     color-mix(in srgb, var(--color-ink-50) 45%, transparent)
   );
   box-shadow: 0 0 14px color-mix(in srgb, var(--color-ink-50) 40%, transparent);
-  --underline-reveal: 0%;
-  -webkit-mask-image: linear-gradient(90deg, #000 calc(var(--underline-reveal) - 13%), transparent var(--underline-reveal));
-  mask-image: linear-gradient(90deg, #000 calc(var(--underline-reveal) - 13%), transparent var(--underline-reveal));
-  -webkit-mask-size: calc(100% + 48px) calc(100% + 48px);
-  mask-size: calc(100% + 48px) calc(100% + 48px);
-  -webkit-mask-position: center;
-  mask-position: center;
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
+  clip-path: inset(-24px 100% -24px -24px);
   opacity: 0;
 }
 .heading-reveal.in-view::after {
-  animation: headingUnderline 1.25s cubic-bezier(0.45, 0, 0.25, 1) 0.15s forwards;
+  animation: headingUnderline 1.1s cubic-bezier(0.45, 0, 0.25, 1) 0.15s forwards;
 }
 @keyframes headingUnderline {
-  0% { --underline-reveal: 0%; opacity: 0; }
+  0% { clip-path: inset(-24px 100% -24px -24px); opacity: 0; }
   10% { opacity: 1; }
-  100% { --underline-reveal: 116%; opacity: 1; }
+  100% { clip-path: inset(-24px -24px -24px -24px); opacity: 1; }
 }
 
 @media (max-width: 519px) {
@@ -470,7 +456,7 @@ button:focus-visible {
   .heading-reveal::after,
   .heading-reveal.in-view::after {
     animation: none;
-    --underline-reveal: 116%;
+    clip-path: none;
     opacity: 1;
   }
   *, *::before, *::after { transition-duration: 0s !important; }

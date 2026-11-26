@@ -123,24 +123,51 @@ const EXPERIENCE = [
 
 // ─── Hooks ─────────────────────────────────────────────────────────────────
 
+// Scroll reveal. An element is revealed once its top passes a line 80px above the
+// bottom of the viewport, including when it was scrolled past in one jump (fast
+// flick, nav link, reload mid-page). An IntersectionObserver misses those cases,
+// because the element is never inside its root between two rendered frames.
+const REVEAL_OFFSET = 80;
+const pendingReveals = new Set<HTMLElement>();
+let revealFrame = 0;
+
+function checkReveals() {
+  revealFrame = 0;
+  const line = window.innerHeight - REVEAL_OFFSET;
+  pendingReveals.forEach((el) => {
+    if (el.getBoundingClientRect().top < line) {
+      el.classList.add("in-view");
+      pendingReveals.delete(el);
+    }
+  });
+  if (pendingReveals.size === 0) detachRevealListeners();
+}
+
+function detachRevealListeners() {
+  window.removeEventListener("scroll", scheduleRevealCheck);
+  window.removeEventListener("resize", scheduleRevealCheck);
+}
+
+function scheduleRevealCheck() {
+  // At most one layout read per frame, however many scroll events arrive.
+  if (!revealFrame) revealFrame = window.requestAnimationFrame(checkReveals);
+}
+
 function useReveal<T extends HTMLElement>() {
   const ref = useRef<T>(null);
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((e) => {
-          if (e.isIntersecting) {
-            e.target.classList.add("in-view");
-            io.unobserve(e.target);
-          }
-        });
-      },
-      { threshold: 0.15, rootMargin: "0px 0px -80px 0px" },
-    );
-    io.observe(el);
-    return () => io.disconnect();
+    if (pendingReveals.size === 0) {
+      window.addEventListener("scroll", scheduleRevealCheck, { passive: true });
+      window.addEventListener("resize", scheduleRevealCheck);
+    }
+    pendingReveals.add(el);
+    scheduleRevealCheck();
+    return () => {
+      pendingReveals.delete(el);
+      if (pendingReveals.size === 0) detachRevealListeners();
+    };
   }, []);
   return ref;
 }
