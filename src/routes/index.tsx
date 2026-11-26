@@ -287,7 +287,7 @@ function Hero() {
             <span className="btn-reveal" aria-hidden="true">
               <span>Contact me</span>
             </span>
-            <span className="relative">Contact me</span>
+            <span className="relative [text-shadow:0_0_10px_rgba(255,255,255,0.45)]">Contact me</span>
           </Button>
         </div>
         </div>
