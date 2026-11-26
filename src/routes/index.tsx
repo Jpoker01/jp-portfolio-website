@@ -298,8 +298,8 @@ function Hero() {
       </h1>
 
         <div className="flex flex-col items-center lg:items-start mt-8 lg:mt-0 lg:max-w-[420px]">
-        <span className="mt-7 lg:mt-0 uppercase text-[13px] font-medium tracking-[0.18em] text-ink-400">
-          AI Engineer &middot; Brno, CZ
+        <span className="mt-7 lg:mt-0 uppercase text-[13px] font-medium tracking-[0.18em] text-white">
+          AI Engineer <span className="text-[#777]">&middot; Brno, CZ</span>
         </span>
 
         <p className="mt-6 font-light text-[18px] leading-relaxed text-ink-300 max-w-2xl lg:max-w-sm">
