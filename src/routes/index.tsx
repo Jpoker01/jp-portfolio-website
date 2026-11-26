@@ -332,6 +332,16 @@ function ProjectCard({
   isFirst: boolean;
 }) {
   const ref = useReveal<HTMLDivElement>();
+  const heading = (
+    <>
+      <p className="font-sans text-[15px] font-medium tracking-normal text-ink-400 mb-4">
+        {project.tag}
+      </p>
+      <h3 className="text-[18px] md:text-[20px] lg:text-[20px] font-bold text-white tracking-tight leading-[1.1]">
+        {project.title}
+      </h3>
+    </>
+  );
   return (
     <div
       ref={ref}
@@ -339,22 +349,31 @@ function ProjectCard({
         isFirst ? "" : "border-t border-ink-800 pt-16"
       } pb-16`}
     >
-      {/* Heading on its own row, so the description and the right column
-          below it start on the same line. */}
-      <div className="lg:col-span-12">
-        <p className="font-sans text-[15px] font-medium tracking-normal text-ink-400 mb-4">
-          {project.tag}
-        </p>
-        <h3 className="text-[18px] md:text-[20px] lg:text-[20px] font-bold text-white tracking-tight leading-[1.1]">
-          {project.title}
-        </h3>
-      </div>
+      {project.image ? (
+        // With an image: heading and description share the left column and
+        // the image column starts at the top, next to the heading.
+        <div className="lg:col-span-7">
+          {heading}
+          <p className="mt-6 text-[17px] text-ink-400 leading-relaxed font-light max-w-xl">
+            {project.description}
+          </p>
+        </div>
+      ) : (
+        // Without an image: heading on its own row, so the tags on the right
+        // start level with the first line of the description.
+        <>
+          <div className="lg:col-span-12">{heading}</div>
+          <p className="lg:col-span-7 text-[17px] text-ink-400 leading-relaxed font-light max-w-xl">
+            {project.description}
+          </p>
+        </>
+      )}
 
-      <p className="lg:col-span-7 text-[17px] text-ink-400 leading-relaxed font-light max-w-xl">
-        {project.description}
-      </p>
-
-      <div className="lg:col-span-5 flex flex-col gap-8 mt-2 lg:mt-0">
+      <div
+        className={`lg:col-span-5 flex flex-col gap-8 mt-2 lg:mt-0 ${
+          project.image ? "lg:justify-center" : ""
+        }`}
+      >
         {project.image && (
           <img
             src={project.image}
