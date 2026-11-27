@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { JpMark } from "@/components/jp-mark";
+import { FogBackground } from "@/components/fog-background";
 import {
   Menu,
   X,
@@ -833,11 +834,7 @@ function Footer() {
 function Index() {
   return (
     <div className="min-h-screen">
-      <div className="fog-layer" aria-hidden="true">
-        <div className="fog-haze fog-haze-a" />
-        <div className="fog-haze fog-haze-b" />
-        <div className="fog-grain" />
-      </div>
+      <FogBackground />
       <Nav />
       <main>
         <Hero />

@@ -238,6 +238,28 @@ body {
   .fog-haze-b { animation: none; }
 }
 
+/* WebGL fog (Vanta FOG). Fades in over the CSS haze once three.js has loaded;
+   the haze then stops painting. */
+.fog-webgl {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 1.2s ease;
+}
+
+.fog-webgl.is-ready { opacity: 1; }
+
+.fog-layer {
+  transition: opacity 1.2s ease, visibility 0s linear 1.2s;
+}
+
+.fog-layer.is-faded {
+  opacity: 0;
+  visibility: hidden;
+}
+
 /* Skill tags: soft filled rectangle, no border, barely-there dark fill. */
 .tag-mark {
   display: inline-flex;
