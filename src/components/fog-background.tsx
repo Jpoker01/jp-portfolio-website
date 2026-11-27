@@ -2,15 +2,15 @@ import { useEffect, useRef, useState } from "react";
 
 type VantaFog = (options: Record<string, unknown>) => { destroy: () => void };
 
-// Vanta FOG recoloured to the site's greys (base black, highlights at #1f1f1f).
+// Vanta FOG recoloured to the site's greys (base black, highlights at #181818).
 const FOG_OPTIONS = {
   mouseControls: false,
   touchControls: false,
   gyroControls: false,
   baseColor: 0x000000,
   lowlightColor: 0x050505,
-  midtoneColor: 0x0d0d0d,
-  highlightColor: 0x1f1f1f,
+  midtoneColor: 0x0a0a0a,
+  highlightColor: 0x181818,
   blurFactor: 0.7,
   speed: 0.6,
   zoom: 0.8,
