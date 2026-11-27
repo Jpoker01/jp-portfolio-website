@@ -97,6 +97,30 @@ body {
   .name-shine { display: none !important; }
 }
 
+/* Contact slogan: the same sweeping white band as the hero name, drawn as a second
+   background layer over the ink-300 base and clipped to the letters. */
+.slogan-shine {
+  color: transparent;
+  background-image:
+    linear-gradient(105deg, transparent 40%, #fff 50%, transparent 60%),
+    linear-gradient(var(--color-ink-300), var(--color-ink-300));
+  background-size: 300% 100%, 100% 100%;
+  background-repeat: no-repeat;
+  background-position: 100% 0, 0 0;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: slogan-shine 7s ease-in-out infinite;
+}
+
+@keyframes slogan-shine {
+  0%       { background-position: 100% 0, 0 0; }
+  45%, 100% { background-position: 0% 0, 0 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .slogan-shine { animation: none; }
+}
+
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: #000; }
 ::-webkit-scrollbar-thumb { background: #2a2a2a; }
